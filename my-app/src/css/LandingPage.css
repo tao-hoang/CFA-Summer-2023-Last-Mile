@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "montserrat";
+    src: url("./fonts/Montserrat-VariableFont_wght.ttf");
+  }
+  @font-face {
+    font-family: "lora";
+    src: url("./fonts/Lora.ttf");
+  }
+.websiteName{
+    font-family: "lora" !important;
+    font-size: 26px !important;
+}
+
+.headerButton{
+    margin-left: 10px !important;
+    text-transform: none !important;
+    font-family: "montserrat" !important;
+    font-size: 16px !important;
+}
+#heroImage{
+    background-image:url("../images/hero.jpg") ;
+    height: 600px;
+    min-width: 1000px;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.welcomeText{
+  width:400px;
+  padding-top:100px ;
+  padding-left:50px;
+  font-family: "lora" ;
+}
+.welcomeHeader{
+  font-family: "montserrat";
+  margin: 0;
+  font-size: 32px;
+}
+.welcomeMessage{
+  font-size: 18px;
+}
+.searchPrompt{
+
+}
+.landingSearchBar{
+  background-color: "CECFD4" !important;
+}
+.catergoryHeader{
+  /* margin-left:80px ; */
+}
+.categoriesDiv{
+  display: grid;
+  grid-template-columns:repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+  width: 900px;
+  text-align: center;
+  margin-left:40px ;
+}
+.categoryLink{
+  text-align: center;
+}
+.categoryIcon{
+  font-size: 70px !important;
+}
+.webDevIcons{
+
+}
+.categoriesSection{
+  margin-left:80px ;
+}
