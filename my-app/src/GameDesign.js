@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Switch>
       {/* Define the route for the separate page */}
-      <Route path="/web-design-page" component={GameDesign} />
+      <Route path="/game-design-page" component={GameDesign} />
       <Route path="/" component={JobsListing} />
 
       <div>
