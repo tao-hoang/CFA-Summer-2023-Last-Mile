@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "montserrat";
+    src: url("./fonts/Montserrat-VariableFont_wght.ttf");
+  }
+@font-face {
+font-family: "lora";
+src: url("./fonts/Lora.ttf");
+}
+.loginPage{
+    font-family: "lora";
+}
+.loginHeroImage{
+    background-image: url("../images/login.jpg");
+    width:50%;
+    height: 800px;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+.formDiv{
+    width: 50%;
+}
+.innerFormDiv{
+    margin-left:  100px;
+    margin-right: 50px;
+    margin-top: 80px;
+    width: 400px;
+}
+.loginPage{
+    display: flex;
+}
+.welcomeMessage{
+    font-family: "montserrat";
+    font-size: 34px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.siteName{
+    color: rgb(99, 99, 99);
+    margin: 0;
+    font-weight:800;
+}
+.loginInstruction{
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.formLabel{
+    display: block;
+    color: rgb(99, 99, 99);
+    font-size: 17px;
+}
+.formInput{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 1px ;
+}
+.inputGroup{
+    margin-top: 16px;
+}
+.loginButton{
+    margin-top: 40px;
+    width: 100%;
+    height: 44px;
+    background-color:#0A1128 ;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    border-width: 1px ;
+}
+/* *{
+    border: solid black;
+} */
