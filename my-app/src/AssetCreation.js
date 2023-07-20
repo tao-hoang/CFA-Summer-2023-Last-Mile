@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import CyberSecurity from './CyberSecurity';
+import AssetCreation from './AssetCreation';
 import JobsListing from './JobsListing';
 
 const App = () => {
   return (
     <Switch>
       {/* Define the route for the separate page */}
-      <Route path="/cyber-security-page" component={CyberSecurity} />
+      <Route path="/asset-design-page" component={AssetCreation} />
       <Route path="/" component={JobsListing} />
 
       <div>
-        <h1>Cyber Security</h1>
+        <h1>Asset Creation</h1>
             <p>
                 Welcome to Web Design! Here, you can find the latest job opportunities related to
                 web design, web development, and other tech-related positions.
