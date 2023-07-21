@@ -8,17 +8,22 @@ src: url("./fonts/Lora.ttf");
 }
 .loginPage{
     font-family: "lora";
+
 }
 .loginHeroImage{
     background-image: url("../images/login.jpg");
     width:50%;
-    height: 800px;
+    height: 900px;
     /* Position and center the image to scale nicely on all screens */
     background-position: center 75%;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 
+}
+.loginInstruction{
+    font-size: 18px !important;
+    color: gray;
 }
 .formDiv{
     width: 50%;
@@ -59,12 +64,16 @@ src: url("./fonts/Lora.ttf");
     height: 40px;
     border-radius: 10px;
     border-width: 1px ;
+    font-size: 22px;
+    padding-left: 5px;
+    border-style: solid;
 }
 .inputGroup{
     margin-top: 16px;
 }
 .loginButton{
     margin-top: 40px;
+    margin-bottom: 40px;
     width: 100%;
     height: 44px;
     background-color:#0A1128 ;
@@ -76,3 +85,34 @@ src: url("./fonts/Lora.ttf");
 /* *{
     border: solid black;
 } */
+.smPrompt{
+    text-align: center; 
+    border-bottom: 1px solid rgb(185, 185, 185); 
+    line-height: 0.1em;
+    margin-bottom: 40px; 
+}
+.smText{
+    background:#fff; 
+    padding:0 10px;
+    color: rgb(151, 151, 151); 
+}
+.socialMediaLogin{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+.socialMediaButton{
+    font-size: 60px !important;
+}
+.newUserSignup{
+
+    width: 100%;
+    height: 44px;
+    background-color:white ;
+    color: rgb(151, 151, 151);
+    font-size: 20px;
+    border-radius: 20px;
+    border-width: 1px ;
+    border-color: rgb(196, 196, 196);
+    border-style:solid;
+}

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import "./css/LoginForm.css"
+
+//icons
+import GoogleIcon from '@mui/icons-material/Google';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import AppleIcon from '@mui/icons-material/Apple';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -45,8 +51,14 @@ const LoginForm = () => {
             <button className='loginButton' type="submit">Login</button>
           </form>
           {error && <p>{error}</p>}
-          <p>or log in with</p>
-          <div className='socialMediaLogin'></div>
+          <p className='smPrompt'><span className='smText'>or log in with</span></p>
+          <div className='socialMediaLogin'>
+            <GoogleIcon className="socialMediaButton" />
+            <LinkedInIcon className="socialMediaButton" />
+            <FacebookIcon className="socialMediaButton" />
+            <AppleIcon className="socialMediaButton" />
+          </div>
+          <button className='newUserSignup'>New user? Create an account</button>
         </div>
       </div>
     </div>
