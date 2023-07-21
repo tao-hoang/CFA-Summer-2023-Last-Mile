@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+
+import "./css/LandingPage.css";
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
-import "./css/LandingPage.css";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
