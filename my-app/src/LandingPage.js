@@ -61,14 +61,14 @@ const LandingPage = () => {
     <ThemeProvider theme={theme}>
       <div>
         <Box sx={{ flexGrow: 1  }}>
-          <AppBar sx={{ bgcolor: 'white' }} position="static">
+          <AppBar sx={{ bgcolor: '#FEFCFB' }} position="static">
             <Toolbar>
               <Typography className='websiteName' variant="h6" component="div" sx={{  color: '#0a1128',flexGrow: 1, fontWeight:"bold" }}>
                 website name
               </Typography>
-              <Button className='headerButton'>Explore</Button>
-              <Button className='headerButton'>Sign In</Button>
-              <Button className='headerButton' variant="contained" color="primary">Join</Button>
+              <Button className='headerButton' sx={{width:80, borderRadius:100}}>Explore</Button>
+              <Button className='headerButton' sx={{width:80, borderRadius:100}}>Sign In</Button>
+              <Button className='headerButton' variant="contained" color="primary" sx={{width:80, borderRadius:100}}>Join</Button>
             </Toolbar>
           </AppBar>
         </Box>
