@@ -79,7 +79,7 @@ const LandingPage = () => {
             <p className='searchPrompt'>What kind of work are you looking for?</p>
             <Paper onSubmit={handleSearchSubmit}
               component="form"
-              sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 375, opacity:0.6, borderRadius:2}}
+              sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 375, opacity:0.5, borderRadius:2}}
             >
               <IconButton sx={{ p: '10px' }} aria-label="menu">
                 <MenuIcon />

@@ -37,12 +37,14 @@
   font-family: "montserrat";
   margin: 0;
   font-size: 32px;
+  font-weight: 650;
 }
 .welcomeMessage{
-  font-size: 18px;
+  font-size: 19px;
+  font-family: "lora";
 }
 .searchPrompt{
-
+  font-size: 16px;
 }
 .landingSearchBar{
   background-color: "CECFD4" !important;
