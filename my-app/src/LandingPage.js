@@ -75,7 +75,7 @@ const LandingPage = () => {
         <div id="heroImage">
           <div className="welcomeText">
             <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>
-            <p className="welcomeMessage" style={{marginBottom:50}}>Start honing your skills and get real-world experience with [website name]. We have projects that will suit your needs and help you grow as a professional.</p>
+            <p className="welcomeMessage" style={{marginBottom:50, fontSize:19, fontFamily:"lora"}}>Start honing your skills and get real-world experience with [website name]. We have projects that will suit your needs and help you grow as a professional.</p>
             <p className='searchPrompt'>What kind of work are you looking for?</p>
             <Paper onSubmit={handleSearchSubmit}
               component="form"
@@ -109,7 +109,7 @@ const LandingPage = () => {
             <div className="categoryLink">
               <div className='webDevIcons'>
                 <HtmlIcon className='categoryIcon'/>
-                <CssIcon className='categoryIcon'/>
+                {/* <CssIcon className='categoryIcon'/> */}
               </div>
               <p>Web Development</p>
             </div>
