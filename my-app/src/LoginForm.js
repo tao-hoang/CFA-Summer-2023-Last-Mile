@@ -33,7 +33,7 @@ const LoginForm = () => {
 
   return (
     <div className='loginPage'>
-      <div className='loginHeroImage'></div>
+      <img alt="computer"src={require("./images/login.jpg")} className='loginHeroImage'/>
       <div className='formDiv'>
         <div className='innerFormDiv'>
           <h2 className='siteName'>website name</h2>

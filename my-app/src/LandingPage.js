@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 
 import "./css/LandingPage.css";
@@ -67,8 +68,12 @@ const LandingPage = () => {
                 website name
               </Typography>
               <Button className='headerButton'>Explore</Button>
-              <Button className='headerButton'>Sign In</Button>
+              <Link to="/login">
+                <Button className='headerButton'>Sign In</Button>
+              </Link>
+              <Link to="/register">
               <Button className='headerButton' variant="contained" color="primary">Join</Button>
+              </Link>
             </Toolbar>
           </AppBar>
         </Box>

@@ -5,7 +5,7 @@ import App from './App';
 import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 import reportWebVitals from './reportWebVitals';
-
+import RegUI from './RegUI';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <RegistrationForm />
+    element: <RegUI />
   }
 ]);
 
