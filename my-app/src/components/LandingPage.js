@@ -61,25 +61,25 @@ const LandingPage = () => {
     <ThemeProvider theme={theme}>
       <div>
         <Box sx={{ flexGrow: 1  }}>
-          <AppBar sx={{ bgcolor: 'white' }} position="static">
+          <AppBar sx={{ bgcolor: '#FEFCFB' }} position="static">
             <Toolbar>
               <Typography className='websiteName' variant="h6" component="div" sx={{  color: '#0a1128',flexGrow: 1, fontWeight:"bold" }}>
                 website name
               </Typography>
-              <Button className='headerButton'>Explore</Button>
-              <Button className='headerButton'>Sign In</Button>
-              <Button className='headerButton' variant="contained" color="primary">Join</Button>
+              <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
+              <Button className='headerButton' sx={{width:90, borderRadius:100}}>Sign In</Button>
+              <Button className='headerButton' variant="contained" color="primary" sx={{width:90, borderRadius:100}}>Join</Button>
             </Toolbar>
           </AppBar>
         </Box>
         <div id="heroImage">
           <div className="welcomeText">
-            <h1 className="welcomeHeader">Work to empower yourself.</h1>
-            <p className="welcomeMessage">Start honing your skills and get real-world experience with [website name]. We have projects that will suit your needs and help you grow as a professional.</p>
+            <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>
+            <p className="welcomeMessage" style={{marginBottom:50, fontSize:19, fontFamily:"lora"}}>Start honing your skills and get real-world experience with [website name]. We have projects that will suit your needs and help you grow as a professional.</p>
             <p className='searchPrompt'>What kind of work are you looking for?</p>
-            <Paper  onSubmit={handleSearchSubmit}
+            <Paper onSubmit={handleSearchSubmit}
               component="form"
-              sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+              sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 375, opacity:0.5, borderRadius:2}}
             >
               <IconButton sx={{ p: '10px' }} aria-label="menu">
                 <MenuIcon />
@@ -109,7 +109,7 @@ const LandingPage = () => {
             <div className="categoryLink">
               <div className='webDevIcons'>
                 <HtmlIcon className='categoryIcon'/>
-                <CssIcon className='categoryIcon'/>
+                {/* <CssIcon className='categoryIcon'/> */}
               </div>
               <p>Web Development</p>
             </div>
