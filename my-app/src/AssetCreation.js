@@ -1,20 +1,20 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import UiDesign from './UiDesign';
+import AssetCreation from './AssetCreation';
 import JobsListing from './JobsListing';
 
 const App = () => {
   return (
     <Switch>
       {/* Define the route for the separate page */}
-      <Route path="/ui-ux-design-page" component={UiDesign} />
+      <Route path="/asset-design-page" component={AssetCreation} />
       <Route path="/" component={JobsListing} />
 
       <div>
-        <h1>UI/UX Design</h1>
+        <h1>Asset Creation</h1>
             <p>
-                Welcome to the UI/UX Design page! Here, you can find the latest job opportunities related to
-                UI/UX design, web development, and other tech-related positions.
+                Welcome to Web Design! Here, you can find the latest job opportunities related to
+                web design, web development, and other tech-related positions.
             </p>
             <p>
                 Our platform regularly updates job listings from top companies and startups, providing you
