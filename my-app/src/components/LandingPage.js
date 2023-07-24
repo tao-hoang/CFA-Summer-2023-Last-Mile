@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 
-import "./css/LandingPage.css";
+import "../css/LandingPage.css";
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -29,7 +29,7 @@ import SecurityIcon from '@mui/icons-material/Security';
 import WebAssetIcon from '@mui/icons-material/WebAsset';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 //fonts
-import Montserrat from "./css/fonts/Montserrat-VariableFont_wght.ttf";
+import Montserrat from "../css/fonts/Montserrat-VariableFont_wght.ttf";
 const LandingPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   //colors for components
