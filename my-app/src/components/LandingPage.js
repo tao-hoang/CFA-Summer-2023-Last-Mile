@@ -64,7 +64,7 @@ const LandingPage = () => {
           <AppBar sx={{ bgcolor: '#FEFCFB' }} position="static">
             <Toolbar>
               <Typography className='websiteName' variant="h6" component="div" sx={{  color: '#0a1128',flexGrow: 1, fontWeight:"bold" }}>
-                website name
+                connectIT
               </Typography>
               <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
               <Button className='headerButton' sx={{width:90, borderRadius:100}}>Sign In</Button>
@@ -75,7 +75,7 @@ const LandingPage = () => {
         <div id="heroImage">
           <div className="welcomeText">
             <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>
-            <p className="welcomeMessage" style={{marginBottom:50, fontSize:19, fontFamily:"lora"}}>Start honing your skills and get real-world experience with [website name]. We have projects that will suit your needs and help you grow as a professional.</p>
+            <p className="welcomeMessage" style={{marginBottom:50, fontSize:19, fontFamily:"lora"}}>Start honing your skills and get real-world experience with connectIT. We have projects that will suit your needs and help you grow as a professional.</p>
             <p className='searchPrompt'>What kind of work are you looking for?</p>
             <Paper onSubmit={handleSearchSubmit}
               component="form"
