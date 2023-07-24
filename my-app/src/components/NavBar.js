@@ -19,9 +19,10 @@ function App() {
         {/* Your page content goes here */}
         <h1>Welcome to website name here</h1>
         <p>This is the content of the page.</p>
+        <p></p>
       </div>
     </div>
   );
 }
 
-export default App;
+export default App
