@@ -37,36 +37,45 @@
   font-family: "montserrat";
   margin: 0;
   font-size: 32px;
+  font-weight: 650;
 }
 .welcomeMessage{
-  font-size: 18px;
+  font-size: 19px;
+  font-family: "lora";
 }
 .searchPrompt{
-
+  font-size: 16px;
 }
 .landingSearchBar{
   background-color: "CECFD4" !important;
 }
-.catergoryHeader{
+.categoryHeader{
   /* margin-left:80px ; */
 }
 .categoriesDiv{
-  display: grid;
+  /* display: grid;
   grid-template-columns:repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
-  width: 900px;
+  width: 100% -40px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
-  margin-left:40px ;
+  gap: 0px 30px;
 }
 .categoryLink{
   text-align: center;
+  width: 17%;
 }
 .categoryIcon{
   font-size: 70px !important;
 }
-.webDevIcons{
-
-}
+/* .webDevIcons{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 0;
+} */
 .categoriesSection{
   margin-left:80px ;
 }
