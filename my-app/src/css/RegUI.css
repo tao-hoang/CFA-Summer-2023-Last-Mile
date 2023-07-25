@@ -6,27 +6,18 @@
 font-family: "lora";
 src: url("./fonts/Lora.ttf");
 }
-.loginPage{
+.signUpPage{
     font-family: "lora";
     height: 100%;
 }
-.loginHeroImage{
+.signUpHeroImage{
     display: block;
+    height: auto;
+    max-height: 1000px;
+    max-width: 50%;
     object-fit: cover;
-    /* background-image: url("../images/login.jpg"); */
-    /* width:50%; */
-    height: 1000px;
-    /* Position and center the image to scale nicely on all screens */
-    /* background-position: center 75%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; */
-    
 }
-.loginInstruction{
-    font-size: 18px !important;
-    color: gray;
-}
+
 .formDiv{
     width: 50%;
     margin: auto;
@@ -40,7 +31,7 @@ src: url("./fonts/Lora.ttf");
     margin-top: 80px;
     width: 400px;
 }
-.loginPage{
+.signUpPage{
     display: flex;
 }
 .welcomeMessage{
@@ -54,12 +45,12 @@ src: url("./fonts/Lora.ttf");
     margin: 0;
     font-weight:800;
 }
-.loginInstruction{
-    font-size: 14px;
-    font-weight: lighter;
-    margin-top: 10px;
-    margin-bottom: 50px;
+.signUpInstruction{
+    font-size: 18px !important;
+    color: rgb(85, 85, 85);
+    font-weight: normal;
 }
+
 .formLabel{
     display: block;
     color: rgb(99, 99, 99);
@@ -77,7 +68,7 @@ src: url("./fonts/Lora.ttf");
 .inputGroup{
     margin-top: 16px;
 }
-.loginButton{
+.signUpButton{
     margin-top: 40px;
     margin-bottom: 40px;
     width: 100%;
@@ -102,7 +93,7 @@ src: url("./fonts/Lora.ttf");
     padding:0 10px;
     color: rgb(151, 151, 151); 
 }
-.socialMediaLogin{
+.socialMediasignUp{
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 40px;
@@ -111,7 +102,6 @@ src: url("./fonts/Lora.ttf");
     font-size: 60px !important;
 }
 .newUserSignup{
-
     width: 100%;
     height: 44px;
     background-color:white ;
@@ -121,4 +111,56 @@ src: url("./fonts/Lora.ttf");
     border-width: 1px ;
     border-color: rgb(196, 196, 196);
     border-style:solid;
+}
+.red{
+    color: red;
+}
+.signInButton{
+    width: 100%;
+    height: 44px;
+    background-color:white ;
+    color: lightgray;
+    font-size: 20px;
+    border: solid lightgray;
+    border-radius: 20px;
+    border-width: 1px ;
+}
+.client{
+    height: 160px;
+    width: 160px;
+    color:#0A1128;
+    text-align: center;
+    border-radius: 25px;
+    border-width: 1px ;
+    border: solid #0A1128;
+}
+.clientIcon{
+    margin-top: 20px !important;
+    padding: none !important;
+    font-size: 90px !important;
+}
+.jobSeeker{
+    height: 160px;
+    width: 160px;
+    background-color: #0A1128;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    border-width: 1px ;
+    border: solid #0A1128;
+}
+.jobSeekerIcon{
+    margin-top: 20px !important;
+    padding: none !important;
+    font-size: 90px !important;
+}
+.iconText{
+    font-family: "montserrat";
+    font-weight: 600;
+}
+.iconDiv{
+    display: flex;
+    justify-content: space-around ;
+    align-items: flex-start;
+    gap: 20px;
 }
