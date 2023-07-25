@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import LoginForm from './components/LoginForm';
-import RegistrationForm from './components/RegistrationForm';
+
 import reportWebVitals from './reportWebVitals';
-import RegUI from './RegUI';
+import RegUI from './components/RegUI1';
+import RegUI2 from './components/RegUI2';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -24,7 +25,12 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegUI />
+  },
+  {
+    path: "/register2",
+    element: <RegUI2 />
   }
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

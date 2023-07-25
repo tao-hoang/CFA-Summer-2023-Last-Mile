@@ -12,6 +12,7 @@ src: url("./fonts/Lora.ttf");
 }
 .loginHeroImage{
     display: block;
+    object-fit: cover;
     /* background-image: url("../images/login.jpg"); */
     /* width:50%; */
     height: 1000px;

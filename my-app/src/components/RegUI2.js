@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import "./css/RegUI.css";
+import "../css/RegUI.css";
 
 //icons
 import GoogleIcon from '@mui/icons-material/Google';
@@ -64,7 +64,7 @@ const RegUI = () => {
     };
   return (
     <div className='signUpPage'>
-      <img alt="computer" src={require("./images/login.jpg")} className='signUpHeroImage'/>
+      <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
       <div className='formDiv'>
         <div className='innerFormDiv'>
           <h2 className='siteName'>website name</h2>
