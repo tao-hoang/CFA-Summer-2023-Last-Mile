@@ -88,7 +88,7 @@ const RegUI = () => {
       <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
       <div className='formDiv'>
         <div className='innerFormDiv'>
-          <h2 className='siteName'>website name</h2>
+          <h2 className='siteName'>connectIT</h2>
           <h1 className='welcomeMessage'>Create an account</h1>
           <h3 className='signUpInstruction'>Join our network of cool people yippeeeeeeee</h3>
           <form onSubmit={handleRegistration}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/LoginForm.css"
 import axios from "axios";
 
@@ -13,8 +13,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [post, setPost] = React.useState(null);
-
+  const navigate = useNavigate();
   function createPost(event) {
     event.preventDefault(); 
     axios.post(baseURL, {
@@ -23,8 +22,11 @@ const LoginForm = () => {
         }
       )
       .then((response) => {
-        setPost(response.data);
         console.log(response.data);
+        if(response.data.user.token){
+          localStorage.setItem("token", response.data.user.token)
+          //navigate('/home')
+        }
       })
       .catch((error) => {
         setError("Failed to log in. Please check your credentials.");
