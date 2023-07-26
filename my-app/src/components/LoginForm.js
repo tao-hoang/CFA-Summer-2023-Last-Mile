@@ -34,11 +34,13 @@ const LoginForm = () => {
 
   return (
     <div className='loginPage'>
-      <img alt="computer"src={require("../images/login.jpg")} className='loginHeroImage'/>
-      <div className='formDiv'>
-        <div className='innerFormDiv'>
-          <h2 className='siteName'>website name</h2>
-          <h1 className='welcomeMessage'>Welcome back</h1>
+      
+        <img alt="computer"src={require("../images/login.jpg")} className='loginHeroImage'/>
+
+      <div className='formDivLogin'>
+        <div className='innerFormDivLogin'>
+          <h2 className='siteNameLogin'>ConnectIT</h2>
+          <h1 className='welcomeMessageLogin'>Welcome back</h1>
           <h3 className='loginInstruction'>Log in to to your account</h3>
           <form onSubmit={createPost}>
             <div className='inputGroup'>
@@ -59,8 +61,6 @@ const LoginForm = () => {
             <FacebookIcon className="socialMediaButton" />
             <AppleIcon className="socialMediaButton" />
           </div>
-
-          <button className='newUserSignup'>New user? Create an account</button>
           {error && <p>{error}</p>}
       {/* ... (rest of the component) ... */}
           <Link to="../register">
