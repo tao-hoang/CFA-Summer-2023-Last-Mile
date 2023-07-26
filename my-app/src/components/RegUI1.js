@@ -7,7 +7,9 @@ const RegUI = () => {
     
   return (
     <div className='signUpPage'>
-      <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
+      <div className='signUpHeroImageDiv'>
+        <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
+      </div>
       <div className='formDiv'>
         <div className='innerFormDiv'>
           <h2 className='siteName'>website name</h2>

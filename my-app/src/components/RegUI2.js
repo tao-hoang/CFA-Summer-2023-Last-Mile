@@ -64,8 +64,9 @@ const RegUI = () => {
     };
   return (
     <div className='signUpPage'>
-      <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
-      <div className='formDiv'>
+      <div className='signUpHeroImageDiv'>
+        <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
+      </div>      <div className='formDiv'>
         <div className='innerFormDiv'>
           <h2 className='siteName'>website name</h2>
           <h1 className='welcomeMessage'>Create an account</h1>
@@ -90,7 +91,7 @@ const RegUI = () => {
             </ul>
             <div>
                 <label className='formLabel' htmlFor='confirmPasswordInput'>Confirm Password:</label>
-                <input className='formInput' id="confirmPasswordInput" type="password" value={setConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+                <input className='formInput' id="confirmPasswordInput" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
             </div>
             <div className='captcha'>(captcha)</div>
             <button className='signUpButton' type="submit">Join</button>
