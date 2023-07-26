@@ -1,46 +1,67 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/RegUI.css";
-
+import axios from "axios";
 //icons
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
+
+
+
+const baseURL = "http://localhost:3000/register";
 const RegUI = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegistration = (e) => {
-        e.preventDefault();
-    
-        // Validation logic (add your specific validation here)
-        if (!email || !password || !confirmPassword) {
-          setError('Please fill in all fields.');
-          return;
-        }
-    
-        if (!isValidEmail(email)) {
-          setError('Please enter a valid email address.');
-          return;
-        }
-    
-        if (password !== confirmPassword) {
-          setError('Passwords do not match.');
-          return;
-        }
-    
-        if (!isValidPassword(password)) {
-          setError('Please enter a valid password.');
-          return;
-        }
+      e.preventDefault();
 
-        // Registration API call (replace with your own implementation)
-        // Assuming it returns a JSON web token (JWT)
-        const token = 'sample-jwt-token';
-        localStorage.setItem('token', token);
+      // Validation logic (add your specific validation here)
+      if (!email || !password || !confirmPassword) {
+        setError('Please fill in all fields.');
+        return;
+      }
+  
+      if (!isValidEmail(email)) {
+        setError('Please enter a valid email address.');
+        return;
+      }
+  
+     if (password !== confirmPassword) {
+        setError('Passwords do not match.');
+        return;
+      }
+  
+      if (!isValidPassword(password)) {
+        setError('Please enter a valid password.');
+        return;
+      }
+  
+  
+        axios.post(baseURL, {
+          "fname":"first_name",
+          "lname":"last_name",
+          "email": email,
+          "password":password
+        }
+          )
+          .then((response) => {
+            if(response.data.token){
+              localStorage.setItem('token', response.data.token)
+              navigate('/login')
+            }
+
+          })
+          .catch((error) => {
+            console.log(error)
+            setError("Failed to log in. Please check your credentials.");
+          });
+          
 
         // Redirect to restricted-access page
         // You can use React Router for navigation
@@ -55,7 +76,7 @@ const RegUI = () => {
         // Password validation logic (add your specific validation here)
         // Password criteria: at least 12 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character
         return (
-            password.length >= 12 &&
+            password.length >= 8 &&
             /[A-Z]/.test(password) &&
             /[a-z]/.test(password) &&
             /\d/.test(password) &&

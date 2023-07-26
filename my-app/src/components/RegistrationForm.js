@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
+const baseURL = "http://localhost:3000/register";
+
+
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-
   const handleRegistration = (e) => {
     e.preventDefault();
 
@@ -20,7 +22,7 @@ const RegistrationForm = () => {
       return;
     }
 
-    if (password !== confirmPassword) {
+   if (password !== confirmPassword) {
       setError('Passwords do not match.');
       return;
     }
@@ -29,6 +31,22 @@ const RegistrationForm = () => {
       setError('Please enter a valid password.');
       return;
     }
+
+
+      axios.post(baseURL, {
+        "fname":"Daen",
+        "lname":"Crz",
+        "email": email,
+        "password":password
+      }
+        )
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          setError("Failed to log in. Please check your credentials.");
+        });
+
 
     // Registration API call (replace with your own implementation)
     // Assuming it returns a JSON web token (JWT)
@@ -71,7 +89,7 @@ const RegistrationForm = () => {
         </div>
         <div>
           <label>Confirm Password:</label>
-          <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+          <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
         </div>
         <button type="submit">Register</button>
       </form>
