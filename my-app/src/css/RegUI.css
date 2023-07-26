@@ -21,7 +21,7 @@ src: url("./fonts/Lora.ttf");
 
 .formDiv{
     width: 50%;
-    /* margin: 40px auto; */
+    margin:  0 auto;
     display: flex;
     justify-content: center;
 
