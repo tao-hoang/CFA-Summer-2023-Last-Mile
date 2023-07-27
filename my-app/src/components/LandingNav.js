@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 //fonts
 import Montserrat from "../css/fonts/Montserrat-VariableFont_wght.ttf";
-let HomeNav=()=>{
+let LandingNav=()=>{
     //colors for components
     const theme = createTheme({
     palette: {
@@ -48,4 +48,4 @@ let HomeNav=()=>{
         </ThemeProvider>
     )
 }
-export default HomeNav;
+export default LandingNav;
