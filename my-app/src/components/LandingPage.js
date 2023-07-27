@@ -19,7 +19,6 @@ import SearchIcon from '@mui/icons-material/Search';
 //icons
 import DrawIcon from '@mui/icons-material/Draw';
 import HtmlIcon from '@mui/icons-material/Html';
-import CssIcon from '@mui/icons-material/Css';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
