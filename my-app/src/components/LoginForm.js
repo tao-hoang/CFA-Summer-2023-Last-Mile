@@ -61,6 +61,7 @@ const LoginForm = () => {
             <FacebookIcon className="socialMediaButton" />
             <AppleIcon className="socialMediaButton" />
           </div>
+
           {error && <p>{error}</p>}
       {/* ... (rest of the component) ... */}
           <Link to="../register">

@@ -11,12 +11,12 @@
     font-size: 26px !important;
 }
 
-.headerButton{
+/* .headerButton{
     margin-left: 10px !important;
     text-transform: none !important;
     font-family: "montserrat" !important;
     font-size: 16px !important;
-}
+} */
 #heroImage{
     background-image:url("../images/hero.jpg") ;
     height: 600px;
