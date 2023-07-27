@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AssetCreation from './AssetCreation';
 import JobsListing from './JobsListing';
+import LandingPage from './LandingPage';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       {/* Define the route for the separate page */}
       <Route path="/asset-design-page" component={AssetCreation} />
       <Route path="/" component={JobsListing} />
+      <Route path="/" component={LandingPage} />
 
       <div>
         <h1>Asset Creation</h1>

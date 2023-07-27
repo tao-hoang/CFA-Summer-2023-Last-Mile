@@ -107,7 +107,7 @@ const LandingPage = () => {
           <div className='categoriesDiv'>
             <div className="categoryLink">
               <DrawIcon className='categoryIcon'/>
-              <Link to="UiDesign.js">
+              <Link to="./UiDesign.js">
                 <p>UX/UI Design</p>
               </Link>
             </div>
@@ -117,63 +117,63 @@ const LandingPage = () => {
                 <HtmlIcon className='categoryIcon'/>
                 {/* <CssIcon className='categoryIcon'/> */}
               </div>
-              <Link to="WebDesign.js">
+              <Link to="./WebDesign.js">
                 <p>Web Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <TerminalIcon className='categoryIcon'/>
-              <Link to="SoftwareDev.js">
+              <Link to="./SoftwareDev.js">
                 <p>Software Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <PhoneAndroidIcon className='categoryIcon'/>
-              <Link to="MobileDev.js">
+              <Link to="./MobileDev.js">
                 <p>Mobile App Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <SportsEsportsIcon  className='categoryIcon'/>
-              <Link to="GameDesign.js">
+              <Link to="./GameDesign.js">
                 <p>Game Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <QueryStatsIcon  className='categoryIcon'/>
-              <Link to="DataAnalytics.js">
+              <Link to="./DataAnalytics.js">
                 <p>Data Analytics</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <ManageAccountsIcon  className='categoryIcon'/>
-              <Link to="ITSupport.js">
+              <Link to="./ITSupport.js">
                 <p>IT Support</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <SecurityIcon  className='categoryIcon'/>
-              <Link to="CyberSecurity.js">
+              <Link to="./CyberSecurity.js">
                 <p>Cybersecurity</p>
               </Link>   
             </div>
 
             <div className="categoryLink">
               <WebAssetIcon  className='categoryIcon'/>
-              <Link to="AssetCreation.js">
+              <Link to="./AssetCreation.js">
                 <p>Asset Creation</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <ContactSupportIcon  className='categoryIcon'/>
-              <Link to="CustomerSupport.js">
+              <Link to="./CustomerSupport.js">
                 <p>Customer Support</p>
               </Link>
             </div>
