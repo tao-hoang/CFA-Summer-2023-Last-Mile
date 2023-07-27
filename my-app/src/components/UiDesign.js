@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import UiDesign from './UiDesign';
 import JobsListing from './JobsListing';
 

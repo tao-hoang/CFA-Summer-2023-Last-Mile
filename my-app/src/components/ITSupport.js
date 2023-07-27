@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import AssetCreation from './AssetCreation';
 import JobsListing from './JobsListing';
 import LandingPage from './LandingPage';

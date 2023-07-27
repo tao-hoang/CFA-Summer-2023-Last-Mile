@@ -7,7 +7,8 @@ import LoginForm from './components/LoginForm';
 import reportWebVitals from './reportWebVitals';
 import RegUI from './components/RegUI1';
 import RegUI2 from './components/RegUI2';
-
+import ErrorPage404 from './components/ErrorPage404';
+import ErrorPage500 from './components/ErrorPage500';
 import AssetCreation from './components/AssetCreation';
 import CustomerSupport from './components/CustomerSupport';
 import DataAnalytics from './components/DataAnalytics';
@@ -42,45 +43,55 @@ const router = createBrowserRouter([
     element: <RegUI2 />
   },
   {
-    path: "/uidesign",
-    element: <UiDesign />
+    path: "/error404",
+    element: <ErrorPage404 />
   },
   {
-    path: "/assetcreation",
-    element: <AssetCreation />
+    path: "/error500",
+    element: <ErrorPage500 />
   },
   {
-    path: "/customersupport",
-    element: <CustomerSupport />
-  },
-  {
-    path: "/cybersecurity",
-    element: <CyberSecurity />
-  },
-  {
-    path: "/dataanalytics",
-    element: <DataAnalytics />
-  },
-  {
-    path: "/gamedesign",
-    element: <GameDesign />
-  },
-  {
-    path: "/itsupport",
-    element: <ITSupport />
-  },
-  {
-    path: "/mobiledev",
-    element: <MobileDev />
-  },
-  {
-    path: "/softwaredev",
-    element: <SoftwareDev />
-  },
-  {
-    path: "/webdesign",
-    element: <WebDesign />
-  },
+  path: "/uidesign",
+  element: <UiDesign />
+},
+{
+  path: "/assetcreation",
+  element: <AssetCreation />
+},
+{
+  path: "/customersupport",
+  element: <CustomerSupport />
+},
+{
+  path: "/cybersecurity",
+  element: <CyberSecurity />
+},
+{
+  path: "/dataanalytics",
+  element: <DataAnalytics />
+},
+{
+  path: "/gamedesign",
+  element: <GameDesign />
+},
+{
+  path: "/itsupport",
+  element: <ITSupport />
+},
+{
+  path: "/mobiledev",
+  element: <MobileDev />
+},
+{
+  path: "/softwaredev",
+  element: <SoftwareDev />
+},
+{
+  path: "/webdesign",
+  element: <WebDesign />
+},
+
+  
 
 ]);
 

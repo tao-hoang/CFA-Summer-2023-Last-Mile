@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import WebDesign from './WebDesign';
 import JobsListing from './JobsListing';
 
@@ -9,7 +8,7 @@ const App = () => {
     <Switch>
       {/* Define the route for the separate page */}
       <Route path="/web-design-page" component={WebDesign} />
-      <Route path="/" component={JobsListing} />
+      <Route path="/jobs-listing" component={JobsListing} />
 
       <div>
         <h1>Web Design</h1>

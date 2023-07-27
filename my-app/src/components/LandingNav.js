@@ -2,17 +2,15 @@
 import { Link } from "react-router-dom";
 //header
 import Button from '@mui/material/Button';
-import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 //fonts
 import Montserrat from "../css/fonts/Montserrat-VariableFont_wght.ttf";
-let HomeNav=()=>{
+let LandingNav=()=>{
     //colors for components
     const theme = createTheme({
     palette: {
@@ -48,4 +46,4 @@ let HomeNav=()=>{
         </ThemeProvider>
     )
 }
-export default HomeNav;
+export default LandingNav;

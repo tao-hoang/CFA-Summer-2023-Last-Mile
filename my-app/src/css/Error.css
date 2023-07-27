@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "montserrat";
+    src: url("./fonts/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+font-family: "lora";
+src: url("./fonts/Lora.ttf");
+}
+.errorBody{
+    padding: 50px;
+    margin: 0;
+    height: 800px;
+    background-size: cover;
+    background-image: url("../images/error.png");
+    background-repeat: no-repeat;
+    background-position: center; 
+    color:white;
+    font-family:"montserrat" ;
+}
+
+.errorType{
+    padding-top: 80px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+}
+.errorCode{
+    text-align: center;
+    font-size: 220px;
+    font-weight: 600;
+    padding-top: 60px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.errorMessage{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    width: 800px;
+    margin: auto;
+}
+.linkButtonsDiv{
+    padding-top: 50px;
+    display: flex;
+    margin: auto;
+    width: 600px;
+    justify-content: center;
+    gap:50px;
+}
+.linkButton{
+    display: block;
+    background-color: #0A1128 ;
+    color: white;
+    font-size: 24px;
+    height: 45px;
+    width: 220px;
+    border: solid #0A1128 ;
+    border-radius: 25px;
+}
+.sadError{
+    display: inline-block;
+}
