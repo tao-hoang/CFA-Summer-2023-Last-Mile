@@ -7,6 +7,8 @@ import LoginForm from './components/LoginForm';
 import reportWebVitals from './reportWebVitals';
 import RegUI from './components/RegUI1';
 import RegUI2 from './components/RegUI2';
+import ErrorPage404 from './components/ErrorPage404';
+import ErrorPage500 from './components/ErrorPage500';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
   {
     path: "/register2",
     element: <RegUI2 />
+  },
+  {
+    path: "/error404",
+    element: <ErrorPage404 />
+  },
+  {
+    path: "/error500",
+    element: <ErrorPage500 />
   }
 
 ]);
