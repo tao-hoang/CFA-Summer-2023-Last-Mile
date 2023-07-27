@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import "../css/LandingPage.css";
+import HomeNav from "./HomeNav";
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -59,22 +60,7 @@ const LandingPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Box sx={{ flexGrow: 1  }}>
-          <AppBar sx={{ bgcolor: '#FEFCFB' }} position="static">
-            <Toolbar>
-              <Typography className='websiteName' variant="h6" component="div" sx={{  color: '#0a1128',flexGrow: 1, fontWeight:"bold" }}>
-                connectIT
-              </Typography>
-              <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
-              <Link to="/login">
-                <Button className='headerButton' sx={{width:90, borderRadius:100}}>Sign In</Button>
-              </Link>
-              <Link to="/register">
-                <Button className='headerButton' variant="contained" color="primary" sx={{width:90, borderRadius:100}}>Join</Button>
-              </Link>
-            </Toolbar>
-          </AppBar>
-        </Box>
+        <HomeNav/>
         <div id="heroImage">
           <div className="welcomeText">
             <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>

@@ -48,3 +48,4 @@ let HomeNav=()=>{
         </ThemeProvider>
     )
 }
+export default HomeNav;
