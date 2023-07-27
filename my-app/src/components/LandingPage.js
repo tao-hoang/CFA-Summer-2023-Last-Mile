@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import "../css/LandingPage.css";
+import LandingNav from "./LandingNav";
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -19,7 +20,6 @@ import SearchIcon from '@mui/icons-material/Search';
 //icons
 import DrawIcon from '@mui/icons-material/Draw';
 import HtmlIcon from '@mui/icons-material/Html';
-import CssIcon from '@mui/icons-material/Css';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
@@ -60,22 +60,7 @@ const LandingPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Box sx={{ flexGrow: 1  }}>
-          <AppBar sx={{ bgcolor: '#FEFCFB' }} position="static">
-            <Toolbar>
-              <Typography className='websiteName' variant="h6" component="div" sx={{  color: '#0a1128',flexGrow: 1, fontWeight:"bold" }}>
-                connectIT
-              </Typography>
-              <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
-              <Link to="/login">
-                <Button className='headerButton' sx={{width:90, borderRadius:100}}>Sign In</Button>
-              </Link>
-              <Link to="/register">
-                <Button className='headerButton' variant="contained" color="primary" sx={{width:90, borderRadius:100}}>Join</Button>
-              </Link>
-            </Toolbar>
-          </AppBar>
-        </Box>
+        <LandingNav/>
         <div id="heroImage">
           <div className="welcomeText">
             <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>

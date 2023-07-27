@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/LoginForm.css"
 import axios from "axios";
 
@@ -13,8 +13,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [post, setPost] = React.useState(null);
-
+  const navigate = useNavigate();
   function createPost(event) {
     event.preventDefault(); 
     axios.post(baseURL, {
@@ -23,8 +22,11 @@ const LoginForm = () => {
         }
       )
       .then((response) => {
-        setPost(response.data);
         console.log(response.data);
+        if(response.data.user.token){
+          localStorage.setItem("token", response.data.user.token)
+          //navigate('/home')
+        }
       })
       .catch((error) => {
         setError("Failed to log in. Please check your credentials.");
@@ -34,11 +36,13 @@ const LoginForm = () => {
 
   return (
     <div className='loginPage'>
-      <img alt="computer"src={require("../images/login.jpg")} className='loginHeroImage'/>
-      <div className='formDiv'>
-        <div className='innerFormDiv'>
-          <h2 className='siteName'>website name</h2>
-          <h1 className='welcomeMessage'>Welcome back</h1>
+      
+        <img alt="computer"src={require("../images/login.jpg")} className='loginHeroImage'/>
+
+      <div className='formDivLogin'>
+        <div className='innerFormDivLogin'>
+          <h2 className='siteNameLogin'>ConnectIT</h2>
+          <h1 className='welcomeMessageLogin'>Welcome back</h1>
           <h3 className='loginInstruction'>Log in to to your account</h3>
           <form onSubmit={createPost}>
             <div className='inputGroup'>
@@ -60,7 +64,6 @@ const LoginForm = () => {
             <AppleIcon className="socialMediaButton" />
           </div>
 
-          <button className='newUserSignup'>New user? Create an account</button>
           {error && <p>{error}</p>}
       {/* ... (rest of the component) ... */}
           <Link to="../register">
