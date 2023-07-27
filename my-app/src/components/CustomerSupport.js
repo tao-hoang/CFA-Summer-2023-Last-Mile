@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AssetCreation from './AssetCreation';
+import CustomerSupport from './CustomerSupport';
 import JobsListing from './JobsListing';
 import LandingPage from './LandingPage';
 
@@ -8,12 +8,12 @@ const App = () => {
   return (
     <Switch>
       {/* Define the route for the separate page */}
-      <Route path="/asset-design-page" component={AssetCreation} />
+      <Route path="/asset-design-page" component={CustomerSupport} />
       <Route path="/" component={JobsListing} />
       <Route path="/" component={LandingPage} />
 
       <div>
-        <h1>Asset Creation</h1>
+        <h1>Customer Support</h1>
             <p>
                 Welcome to Web Design! Here, you can find the latest job opportunities related to
                 web design, web development, and other tech-related positions.
