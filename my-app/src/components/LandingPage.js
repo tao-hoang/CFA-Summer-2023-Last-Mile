@@ -107,7 +107,9 @@ const LandingPage = () => {
           <div className='categoriesDiv'>
             <div className="categoryLink">
               <DrawIcon className='categoryIcon'/>
-              <p>UX/UI Design</p>
+              <Link to="./UiDesign.js">
+                <p>UX/UI Design</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
@@ -115,47 +117,65 @@ const LandingPage = () => {
                 <HtmlIcon className='categoryIcon'/>
                 {/* <CssIcon className='categoryIcon'/> */}
               </div>
-              <p>Web Development</p>
+              <Link to="./WebDesign.js">
+                <p>Web Development</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
               <TerminalIcon className='categoryIcon'/>
-              <p>Software Development</p>
+              <Link to="./SoftwareDev.js">
+                <p>Software Development</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
               <PhoneAndroidIcon className='categoryIcon'/>
-              <p>Mobile App Development</p>
+              <Link to="./MobileDev.js">
+                <p>Mobile App Development</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
               <SportsEsportsIcon  className='categoryIcon'/>
-              <p>Game Development</p>
+              <Link to="./GameDesign.js">
+                <p>Game Development</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
               <QueryStatsIcon  className='categoryIcon'/>
-              <p>Data Analytics</p>
+              <Link to="./DataAnalytics.js">
+                <p>Data Analytics</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
               <ManageAccountsIcon  className='categoryIcon'/>
-              <p>IT Support</p>
+              <Link to="./ITSupport.js">
+                <p>IT Support</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
               <SecurityIcon  className='categoryIcon'/>
-              <p>Cybersecurity</p>
+              <Link to="./CyberSecurity.js">
+                <p>Cybersecurity</p>
+              </Link>   
             </div>
 
             <div className="categoryLink">
               <WebAssetIcon  className='categoryIcon'/>
-              <p>Asset Creation</p>
+              <Link to="./AssetCreation.js">
+                <p>Asset Creation</p>
+              </Link>
             </div>
 
             <div className="categoryLink">
               <ContactSupportIcon  className='categoryIcon'/>
-              <p>Customer Support</p>
+              <Link to="./CustomerSupport.js">
+                <p>Customer Support</p>
+              </Link>
             </div>
 
           </div>
@@ -172,19 +192,9 @@ const LandingPage = () => {
           <li>Get personalized job recommendations</li>
           <li>Track your learning progress and achievements</li>
         </ul>
-        {/* Search bar */}
-        <form onSubmit={handleSearchSubmit}>
-          <input
-            type="text"
-            placeholder="Search jobs and courses..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-          <button type="submit">Search</button>
-        </form>
-        
+        <h2>How it Works:</h2>
         {/* How It Works section */}
-        <ol>
+        <ul>
           <li>Create an account to get started</li>
           <li>Set your preferences and indicate your desired skills and location</li>
           <li>Explore the available job listings and learning resources</li>
@@ -192,7 +202,7 @@ const LandingPage = () => {
           <li>Connect with other users and industry professionals to expand your network</li>
           <li>Track your job applications and interview progress</li>
           <li>Continuously learn and enhance your skills to improve your career prospects</li>
-        </ol>
+        </ul>
         {/* Join Our Community section */}
         <p>Sign up now to start your journey towards a fulfilling and successful career!</p>
       </div>
