@@ -19,7 +19,7 @@ let LandingNav=()=>{
       },
       secondary:{
         main:"#001f54"
-      }
+      },
     },
     typography: {
       fontFamily: "Montserrat",

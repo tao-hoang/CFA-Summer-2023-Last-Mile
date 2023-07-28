@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     element: <RegUI2 />
   },
   {
-    path: "/error404",
+    path: "/*",
     element: <ErrorPage404 />
   },
   {

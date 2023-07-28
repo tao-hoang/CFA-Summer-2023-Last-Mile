@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import "../css/LandingPage.css";
 import LandingNav from "./LandingNav";
@@ -7,10 +6,6 @@ import LandingNav from "./LandingNav";
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 //search bar
 import Paper from '@mui/material/Paper';
@@ -59,7 +54,7 @@ const LandingPage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div className='landingBody'>
         <LandingNav/>
         <div id="heroImage">
           <div className="welcomeText">
@@ -74,7 +69,7 @@ const LandingPage = () => {
                 <MenuIcon />
               </IconButton>
               <InputBase
-                sx={{ ml: 1, flex: 1 }}
+                sx={{ ml: 1, flex: 1}}
                 inputProps={{ 'aria-label': 'search' }}
                 type="text"
                 placeholder="Search jobs and courses..."
