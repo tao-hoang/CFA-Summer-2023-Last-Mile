@@ -7,8 +7,9 @@ font-family: "lora";
 src: url("./fonts/Lora.ttf");
 }
 .errorBody{
+    max-width: 1600px;
     padding: 50px;
-    margin: 0;
+    margin: auto;
     height: 800px;
     background-size: cover;
     background-image: url("../images/error.png");
