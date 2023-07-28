@@ -93,7 +93,6 @@ const LandingPage = () => {
             <div className="categoryLink">
               <div className='webDevIcons'>
                 <HtmlIcon className='categoryIcon'/>
-                {/* <CssIcon className='categoryIcon'/> */}
               </div>
               <p>Web Development</p>
             </div>
