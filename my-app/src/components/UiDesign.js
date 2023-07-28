@@ -1,11 +1,11 @@
 import React from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Routes } from 'react-router-dom';
 import UiDesign from './UiDesign';
 import JobsListing from './JobsListing';
 
 const App = () => {
   return (
-    <Switch>
+    <Routes>
       {/* Define the route for the separate page */}
       <Route path="/ui-ux-design-page" component={UiDesign} />
       <Route path="/" component={JobsListing} />
@@ -26,7 +26,7 @@ const App = () => {
                 your job search!
             </p>
         </div>
-    </Switch>
+    </Routes>
   );
 };
 
