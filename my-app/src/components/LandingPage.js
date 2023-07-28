@@ -88,7 +88,7 @@ const LandingPage = () => {
           <div className='categoriesDiv'>
             <div className="categoryLink">
               <DrawIcon className='categoryIcon'/>
-              <Link to= './UiDesign.js'>
+              <Link to= '/uidesign'>
                 <p>UX/UI Design</p>
               </Link>
             </div>
