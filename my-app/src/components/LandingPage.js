@@ -53,9 +53,10 @@ const LandingPage = () => {
   };
 
   return (
+    <div className='landingBodyContainer'>
+    <LandingNav showLinks="true"/>
     <ThemeProvider theme={theme}>
       <div className='landingBody'>
-        <LandingNav showLinks="true"/>
         <div id="heroImage">
           <div className="welcomeText">
             <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>
@@ -176,6 +177,7 @@ const LandingPage = () => {
         <p>Sign up now to start your journey towards a fulfilling and successful career!</p>
       </div>
     </ThemeProvider>
+    </div>
   );
 };
 

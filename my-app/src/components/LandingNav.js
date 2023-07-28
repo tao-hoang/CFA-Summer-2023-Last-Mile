@@ -29,10 +29,11 @@ let LandingNav=(props)=>{
     }});
 
     return (
+      <div className="landingNavBody"><div className="landingNavContent">
         <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1, boxShadow:"none"  }}>
             <AppBar sx={{ bgcolor: '#FEFCFB',boxShadow:"none"  }} position="static">
-                <Toolbar sx={{boxShadow:"none", borderBottom:"1px solid lightgrey"  }}>
+                <Toolbar sx={{boxShadow:"none"  }}>
                 <Typography className='websiteName' variant="h6" component="div" sx={{  color: '#0a1128',flexGrow: 1, fontWeight:"bold" }}>
                 <Link to="/" className="linkUnstyled">connectIT</Link>
                 </Typography>
@@ -41,6 +42,7 @@ let LandingNav=(props)=>{
             </AppBar>
             </Box>
         </ThemeProvider>
+      </div></div>
     )
 }
 export default LandingNav;
