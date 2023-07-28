@@ -6,13 +6,10 @@
     font-family: "lora";
     src: url("./fonts/Lora.ttf");
   }
-.websiteName{
-    font-family: "lora" !important;
-    font-size: 26px !important;
-}
+
 #heroImage{
     background-image:url("../images/hero.jpg") ;
-    height: 600px;
+    height: 700px;
     min-width: 1000px;
     /* Position and center the image to scale nicely on all screens */
     background-position: center 55%;
@@ -62,4 +59,9 @@
 }
 .landingBody{
   color:#0A1128 ;
+  max-width: 1600px;
+  margin: auto;
+}
+.landingBodyContainer{
+
 }

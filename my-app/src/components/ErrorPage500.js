@@ -3,7 +3,7 @@ import "../css/Error.css"
 let ErrorPage500=()=>{
     return(
         <div>
-            <LandingNav/>
+            <LandingNav showLinks/>
             <div className="errorBody">
                 <h1 className="errorType">Internal server error</h1>
                 <h1 className="errorCode">5<img className="sadError" alt="sad" src={require("../images/sadError.png")}/>0</h1>

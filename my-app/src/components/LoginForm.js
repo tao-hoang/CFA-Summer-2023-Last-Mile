@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../css/LoginForm.css"
 import axios from "axios";
 
+import LandingNav from "./LandingNav"
 //icons
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -35,6 +36,8 @@ const LoginForm = () => {
   
 
   return (
+    <div>
+    <LandingNav/>
     <div className='loginPage'>
       
         <img alt="computer"src={require("../images/login.jpg")} className='loginHeroImage'/>
@@ -72,6 +75,7 @@ const LoginForm = () => {
 
         </div>
       </div>
+    </div>
     </div>
   );
 };
