@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import "../css/RegUI.css";
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import LandingNav from "./LandingNav"
 const RegUI = () => {
     
   return (
+    <div><LandingNav/>
     <div className='signUpPage'>
       <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
       <div className='formDiv'>
@@ -34,6 +36,7 @@ const RegUI = () => {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };

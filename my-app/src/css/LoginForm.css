@@ -120,3 +120,7 @@ src: url("./fonts/Lora.ttf");
     border-color: rgb(196, 196, 196);
     border-style:solid;
 }
+.linkUnstyled, .linkUnstyled:link, .linkUnstyled:hover {
+    color: inherit;
+    text-decoration: inherit;
+}

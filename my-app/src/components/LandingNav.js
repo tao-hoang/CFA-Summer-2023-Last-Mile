@@ -1,5 +1,8 @@
-//NavBar component based on homepage/landing page navbar
+//NavBar component based on homepage/landing page navbar, pass showLinks if login buttons should be displayed
 import { Link } from "react-router-dom";
+import "../css/LandingNav.css";
+//link component(s)
+import LandingNavLinks from "./LandingNavLinks";
 //header
 import Button from '@mui/material/Button';
 import { createTheme } from '@mui/material/styles';
@@ -10,7 +13,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 //fonts
 import Montserrat from "../css/fonts/Montserrat-VariableFont_wght.ttf";
-let LandingNav=()=>{
+let LandingNav=(props)=>{
     //colors for components
     const theme = createTheme({
     palette: {
@@ -27,19 +30,13 @@ let LandingNav=()=>{
 
     return (
         <ThemeProvider theme={theme}>
-            <Box sx={{ flexGrow: 1  }}>
-            <AppBar sx={{ bgcolor: '#FEFCFB' }} position="static">
-                <Toolbar>
+            <Box sx={{ flexGrow: 1, boxShadow:"none"  }}>
+            <AppBar sx={{ bgcolor: '#FEFCFB',boxShadow:"none"  }} position="static">
+                <Toolbar sx={{boxShadow:"none", borderBottom:"1px solid lightgrey"  }}>
                 <Typography className='websiteName' variant="h6" component="div" sx={{  color: '#0a1128',flexGrow: 1, fontWeight:"bold" }}>
-                    connectIT
+                <Link to="/" className="linkUnstyled">connectIT</Link>
                 </Typography>
-                <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
-                <Link to="/login">
-                    <Button className='headerButton' sx={{width:90, borderRadius:100}}>Sign In</Button>
-                </Link>
-                <Link to="/register">
-                    <Button className='headerButton' variant="contained" color="primary" sx={{width:90, borderRadius:100}}>Join</Button>
-                </Link>
+                <LandingNavLinks showLinks={props.showLinks}/>
                 </Toolbar>
             </AppBar>
             </Box>

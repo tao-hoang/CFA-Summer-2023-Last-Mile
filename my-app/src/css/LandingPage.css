@@ -6,10 +6,7 @@
     font-family: "lora";
     src: url("./fonts/Lora.ttf");
   }
-.websiteName{
-    font-family: "lora" !important;
-    font-size: 26px !important;
-}
+
 #heroImage{
     background-image:url("../images/hero.jpg") ;
     height: 600px;
