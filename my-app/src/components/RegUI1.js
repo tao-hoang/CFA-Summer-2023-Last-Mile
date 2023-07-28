@@ -16,9 +16,11 @@ const RegUI = () => {
           <h1 className='welcomeMessage'>Create an account</h1>
           <h3 className='signUpInstruction'>Join our network of cool people yippeeeeeeee</h3>
           <h2 className='signUpInstruction'>Join as a</h2>
-          <div className='iconDiv'>          
-            <div className="client"><PersonSearchIcon className='clientIcon'/><p className='iconText'>Client</p></div>
-            <Link to="../register2">
+          <div className='iconDiv'>   
+            <Link to="../register2Client" className='linkUnstyled'>       
+              <div className="client"><PersonSearchIcon className='clientIcon'/><p className='iconText'>Client</p></div>
+            </Link>
+            <Link to="../register2" className='linkUnstyled'>
               <div className='jobSeeker'><WorkOutlineIcon className='jobSeekerIcon'/><p className='iconText'>Jobseeker</p></div>
             </Link>
           </div>

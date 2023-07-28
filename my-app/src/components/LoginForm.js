@@ -44,7 +44,7 @@ const LoginForm = () => {
 
       <div className='formDivLogin'>
         <div className='innerFormDivLogin'>
-          <h2 className='siteNameLogin'>ConnectIT</h2>
+          <h2 className='siteNameLogin'>connectIT</h2>
           <h1 className='welcomeMessageLogin'>Welcome back</h1>
           <h3 className='loginInstruction'>Log in to to your account</h3>
           <form onSubmit={createPost}>

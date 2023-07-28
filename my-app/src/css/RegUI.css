@@ -81,20 +81,22 @@ src: url("./fonts/Lora.ttf");
     font-size: 20px;
     border-radius: 20px;
     border-width: 1px ;
+    border-color: #0A1128;
+    border-style: solid;
 }
 /* *{
     border: solid black;
 } */
 .smPrompt{
     text-align: center; 
-    border-bottom: 1px solid rgb(185, 185, 185); 
+    color:rgb(99, 99, 99);
     line-height: 0.1em;
     margin-bottom: 40px; 
 }
 .smText{
     background:#fff; 
     padding:0 10px;
-    color: rgb(151, 151, 151); 
+    color:rgb(99, 99, 99);
 }
 .socialMediasignUp{
     display: flex;
@@ -108,12 +110,13 @@ src: url("./fonts/Lora.ttf");
     width: 100%;
     height: 44px;
     background-color:white ;
-    color: rgb(151, 151, 151);
+    color:rgb(99, 99, 99);
     font-size: 20px;
     border-radius: 20px;
     border-width: 1px ;
-    border-color: rgb(196, 196, 196);
+    color:rgb(99, 99, 99);
     border-style:solid;
+    border-color: rgb(99, 99, 99);
 }
 .red{
     color: red;
@@ -122,11 +125,13 @@ src: url("./fonts/Lora.ttf");
     width: 100%;
     height: 44px;
     background-color:white ;
-    color: lightgray;
+    color:rgb(99, 99, 99);
     font-size: 20px;
-    border: solid lightgray;
+    color:rgb(99, 99, 99);
     border-radius: 20px;
     border-width: 1px ;
+    border-color: rgb(99, 99, 99);
+    border-style: solid;
 }
 .client{
     height: 160px;
