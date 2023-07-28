@@ -8,7 +8,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
 
-
+import LandingNav from "./LandingNav"
 
 const baseURL = "http://localhost:3000/register";
 const RegUI = () => {
@@ -84,6 +84,7 @@ const RegUI = () => {
         );
     };
   return (
+    <div><LandingNav/>
     <div className='signUpPage'>
       <img alt="computer" src={require("../images/signUp.jpg")} className='signUpHeroImage'/>
       <div className='formDiv'>
@@ -126,6 +127,7 @@ const RegUI = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import "../css/Error.css"
 let ErrorPage404=()=>{
     return(
         <div>
-            <LandingNav/>
+            <LandingNav showLinks/>
             <div className="errorBody">
                 <h1 className="errorType">Page not found</h1>
                 <h1 className="errorCode">4<img className="sadError" alt="sad" src={require("../images/sadError.png")}/>4</h1>
