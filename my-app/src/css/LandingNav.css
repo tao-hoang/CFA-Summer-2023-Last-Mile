@@ -9,10 +9,21 @@ src: url("./fonts/Lora.ttf");
 .websiteName{
     font-family: "lora" !important;
     font-size: 26px !important;
+    caret-color: transparent !important;
 }
 .headerButton{
     margin-left: 10px !important;
     text-transform: none !important;
     font-family: "montserrat" !important;
     font-size: 16px !important;
+    caret-color: transparent !important;
+}
+.landingNavContent{
+    max-width: 1600px;
+    margin: auto;
+    background-color:white !important;  
+}
+.landingNavBody{
+    border-bottom:1px solid lightgrey;
+    background-color:white !important;  
 }

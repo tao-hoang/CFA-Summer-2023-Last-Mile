@@ -1,20 +1,13 @@
 import React from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
-import WebDesign from './WebDesign';
 import JobsListing from './JobsListing';
 
-const App = () => {
-  return (
-    <Switch>
-      {/* Define the route for the separate page */}
-      <Route path="/web-design-page" component={WebDesign} />
-      <Route path="/jobs-listing" component={JobsListing} />
-
+const WebDesign = () => {
+  return (  
       <div>
         <h1>Web Design</h1>
             <p>
-                Welcome to Web Design! Here, you can find the latest job opportunities related to
-                web design, web development, and other tech-related positions.
+                Welcome to the Web Design page! Here, you can find the latest job and course opportunities related to
+                Web Design where skills in HTML, CSS, and Javascript can be learned; or if you already have the skills apply!
             </p>
             <p>
                 Our platform regularly updates job listings from top companies and startups, providing you
@@ -26,8 +19,7 @@ const App = () => {
                 your job search!
             </p>
         </div>
-    </Switch>
   );
 };
 
-export default App;
+export default WebDesign;

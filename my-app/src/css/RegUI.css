@@ -9,6 +9,8 @@ src: url("./fonts/Lora.ttf");
 .signUpPage{
     font-family: "lora";
     height: 100%;
+    max-width: 1600px;
+    margin: auto;
 }
 
 .signUpHeroImage{
@@ -51,7 +53,13 @@ src: url("./fonts/Lora.ttf");
     color: rgb(99, 99, 99);
     font-weight: normal;
 }
-
+ul.signUpInstruction li.valid {
+    color:green; 
+    
+}
+ul.signUpInstruction li.invalid {
+    color: rgb(99, 99, 99); 
+}
 .formLabel{
     display: block;
     color: rgb(99, 99, 99);

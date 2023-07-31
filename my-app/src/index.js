@@ -18,6 +18,7 @@ import MobileDev from './components/MobileDev';
 import SoftwareDev from './components/SoftwareDev';
 import UiDesign from './components/UiDesign';
 import WebDesign from './components/WebDesign';
+import CyberSecurity from "./components/CyberSecurity"
 
 import {
   createBrowserRouter,
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
     element: <RegUI2 />
   },
   {
-    path: "/error404",
+    path: "/*",
     element: <ErrorPage404 />
   },
   {

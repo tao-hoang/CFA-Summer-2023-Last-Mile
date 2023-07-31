@@ -1,15 +1,8 @@
 import React from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
-import UiDesign from './UiDesign';
 import JobsListing from './JobsListing';
 
-const App = () => {
-  return (
-    <Switch>
-      {/* Define the route for the separate page */}
-      <Route path="/ui-ux-design-page" component={UiDesign} />
-      <Route path="/" component={JobsListing} />
-
+const UiDesign = () => {
+  return (  
       <div>
         <h1>UI/UX Design</h1>
             <p>
@@ -26,8 +19,7 @@ const App = () => {
                 your job search!
             </p>
         </div>
-    </Switch>
   );
 };
 
-export default App;
+export default UiDesign;

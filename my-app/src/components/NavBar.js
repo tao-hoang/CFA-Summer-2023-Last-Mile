@@ -33,7 +33,7 @@ function App() {
       <Navbar />
       <div className="content">
         {/* Your page content goes here */}
-        <h1>Welcome to Website Name</h1>
+        <h1>Welcome to connectIT</h1>
         <p>This is the content of the page.</p>
       </div>
     </div>
