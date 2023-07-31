@@ -1,22 +1,13 @@
 import React from 'react';
-import { Route, Link, Routes } from 'react-router-dom';
-import AssetCreation from './AssetCreation';
 import JobsListing from './JobsListing';
-import LandingPage from './LandingPage';
 
-const App = () => {
-  return (
-    <Routes>
-      {/* Define the route for the separate page */}
-      <Route path="/asset-design-page" component={AssetCreation} />
-      <Route path="/" component={JobsListing} />
-      <Route path="/" component={LandingPage} />
-
+const ITSupport = () => {
+  return (  
       <div>
-        <h1>Asset Creation</h1>
+        <h1>IT Support</h1>
             <p>
-                Welcome to Web Design! Here, you can find the latest job opportunities related to
-                web design, web development, and other tech-related positions.
+                Welcome to the IT Support page! Here, you can find the latest job opportunities related to
+                IT Support and how to help people with their tech issues.
             </p>
             <p>
                 Our platform regularly updates job listings from top companies and startups, providing you
@@ -28,8 +19,7 @@ const App = () => {
                 your job search!
             </p>
         </div>
-    </Routes>
   );
 };
 
-export default App;
+export default ITSupport;
