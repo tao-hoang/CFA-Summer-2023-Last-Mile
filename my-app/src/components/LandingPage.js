@@ -97,63 +97,63 @@ const LandingPage = () => {
               <div className='webDevIcons'>
                 <HtmlIcon className='categoryIcon'/>
               </div>
-              <Link to= './WebDesign.js'>
+              <Link to= '/webdesign'>
                 <p>Web Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <TerminalIcon className='categoryIcon'/>
-              <Link to= './SoftwareDev.js'>
+              <Link to= '/softwaredev'>
                 <p>Software Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <PhoneAndroidIcon className='categoryIcon'/>
-              <Link to= './MobileDev.js'>
+              <Link to= '/mobiledev'>
                 <p>Mobile App Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <SportsEsportsIcon  className='categoryIcon'/>
-              <Link to= './GameDesign.js'>
+              <Link to= '/gamedesign'>
                 <p>Game Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <QueryStatsIcon  className='categoryIcon'/>
-              <Link to= './DataAnalytics.js'>
+              <Link to= '/dataanalytics'>
                 <p>Data Analytics</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <ManageAccountsIcon  className='categoryIcon'/>
-              <Link to= './ITSupport.js'>
+              <Link to= '/itsupport'>
                 <p>IT Support</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <SecurityIcon  className='categoryIcon'/>
-              <Link to= './CyberSecurity.js'>
+              <Link to= '/cybersecurity'>
                 <p>Cybersecurity</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <WebAssetIcon  className='categoryIcon'/>
-              <Link to= './AssetCreation.js'>
+              <Link to= '/assetcreation'>
                 <p>Asset Creation</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <ContactSupportIcon  className='categoryIcon'/>
-              <Link to= './AssetCreation.js'>
+              <Link to= '/customersupport'>
                 <p>Customer Support</p>
               </Link>
             </div>
