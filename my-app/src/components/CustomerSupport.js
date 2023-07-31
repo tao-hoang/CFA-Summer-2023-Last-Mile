@@ -9,11 +9,11 @@ const CustomerSupport = () => {
                 Welcome to the Customer Support page! Here, you can contact our support team for any inquiries!
             </h2>
             <p>
-              <b>Contact Us:</b>
+              <b>Contact Us: </b>
               If you have any questions, concerns, or need assistance, our dedicated support team is here to help. Please don't hesitate to reach out to us via the following methods:
-              Email: support@connectIT.com
-              Phone: +1 (123) 456-7890
-              Live Chat: Click on the chat icon in the bottom right corner of the page to chat with a support representative.
+              <p>Email: support@connectIT.com</p>
+              <p>Phone: +1 (123) 456-7890</p>
+              <p>Live Chat: Click on the chat icon in the bottom right corner of the page to chat with a support representative.</p>
             </p>
             <p>
               <b>Frequently Asked Questions (FAQs):</b>
