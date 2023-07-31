@@ -9,6 +9,8 @@ src: url("./fonts/Lora.ttf");
 .signUpPage{
     font-family: "lora";
     height: 100%;
+    max-width: 1600px;
+    margin: auto;
 }
 
 .signUpHeroImage{

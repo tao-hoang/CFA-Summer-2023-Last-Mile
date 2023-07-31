@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import "../css/LandingPage.css";
-import HomeNav from "./HomeNav";
+import LandingNav from "./LandingNav";
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 //search bar
 import Paper from '@mui/material/Paper';
@@ -58,9 +53,10 @@ const LandingPage = () => {
   };
 
   return (
+    <div className='landingBodyContainer'>
+    <LandingNav showLinks="true"/>
     <ThemeProvider theme={theme}>
-      <div>
-        <HomeNav/>
+      <div className='landingBody'>
         <div id="heroImage">
           <div className="welcomeText">
             <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>
@@ -74,7 +70,7 @@ const LandingPage = () => {
                 <MenuIcon />
               </IconButton>
               <InputBase
-                sx={{ ml: 1, flex: 1 }}
+                sx={{ ml: 1, flex: 1}}
                 inputProps={{ 'aria-label': 'search' }}
                 type="text"
                 placeholder="Search jobs and courses..."
@@ -92,7 +88,7 @@ const LandingPage = () => {
           <div className='categoriesDiv'>
             <div className="categoryLink">
               <DrawIcon className='categoryIcon'/>
-              <Link to="./UiDesign.js">
+              <Link to= '/uidesign'>
                 <p>UX/UI Design</p>
               </Link>
             </div>
@@ -100,65 +96,64 @@ const LandingPage = () => {
             <div className="categoryLink">
               <div className='webDevIcons'>
                 <HtmlIcon className='categoryIcon'/>
-                {/* <CssIcon className='categoryIcon'/> */}
               </div>
-              <Link to="./WebDesign.js">
+              <Link to= '/webdesign'>
                 <p>Web Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <TerminalIcon className='categoryIcon'/>
-              <Link to="./SoftwareDev.js">
+              <Link to= '/softwaredev'>
                 <p>Software Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <PhoneAndroidIcon className='categoryIcon'/>
-              <Link to="./MobileDev.js">
+              <Link to= '/mobiledev'>
                 <p>Mobile App Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <SportsEsportsIcon  className='categoryIcon'/>
-              <Link to="./GameDesign.js">
+              <Link to= '/gamedesign'>
                 <p>Game Development</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <QueryStatsIcon  className='categoryIcon'/>
-              <Link to="./DataAnalytics.js">
+              <Link to= '/dataanalytics'>
                 <p>Data Analytics</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <ManageAccountsIcon  className='categoryIcon'/>
-              <Link to="./ITSupport.js">
+              <Link to= '/itsupport'>
                 <p>IT Support</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <SecurityIcon  className='categoryIcon'/>
-              <Link to="./CyberSecurity.js">
+              <Link to= '/cybersecurity'>
                 <p>Cybersecurity</p>
-              </Link>   
+              </Link>
             </div>
 
             <div className="categoryLink">
               <WebAssetIcon  className='categoryIcon'/>
-              <Link to="./AssetCreation.js">
+              <Link to= '/assetcreation'>
                 <p>Asset Creation</p>
               </Link>
             </div>
 
             <div className="categoryLink">
               <ContactSupportIcon  className='categoryIcon'/>
-              <Link to="./CustomerSupport.js">
+              <Link to= '/customersupport'>
                 <p>Customer Support</p>
               </Link>
             </div>
@@ -177,8 +172,9 @@ const LandingPage = () => {
           <li>Get personalized job recommendations</li>
           <li>Track your learning progress and achievements</li>
         </ul>
-        <h2>How it Works:</h2>
+        
         {/* How It Works section */}
+        <h2>How It Works:</h2>
         <ul>
           <li>Create an account to get started</li>
           <li>Set your preferences and indicate your desired skills and location</li>
@@ -189,9 +185,10 @@ const LandingPage = () => {
           <li>Continuously learn and enhance your skills to improve your career prospects</li>
         </ul>
         {/* Join Our Community section */}
-        <p>Sign up now to start your journey towards a fulfilling and successful career!</p>
+        <h3>Sign up now to start your journey towards a fulfilling and successful career!</h3>
       </div>
     </ThemeProvider>
+    </div>
   );
 };
 

@@ -1,20 +1,13 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import MobileDev from './MobileDev';
 import JobsListing from './JobsListing';
 
-const App = () => {
-  return (
-    <Switch>
-      {/* Define the route for the separate page */}
-      <Route path="/mobile-design-page" component={MobileDev} />
-      <Route path="/" component={JobsListing} />
-
+const MobileDev = () => {
+  return (  
       <div>
         <h1>Mobile App Development</h1>
             <p>
-                Welcome to Web Design! Here, you can find the latest job opportunities related to
-                web design, web development, and other tech-related positions.
+                Welcome to the Mobile App Development page! Here, you can find the latest job opportunities related to
+                creating mobile apps , games, and more.
             </p>
             <p>
                 Our platform regularly updates job listings from top companies and startups, providing you
@@ -26,8 +19,7 @@ const App = () => {
                 your job search!
             </p>
         </div>
-    </Switch>
   );
 };
 
-export default App;
+export default MobileDev;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/LoginForm.css"
 import axios from "axios";
 
-
+import LandingNav from "./LandingNav"
 //icons
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [post, setPost] = React.useState(null);
+  const navigate = useNavigate();
 
   function createPost(event) {
     event.preventDefault(); 
@@ -24,8 +24,12 @@ const LoginForm = () => {
         }
       )
       .then((response) => {
-        setPost(response.data);
+
         console.log(response.data);
+        if(response.data.user.token){
+          localStorage.setItem("token", response.data.user.token)
+          //navigate('/home')
+        }
       })
       .catch((error) => {
         setError("Failed to log in. Please check your credentials.");
@@ -34,6 +38,8 @@ const LoginForm = () => {
   
 
   return (
+    <div>
+    <LandingNav/>
     <div className='loginPage'>
       
         <img alt="computer"src={require("../images/login.jpg")} className='loginHeroImage'/>
@@ -71,6 +77,7 @@ const LoginForm = () => {
 
         </div>
       </div>
+    </div>
     </div>
   );
 };
