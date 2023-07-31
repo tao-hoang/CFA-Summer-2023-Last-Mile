@@ -88,7 +88,7 @@ const LandingPage = () => {
           <div className='categoriesDiv'>
             <div className="categoryLink">
               <DrawIcon className='categoryIcon'/>
-              <Link to= './UiDesign.js'>
+              <Link to= '/uidesign'>
                 <p>UX/UI Design</p>
               </Link>
             </div>
@@ -185,7 +185,7 @@ const LandingPage = () => {
           <li>Continuously learn and enhance your skills to improve your career prospects</li>
         </ul>
         {/* Join Our Community section */}
-        <p>Sign up now to start your journey towards a fulfilling and successful career!</p>
+        <h3>Sign up now to start your journey towards a fulfilling and successful career!</h3>
       </div>
     </ThemeProvider>
     </div>

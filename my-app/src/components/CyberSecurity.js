@@ -1,20 +1,13 @@
 import React from 'react';
-import { Route, Link, Routes  } from 'react-router-dom';
-import CyberSecurity from './CyberSecurity';
 import JobsListing from './JobsListing';
 
-const App = () => {
-  return (
-    <Routes>
-      {/* Define the route for the separate page */}
-      <Route path="/cyber-security-page" component={CyberSecurity} />
-      <Route path="/" component={JobsListing} />
-
+const CyberSecurity = () => {
+  return (  
       <div>
         <h1>Cyber Security</h1>
             <p>
-                Welcome to Web Design! Here, you can find the latest job opportunities related to
-                web design, web development, and other tech-related positions.
+                Welcome to the Cyber Security page! Here, you can find the latest job opportunities related to
+                Cyber Security , ways to combat cyber attacks, and more.
             </p>
             <p>
                 Our platform regularly updates job listings from top companies and startups, providing you
@@ -26,8 +19,7 @@ const App = () => {
                 your job search!
             </p>
         </div>
-    </Routes>
   );
 };
 
-export default App;
+export default CyberSecurity;
