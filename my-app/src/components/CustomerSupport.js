@@ -1,5 +1,5 @@
 import React from 'react';
-import JobsListing from './JobsListing';
+import "../css/CustomerSupport.css";
 
 const CustomerSupport = () => {
   return (  
