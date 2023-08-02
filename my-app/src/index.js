@@ -19,6 +19,7 @@ import SoftwareDev from './components/SoftwareDev';
 import UiDesign from './components/UiDesign';
 import WebDesign from './components/WebDesign';
 import CyberSecurity from "./components/CyberSecurity"
+import ProfileCreation from './components/ProfileCreation';
 
 import {
   createBrowserRouter,
@@ -91,7 +92,10 @@ const router = createBrowserRouter([
   path: "/webdesign",
   element: <WebDesign />
 },
-
+{
+  path:"/profilecreation",
+  element:<ProfileCreation/>
+}
   
 
 ]);
