@@ -11,7 +11,24 @@ const ProfileForm = () => {
   const [education, setEducation] = useState('');
   const [certifications, setCertifications] = useState('');
 
-  const baseURL = "http://localhost:3000/profilecreation";
+  const baseURL = "http://localhost:3000/";
+
+  const editUserProfile = async (userInfo, authToken) => {
+    try {
+      // Make the POST request to the modifyprofile route
+      const response = await axios.post(`${apiUrl}/modifyprofile`, userInfo, {
+        headers: {
+          Authorization: `Bearer ${authToken}`, // If you require authentication
+        },
+      });
+      // If the request is successful, return the response data
+      return response.data;
+    }
+    catch (error) {
+      // If there's an error, handle it here (e.g., show an error message)
+      throw new Error(error.message);
+    }
+  };
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log({
@@ -24,10 +41,13 @@ const ProfileForm = () => {
       education,
       certifications,
     })
-    axios.post(baseURL, {
+    axios.post(`${baseURL}/modifyprofiile`, {
       "fname":"first_name",
       "lname":"last_name",
-    })
+      },
+      {headers:{
+        
+      }})
 
     // Reset the form after submission
     setFirstName('');
