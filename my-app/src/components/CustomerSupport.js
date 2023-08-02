@@ -37,12 +37,12 @@ const CustomerSupport = () => {
               <b>Stay Updated:</b>
               Follow us on social media and subscribe to our newsletter to stay informed about the latest job postings, career tips, and platform updates.
             </p>
-            <p className='contact-form'>
-              <b>Contact Us: </b>
+            <p className='footer'>
+              <b className='contact-form'>Contact Us: </b>
               If you have any questions, concerns, or need assistance, our dedicated support team is here to help. Please don't hesitate to reach out to us via the following methods:
-              <p>Email: support@connectIT.com</p>
-              <p>Phone: +1 (123) 456-7890</p>
-              <p>Live Chat: Click on the chat icon in the bottom right corner of the page to chat with a support representative.</p>
+              <p className='contact-form'>Email: support@connectIT.com</p>
+              <p className='contact-form'>Phone: +1 (123) 456-7890</p>
+              <p className='contact-form'>Live Chat: Click on the chat icon in the bottom right corner of the page to chat with a support representative.</p>
             </p>
         </div>
   );
