@@ -6,7 +6,9 @@ let LandingNavLinks=(props)=>{
     if (props.showLinks){
         return(
             <Fragment>
+                <Link to="/homepage">
                 <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
+                </Link>
                 <Link to="/login">
                     <Button className='headerButton' sx={{width:90, borderRadius:100}}>Sign In</Button>
                 </Link>
