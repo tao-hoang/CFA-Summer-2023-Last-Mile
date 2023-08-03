@@ -18,7 +18,8 @@ import MobileDev from './components/MobileDev';
 import SoftwareDev from './components/SoftwareDev';
 import UiDesign from './components/UiDesign';
 import WebDesign from './components/WebDesign';
-import CyberSecurity from "./components/CyberSecurity"
+import CyberSecurity from "./components/CyberSecurity";
+import Homepage from './components/Homepage';
 
 import {
   createBrowserRouter,
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/gigsLookUp",
     element: <JobsListing />,
+  },
+  {
+    path: "/homepage",
+    element: <Homepage />,
   },
   {
     path: "/*",
