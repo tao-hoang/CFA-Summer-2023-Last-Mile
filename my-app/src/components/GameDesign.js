@@ -1,33 +1,26 @@
 import React from 'react';
-import { Route, Link, Routes } from 'react-router-dom';
-import GameDesign from './GameDesign';
 import JobsListing from './JobsListing';
+import "../css/Jobs.css";
 
-const App = () => {
-  return (
-    <Routes>
-      {/* Define the route for the separate page */}
-      <Route path="/game-design-page" component={GameDesign} />
-      <Route path="/" component={JobsListing} />
-
-      <div>
-        <h1>Game Design</h1>
-            <p>
-                Welcome to Web Design! Here, you can find the latest job opportunities related to
-                web design, web development, and other tech-related positions.
+const GameDesign = () => {
+  return (  
+      <div className="container">
+        <h1 className="header">Game Design</h1>
+            <p className="job-listing">
+                Welcome to the Game Design page! Here, you can find the latest job opportunities related to
+                Game Design and how to make your own game.
             </p>
-            <p>
+            <p className="job-listing">
                 Our platform regularly updates job listings from top companies and startups, providing you
                 with a centralized place to discover your dream job. Whether you're looking for entry-level
                 positions or senior roles, we've got you covered.
             </p>
-            <p>
+            <p className="footer"> 
                 Make sure to check back frequently as new job postings are added regularly. Good luck with
                 your job search!
             </p>
         </div>
-    </Routes>
   );
 };
 
-export default App;
+export default GameDesign;

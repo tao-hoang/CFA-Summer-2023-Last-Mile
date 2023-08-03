@@ -1,10 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import UiDesign from './UiDesign';
+import SpecificJob from './SpecificJob';
+import LandingNav from './LandingNav';
 
 const JobsListing = () => {
+  const getData = () =>{
+    axios({
+      method: 'get',
+      baseURL: 'http://localhost:3000',
+      responseType: 'json',
+      url:'/gigsLookUp/design',
+    })
+      .then(function (response) {
+        console.log(response.data)
+        setgigs(response.data.gigsResults)
+        console.log(gigs)
+    });
+  }
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [currentFilters, setFilters] = useState([]);
-
+  const [currentFilters, setFilters] = useState(getData);
+  
+  const [gigs, setgigs] = useState([]);
+  
   const handleButtonClick = (category) => {
     setSelectedCategory(category);
   };
@@ -21,9 +40,17 @@ const JobsListing = () => {
     }
   };
 
+
   return (
     <div>
-      <h1>Jobs</h1>
+      <LandingNav showLinks={false}/>
+      <button onClick={getData}>press me</button>
+      {gigs ? gigs.map(item => 
+      <SpecificJob key={item._id} 
+                jobTitle={item.jobname}
+                payment={item.pay}
+                 />) : null}
+      {/* <h1>Jobs</h1>
       <h1>Current Jobs: {selectedCategory}</h1>
       <div className="categoryContainer">
         <div
@@ -31,7 +58,6 @@ const JobsListing = () => {
           className={`categoryCard ${selectedCategory === 'UI/UX Design' ? 'selected' : ''}`}
           onClick={() => handleButtonClick('UI/UX Design')}
         >
-            {/* Replace onClick with Link */} 
             <Link to="/ui-ux-design-page">
           <h2>UI/UX Design</h2>
           </Link>
@@ -81,7 +107,7 @@ const JobsListing = () => {
             <h2>Asset Creation</h2>
           </Link>
         </div>
-        {/* Add more category cards as needed */}
+         Add more category cards as needed 
       </div>
       <div className="filters">
         <label>
@@ -100,8 +126,7 @@ const JobsListing = () => {
           />
           Filter 2
         </label>
-        {/* Add other filters */}
-      </div>
+      </div> */}
     </div>
   );
 };
