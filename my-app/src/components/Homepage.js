@@ -13,8 +13,6 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
-
-
 const Homepage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCardIndex1, setActiveCardIndex1] = useState(0);
@@ -41,14 +39,14 @@ const Homepage = () => {
   };
 
 
-<h1>Available Jobs</h1>
+//Available Jobs
 const cardsData1 = [
   { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
   { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
   { id: 3, title: 'Card 3', description: 'This is the description for Card 3' },
 ];
 
-<h1>Recommended Courses</h1>
+//Recommended Courses
 const cardsData2 = [
   { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
   { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
@@ -109,7 +107,7 @@ const cardsData2 = [
           <div className="homepage">
             <h1>Welcome to connectIT</h1>
             <div className="card-section">
-              <h2>Section 1</h2>
+              <h2>Available Jobs</h2>
               <div className="card-container">
                 {cardsData1.map((card, index) => (
                   <div
@@ -128,7 +126,7 @@ const cardsData2 = [
             </div>
 
             <div className="card-section">
-              <h2>Section 2</h2>
+              <h2>Recommended Courses</h2>
               <div className="card-container">
                 {cardsData2.map((card, index) => (
                   <div
