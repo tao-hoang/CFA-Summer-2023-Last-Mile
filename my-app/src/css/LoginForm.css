@@ -59,6 +59,7 @@ src: url("./fonts/Lora.ttf");
     font-weight: lighter;
     margin-top: 10px;
     margin-bottom: 50px;
+    color:rgb(99, 99, 99);
 }
 .formLabelLogin{
     display: block;
@@ -87,20 +88,21 @@ src: url("./fonts/Lora.ttf");
     font-size: 20px;
     border-radius: 20px;
     border-width: 1px ;
+    border-style: solid;
 }
 /* *{
     border: solid black;
 } */
 .smPrompt{
     text-align: center; 
-    border-bottom: 1px solid rgb(185, 185, 185); 
+    border-bottom: 1px solid rgb(99, 99, 99);
     line-height: 0.1em;
     margin-bottom: 40px; 
 }
 .smText{
     background:#fff; 
     padding:0 10px;
-    color: rgb(151, 151, 151); 
+    color:rgb(99, 99, 99);
 }
 .socialMediaLogin{
     display: flex;
@@ -114,12 +116,12 @@ src: url("./fonts/Lora.ttf");
     width: 100%;
     height: 44px;
     background-color:white ;
-    color: rgb(151, 151, 151);
+    color:rgb(99, 99, 99);
     font-size: 20px;
     border-radius: 20px;
     border-width: 1px ;
-    border-color: rgb(196, 196, 196);
     border-style:solid;
+    border-color: rgb(99, 99, 99);
 }
 .linkUnstyled, .linkUnstyled:link, .linkUnstyled:hover {
     color: inherit;
