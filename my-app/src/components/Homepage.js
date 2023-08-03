@@ -12,22 +12,13 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-//icons
-import DrawIcon from '@mui/icons-material/Draw';
-import HtmlIcon from '@mui/icons-material/Html';
-import TerminalIcon from '@mui/icons-material/Terminal';
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import QueryStatsIcon from '@mui/icons-material/QueryStats';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import SecurityIcon from '@mui/icons-material/Security';
-import WebAssetIcon from '@mui/icons-material/WebAsset';
-import ContactSupportIcon from '@mui/icons-material/ContactSupport';
-//fonts
-import Montserrat from "../css/fonts/Montserrat-VariableFont_wght.ttf";
-const LandingPage = () => {
+
+
+
+const Homepage = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  //colors for components
+  const [activeCardIndex1, setActiveCardIndex1] = useState(0);
+  const [activeCardIndex2, setActiveCardIndex2] = useState(0);
   const theme = createTheme({
     palette: {
       primary: {
@@ -48,7 +39,7 @@ const LandingPage = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
   };
-}
+
 
 <h1>Available Jobs</h1>
 const cardsData1 = [
@@ -63,13 +54,6 @@ const cardsData2 = [
   { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
   { id: 3, title: 'Card 3', description: 'This is the description for Card 3' },
 ];
-
-
-
-const Homepage = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [activeCardIndex1, setActiveCardIndex1] = useState(0);
-  const [activeCardIndex2, setActiveCardIndex2] = useState(0);
 
   const handleArrowClick = (direction, section) => {
     if (section === 1) {
@@ -94,7 +78,6 @@ const Homepage = () => {
   return (
     <div className='landingBodyContainer'>
       <LandingNav showLinks="true" />
-      <ThemeProvider theme={theme}>
         <div className='landingBody'>
           <div id="heroImage">
             <div className="welcomeText">
@@ -164,7 +147,6 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-      </ThemeProvider>
     </div>
   );
 };
