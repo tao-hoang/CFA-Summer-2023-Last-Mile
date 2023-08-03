@@ -2,11 +2,24 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import "../css/RegUI.css";
 import axios from "axios";
+//from Module import
+import {
+  hasRepeatedCharacters,
+  getColorMessage,
+  checkPasswordLength,
+  checkNumber,
+  checkUppercase,
+  checkLowercase,
+  checkSymbols,
+} from "../components/Module.js";
+
 //icons
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
+import { green } from '@mui/material/colors';
+
 
 import LandingNav from "./LandingNav"
 
@@ -17,7 +30,7 @@ const RegUI = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
+   
     const handleRegistration = (e) => {
       e.preventDefault();
 
@@ -39,6 +52,11 @@ const RegUI = () => {
   
       if (!isValidPassword(password)) {
         setError('Please enter a valid password.');
+        return;
+      }
+
+      if(!checkPasswordValidity(password)) {
+        setError('You cannot use the same letter three times in a row in your password.')
         return;
       }
   
@@ -83,6 +101,14 @@ const RegUI = () => {
             /[!@#$%^&*_=+?~]/.test(password)
         );
     };
+
+    function checkPasswordValidity(password) {
+      if (hasRepeatedCharacters(password)) {
+        return false;
+      }
+      return true; // Password is valid
+    }
+
   return (
     <div><LandingNav/>
     <div className='signUpPage'>
@@ -99,16 +125,16 @@ const RegUI = () => {
             </div>
             <div className='inputGroup'>
               <label className='formLabel' htmlFor='passwordInput'>Password</label>
-              <input className='formInput' id="passwordInput" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+              <input className='formInput' id="passwordInput" type="password" value={password} onChange={(e) => setPassword(e.target.value)}  required />
             </div>
             <h2 className='signUpInstruction'>Password must:</h2>
             <ul className='signUpInstruction'>
-              <li>Contain 8-20 characters</li>
-              <li>Contain at least 1 number</li>
-              <li>Contain at least 1 uppercase letter</li>
-              <li>Contain at least 1 lowercase letter</li>
-              <li>Contain at least 1 symbol: !@#$%^&*~?</li>
-              <li className='red'>Not repeat the same character more than 3 times in a row</li>
+              <li className= {checkPasswordLength(password) ? 'valid': 'invalid'}>Contain 8-20 characters</li>
+              <li className= {checkNumber(password) ? 'valid': 'invalid'}>Contain at least 1 number</li>
+              <li className={checkUppercase(password) ? 'valid': 'invalid'}>Contain at least 1 uppercase letter</li>
+              <li className={checkLowercase(password) ? 'valid': 'invalid'}>Contain at least 1 lowercase letter</li>
+              <li className={checkSymbols(password) ? 'valid': 'invalid'}> Contain at least 1 symbol: !@#$%^&*~?</li>
+              <li style={{ color: getColorMessage(password) }}>Not repeat the same character more than 3 times in a row</li>
             </ul>
             <div>
                 <label className='formLabel' htmlFor='confirmPasswordInput'>Confirm Password:</label>
@@ -130,7 +156,8 @@ const RegUI = () => {
     </div>
     </div>
   );
-};
+  
 
+}
 export default RegUI;
 
