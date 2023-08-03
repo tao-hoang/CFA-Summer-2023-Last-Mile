@@ -1,10 +1,34 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import UiDesign from './UiDesign';
+
+axios({
+  method: 'get',
+  baseURL: 'http://localhost:3000',
+  responseType: 'json',
+  url:'/gigsLookUp/a',
+})
+  .then(function (response) {
+    console.log(response.data)
+  });
 
 const JobsListing = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [currentFilters, setFilters] = useState([]);
-
+  
+  const [gigs, setgigs] = useState([]);
+  axios({
+    method: 'get',
+    baseURL: 'http://localhost:3000',
+    responseType: 'json',
+    url:'/gigsLookUp/w',
+  })
+    .then(function (response) {
+      console.log(response.data)
+      setgigs(response.data.gigResults)
+      console.log(gigs)
+    });
   const handleButtonClick = (category) => {
     setSelectedCategory(category);
   };
@@ -21,8 +45,10 @@ const JobsListing = () => {
     }
   };
 
+
   return (
     <div>
+      {gigs ? gigs.map(item => <p>test</p>) : null}
       <h1>Jobs</h1>
       <h1>Current Jobs: {selectedCategory}</h1>
       <div className="categoryContainer">

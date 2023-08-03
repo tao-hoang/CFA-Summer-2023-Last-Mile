@@ -24,6 +24,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import JobsListing from './components/JobsListing';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/register2",
     element: <RegUI2 />
+  },
+  {
+    path: "/gigsLookUp",
+    element: <JobsListing />,
   },
   {
     path: "/*",
