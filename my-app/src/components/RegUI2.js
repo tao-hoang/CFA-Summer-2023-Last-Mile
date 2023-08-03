@@ -53,7 +53,7 @@ const RegUI = () => {
           .then((response) => {
             if(response.data.token){
               localStorage.setItem('token', response.data.token)
-              navigate('/login')
+              navigate('/profilecreation')
             }
 
           })

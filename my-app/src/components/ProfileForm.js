@@ -10,25 +10,30 @@ const ProfileForm = () => {
   const [city, setCity] = useState('');
   const [education, setEducation] = useState('');
   const [certifications, setCertifications] = useState('');
-
-  const baseURL = "http://localhost:3000/";
+  //set to current baseURL (of backend?)
+  const baseURL = "http://localhost:3000";
 
   const editUserProfile = async (userInfo, authToken) => {
     try {
       // Make the POST request to the modifyprofile route
-      const response = await axios.post(`${apiUrl}/modifyprofile`, userInfo, {
+
+      const response = await axios.post(`${baseURL}/modifyprofile`, userInfo, {
         headers: {
-          Authorization: `Bearer ${authToken}`, // If you require authentication
+          'Content-Type': 'application/json',
+          'x-access-token':authToken, 
         },
       });
       // If the request is successful, return the response data
+      console.log(response)
       return response.data;
     }
     catch (error) {
       // If there's an error, handle it here (e.g., show an error message)
       throw new Error(error.message);
+      console.log(error);
     }
   };
+  //when submitted, try to edit profile
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log({
@@ -41,14 +46,13 @@ const ProfileForm = () => {
       education,
       certifications,
     })
-    axios.post(`${baseURL}/modifyprofiile`, {
-      "fname":"first_name",
-      "lname":"last_name",
-      },
-      {headers:{
-        
-      }})
-
+    //FOR TESTING
+    let myNewData={
+      "fname":firstName,
+      "lname":lastName,
+    }
+    let myToken=localStorage.token;
+    editUserProfile(myNewData,myToken);
     // Reset the form after submission
     setFirstName('');
     setLastName('');
