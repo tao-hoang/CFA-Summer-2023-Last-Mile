@@ -1,0 +1,27 @@
+#header{
+    background-image:url("../images/Job.png") ;
+    height: 340px;
+    min-width: 1000px;
+    /* Position and center the image to scale nicely on all screens */
+    background-position:right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-left: 107px;
+    padding-top: 48px;
+
+
+    color: #0A1128;
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 55px; /* 110% */
+    letter-spacing: 0.5px;
+}
+
+.cat-holder{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
