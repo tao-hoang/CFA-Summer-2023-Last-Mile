@@ -41,7 +41,15 @@ const LandingPage = () => {
       fontFamily: "Montserrat",
     }
   });
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+  };
 }
+
 <h1>Available Jobs</h1>
 const cardsData1 = [
   { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
@@ -58,7 +66,8 @@ const cardsData2 = [
 
 
 
-const HomePage = () => {
+const Homepage = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const [activeCardIndex1, setActiveCardIndex1] = useState(0);
   const [activeCardIndex2, setActiveCardIndex2] = useState(0);
 
