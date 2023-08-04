@@ -1,11 +1,18 @@
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import Profile from "../images/defaultProfilePic.png"
 import Bell from "../images/notificationBell.png"
 let LandingNavLinks=(props)=>{
     //return links if showlinks ==true
-    if (localStorage.token == undefined){
+    const [token, settoken] = useState('')
+    const handleToken = ()=>{
+        //dumb solution but it works for now
+        localStorage.removeItem("token")
+        console.log("logoout")
+        settoken(localStorage.token)
+    }
+    if (!localStorage.token){
         return(
             <Fragment>
                 <Link to="/homepage">
@@ -23,7 +30,13 @@ let LandingNavLinks=(props)=>{
     //else do not return links
     else{
         return(<Fragment>
+            <Link to="/homepage">
+                <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
+                </Link>
             <img src={Bell}/><img src={Profile}/>
+            <Button onClick={handleToken} className='headerButton' variant="contained" color="primary" sx={{width:90, borderRadius:100}}>
+                signout
+            </Button>
 
                 </Fragment>)
     }
