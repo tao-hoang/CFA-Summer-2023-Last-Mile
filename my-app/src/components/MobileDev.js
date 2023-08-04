@@ -8,9 +8,7 @@ const MobileDev = () => {
 
     const [mobileJobs, setMobileJobs] = useState([]);
 
-    useEffect(() =>{
-        getData()
-     },[])
+    useEffect(() =>{ getData() },[])
 
     const getData = () =>{
         axios({

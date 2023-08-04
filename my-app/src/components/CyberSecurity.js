@@ -17,7 +17,7 @@ const CyberSecurity = () => {
             method: 'get',
             baseURL: 'http://localhost:3000',
             responseType: 'json',
-            url: '/gigsLookUp/design',
+            url: '/gigsLookUp/Security',
          })
          .then(function(response){
             console.log(response.data)
@@ -36,7 +36,7 @@ const CyberSecurity = () => {
             </p>
 
             {cyberJobs ? cyberJobs.map(item =>
-            <SpecificJob key = {item._id} jobTitle = {item.jobname} jobDesc = {item.description} payment = {item.pay} />) : null
+            <SpecificJob key = {item._id} jobTitle = {item.jobname} jobDesc = {item.description} payment = {item.pay} remote ={item.remote} duration = {item.duration} employer = {item.employer} />) : null
             }
 
             <p className='job-listing'>
