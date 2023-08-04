@@ -1,30 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from 'react';
 import JobsListing from './JobsListing';
 import "../css/Jobs.css";
-import axios from "axios";
-import SpecificJob from './SpecificJob';
 
 const SoftwareDev = () => {
-    const [softJobs, setSoftJobs] = useState([]);
-
-    useEffect(() =>{
-        getData()
-     },[])
-
-    const getData = () =>{
-        axios({
-            method: 'get',
-            baseURL: 'http://localhost:3000',
-            responseType: 'json',
-            url: '/gigsLookUp/software',
-         })
-         .then(function(response){
-            console.log(response.data)
-            setSoftJobs(response.data.gigsResults);
-            console.log(softJobs)
-         })
-
-    }
   return (  
       <div className='container'>
         <h1 className='header'>Software Development</h1>
@@ -32,11 +10,6 @@ const SoftwareDev = () => {
                 Welcome to the Software Development page! Here, you can find the latest job opportunities related to
                 making software applications , how they work, and more.
             </p>
-
-            {softJobs ? softJobs.map(item =>
-            <SpecificJob key = {item._id} jobTitle = {item.jobname} jobDesc = {item.description} payment = {item.pay} />) : null
-            }
-
             <p className='job-listing'>
                 Our platform regularly updates job listings from top companies and startups, providing you
                 with a centralized place to discover your dream job. Whether you're looking for entry-level
