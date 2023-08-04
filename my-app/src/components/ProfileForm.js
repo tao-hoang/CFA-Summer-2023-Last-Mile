@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import "../css/ProfileCreation.css"
+import GitHubIcon from '@mui/icons-material/GitHub';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 const ProfileForm = () => {
   // State variables to store form data
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [otherNames, setOtherNames] = useState('');
   const [pronouns, setPronouns] = useState('');
+  const [aboutMe, setAboutMe] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [education, setEducation] = useState('');
@@ -30,7 +35,6 @@ const ProfileForm = () => {
     catch (error) {
       // If there's an error, handle it here (e.g., show an error message)
       throw new Error(error.message);
-      console.log(error);
     }
   };
   //when submitted, try to edit profile
@@ -41,6 +45,7 @@ const ProfileForm = () => {
       lastName,
       otherNames,
       pronouns,
+      aboutMe,
       country,
       city,
       education,
@@ -58,6 +63,7 @@ const ProfileForm = () => {
     setLastName('');
     setOtherNames('');
     setPronouns('');
+    setAboutMe('');
     setCountry('');
     setCity('');
     setEducation('');
@@ -65,9 +71,10 @@ const ProfileForm = () => {
   };
 
   return (
+    <div>
     <form onSubmit={handleFormSubmit} className='profileForm'>
       <div>
-        <label htmlFor="firstName">First Name:</label>
+        <label htmlFor="firstName">First Name*</label>
         <input
           type="text"
           id="firstName"
@@ -77,7 +84,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name:</label>
+        <label htmlFor="lastName">Last Name*</label>
         <input
           type="text"
           id="lastName"
@@ -87,7 +94,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="otherNames">Other Names:</label>
+        <label htmlFor="otherNames">Other Names</label>
         <input
           type="text"
           id="otherNames"
@@ -96,7 +103,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="pronouns">Pronouns:</label>
+        <label htmlFor="pronouns">Pronouns</label>
         <input
           type="text"
           id="pronouns"
@@ -104,8 +111,16 @@ const ProfileForm = () => {
           onChange={(e) => setPronouns(e.target.value)}
         />
       </div>
+      <div id='aboutMeDiv'>
+        <label htmlFor="aboutMe">About me</label>
+        <textarea 
+          id="aboutMe"
+          value={aboutMe}
+          onChange={(e) => setAboutMe(e.target.value)}
+          />
+      </div>
       <div>
-        <label htmlFor="country">Country:</label>
+        <label htmlFor="country">Country</label>
         <input
           type="text"
           id="country"
@@ -114,7 +129,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="city">City:</label>
+        <label htmlFor="city">City</label>
         <input
           type="text"
           id="city"
@@ -123,7 +138,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="education">Education:</label>
+        <label htmlFor="education">Education</label>
         <input
           type="text"
           id="education"
@@ -132,7 +147,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="certifications">Certifications:</label>
+        <label htmlFor="certifications">Certifications</label>
         <input
           type="text"
           id="certifications"
@@ -140,8 +155,11 @@ const ProfileForm = () => {
           onChange={(e) => setCertifications(e.target.value)}
         />
       </div>
-      <button type="submit">Submit</button>
     </form>
+      <div className='profileResumeUpload'></div>
+      <div className='gitHubLink'></div>
+      <button className='profileButton' type="submit">Save</button>
+    </div>
   );
 };
 

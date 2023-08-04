@@ -32,8 +32,11 @@
 .welcomeMessage{
   font-size: 19px;
   font-family: "lora";
+  color:#0A1128
+
 }
 .searchPrompt{
+  color:#0A1128;
   font-size: 16px;
 }
 .landingSearchBar{

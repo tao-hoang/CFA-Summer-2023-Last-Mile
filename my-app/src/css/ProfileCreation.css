@@ -1,0 +1,45 @@
+.profileForm{
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows:  repeat(2, 1fr) 2fr repeat(2, 1fr) ;
+    gap: 10px;
+    width: 800px;
+    margin: auto;
+}
+.profileForm div {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+}
+
+.profileForm label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profileForm input {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    border-style:solid;
+    border-width: 1px;
+}
+
+#aboutMeDiv {
+    width: 100%;
+    grid-column: 1 / span 2; 
+}
+#aboutMe{
+    height: 100%;
+    width: 96%;
+    max-width: 800px;
+    border-radius: 10px;
+    border-style:solid;
+    border-width: 1px;
+}
+  
+.profileButton {
+    grid-column: 1 / span .5; 
+    margin-top: 10px;
+}

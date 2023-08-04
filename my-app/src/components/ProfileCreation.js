@@ -3,7 +3,7 @@ import ProfileForm from "./ProfileForm"
 import React from "react"
 let ProfileCreation=()=>{
     return(
-        <div className="pcholder">
+        <div className="profileCreationHolder">
             <LandingNav/>
             <div className="profileCreationContent">
                 <div className="profileCreationHero"></div>
