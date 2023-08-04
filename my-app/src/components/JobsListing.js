@@ -6,7 +6,15 @@ import UiDesign from './UiDesign';
 import SpecificJob from './SpecificJob';
 import LandingNav from './LandingNav';
 import JobListingImg from "../images/Job.png"
-import { Button ,Fab} from '@mui/material';
+import { Button} from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+const theme = createTheme({
+  palette: {
+    primary: {main: '#0a1128'},
+    secondary:{main:"#001f54"},
+    light:{main:"#ffff"}
+  }
+});
 const JobsListing = () => {
   const getData = () =>{
     axios({
@@ -46,26 +54,29 @@ const JobsListing = () => {
   return (
     <div>
       
+      
       <LandingNav showLinks={localStorage.token == undefined}/>
       <div id='header'>
         <h1>Find the perfect job for yourself.</h1>
       </div>
-      <div className='cat-holder'> 
-       <Fab variant="extended">
+      
+      <div className='cat-holder'>
+        <h3>Sort By:</h3>
+       <Button variant="extended" className='Fab' >
        Categories
-       </Fab>
-       <Fab variant="extended">
-       Job type
-       </Fab>
-       <Fab variant="extended">
+       </Button>
+       <Button variant="extended" className='Fab'>
        Onsite/Remote
-       </Fab>
-       <Fab variant="extended">
+       </Button>
+       <Button variant="extended" className='Fab'>
        Location
-       </Fab>
-       <Fab variant="extended">
+       </Button>
+       <Button variant="extended" className='Fab'>
        Date posted
-       </Fab>
+       </Button>
+       <Button variant="extended" className='Fab' onClick={getData}>
+       Reload
+       </Button>
 
 
 
@@ -84,12 +95,6 @@ const JobsListing = () => {
 
 
 
-
-
-
-
-
-      <button onClick={getData}>press me</button>
       {gigs ? gigs.map(item => 
       <SpecificJob key={item._id} 
                 jobTitle={item.jobname}
