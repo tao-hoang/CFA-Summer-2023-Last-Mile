@@ -1,9 +1,11 @@
 import { Fragment } from "react"
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
+import Profile from "../images/defaultProfilePic.png"
+import Bell from "../images/notificationBell.png"
 let LandingNavLinks=(props)=>{
     //return links if showlinks ==true
-    if (props.showLinks){
+    if (localStorage.token == undefined){
         return(
             <Fragment>
                 <Link to="/homepage">
@@ -20,7 +22,10 @@ let LandingNavLinks=(props)=>{
     }
     //else do not return links
     else{
-        return(<div></div>)
+        return(<Fragment>
+            <img src={Bell}/><img src={Profile}/>
+
+                </Fragment>)
     }
 }
 export default LandingNavLinks;
