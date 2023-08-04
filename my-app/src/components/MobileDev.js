@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import JobsListing from './JobsListing';
 import "../css/Jobs.css";
+import axios from "axios";
+import SpecificJob from './SpecificJob';
 
 const MobileDev = () => {
+
+    const [mobileJobs, setMobileJobs] = useState([]);
+
+    useEffect(() =>{
+        getData()
+     },[])
+
+    const getData = () =>{
+        axios({
+            method: 'get',
+            baseURL: 'http://localhost:3000',
+            responseType: 'json',
+            url: '/gigsLookUp/mobile',
+         })
+         .then(function(response){
+            console.log(response.data)
+            setMobileJobs(response.data.gigsResults);
+            console.log(mobileJobs)
+         })
+
+    }
+
   return (  
       <div className='container'>
         <h1 className='header'>Mobile App Development</h1>
@@ -10,6 +34,11 @@ const MobileDev = () => {
                 Welcome to the Mobile App Development page! Here, you can find the latest job opportunities related to
                 creating mobile apps , games, and more.
             </p>
+
+            {mobileJobs ? mobileJobs.map(item =>
+            <SpecificJob key = {item._id} jobTitle = {item.jobname} jobDesc = {item.description} payment = {item.pay} />) : null
+            }
+
             <p className='job-listing'>
                 Our platform regularly updates job listings from top companies and startups, providing you
                 with a centralized place to discover your dream job. Whether you're looking for entry-level
