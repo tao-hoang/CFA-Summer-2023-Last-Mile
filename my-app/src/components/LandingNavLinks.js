@@ -18,7 +18,7 @@ let LandingNavLinks=(props)=>{
         return(
             <Fragment>
                 <Link to="/jobslisting">
-                <Button className='headerButton' sx={{width:90, borderRadius:100}}>Jobs Listings</Button>
+                <Button className='headerButton' sx={{width:130, borderRadius:100}}>Jobs Listings</Button>
                 </Link>
                 <Link to="/homepage">
                 <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
@@ -35,6 +35,9 @@ let LandingNavLinks=(props)=>{
     //else do not return links
     else{
         return(<Fragment>
+            <Link to="/jobslisting">
+                <Button className='headerButton' sx={{width:130, borderRadius:100}}>Jobs Listings</Button>
+                </Link>
             <Link to="/homepage">
                 <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
                 </Link>

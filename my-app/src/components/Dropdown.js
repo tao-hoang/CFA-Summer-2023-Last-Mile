@@ -29,7 +29,8 @@ export default function Dropdown(props) {
     console.count("user load")
   if(localStorage.user){
     setUser(JSON.parse(localStorage.user))
-    }}
+    }
+  }
     useEffect(
       getUser,[]
     )
@@ -81,11 +82,11 @@ export default function Dropdown(props) {
           <ListItemIcon><ManageAccountsIcon/></ListItemIcon>
            My Profile
         </MenuItem>
-        <MenuItem onClick={gotoProfle}>
+        <MenuItem onClick={handleClose}>
            <ListItemIcon><WorkOutlineIcon/></ListItemIcon>
            My Jobs
         </MenuItem>
-        <MenuItem onClick={gotoProfle}>
+        <MenuItem onClick={handleClose}>
           <ListItemIcon><BookmarkBorderIcon/></ListItemIcon>
            Saved Jobs
         </MenuItem>
