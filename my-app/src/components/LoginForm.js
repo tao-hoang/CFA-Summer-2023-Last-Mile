@@ -23,12 +23,12 @@ const LoginForm = () => {
         "password":password,
         }
       )
-      .then((response) => {
+      .then(async (response) => {
 
         console.log(response.data);
         if(response.data.user.token){
           localStorage.setItem("token", response.data.user.token)
-          getData()
+          await getData()
           navigate('/jobslisting')
         }
       })
@@ -36,9 +36,9 @@ const LoginForm = () => {
         setError("Failed to log in. Please check your credentials.");
       });
     }
-    const getData = () =>{
+    const getData = async () =>{
       console.count()
-      axios({
+      await axios({
         method: 'post',
         baseURL: 'http://localhost:3000',
         responseType: 'json',
@@ -53,6 +53,9 @@ const LoginForm = () => {
       }).catch((Error) => {
         console.log(Error)
         console.log(JSON.parse(localStorage.user))
+        if(localStorage.token){
+          localStorage.removeItem("token")
+        }
       });}
   
 

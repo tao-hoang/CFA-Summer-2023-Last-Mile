@@ -29,7 +29,8 @@ export default function Dropdown(props) {
     console.count("user load")
   if(localStorage.user){
     setUser(JSON.parse(localStorage.user))
-    }}
+    }
+  }
     useEffect(
       getUser,[]
     )
