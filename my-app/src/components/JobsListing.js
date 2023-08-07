@@ -4,7 +4,6 @@ import axios from "axios";
 import "../css/JobListing.css"
 import SpecificJob from './SpecificJob';
 import LandingNav from './LandingNav';
-import JobListingImg from "../images/Job.png"
 import { Button} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme({
@@ -15,6 +14,7 @@ const theme = createTheme({
   }
 });
 const JobsListing = () => {
+
   const getData = () =>{
     axios({
       method: 'get',

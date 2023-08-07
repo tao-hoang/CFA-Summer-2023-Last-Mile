@@ -28,6 +28,7 @@ const LoginForm = () => {
         console.log(response.data);
         if(response.data.user.token){
           localStorage.setItem("token", response.data.user.token)
+          getData()
           navigate('/jobslisting')
         }
       })
@@ -35,6 +36,24 @@ const LoginForm = () => {
         setError("Failed to log in. Please check your credentials.");
       });
     }
+    const getData = () =>{
+      console.count()
+      axios({
+        method: 'post',
+        baseURL: 'http://localhost:3000',
+        responseType: 'json',
+        url:'/currentuser',
+        headers: {"x-access-token": localStorage.token},
+        body:{"token": localStorage.token}
+      })
+        .then(function (response) {
+          //console.log(response.data)
+          localStorage.setItem("user", JSON.stringify(response.data))
+          
+      }).catch((Error) => {
+        console.log(Error)
+        console.log(JSON.parse(localStorage.user))
+      });}
   
 
   return (
