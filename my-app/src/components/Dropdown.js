@@ -1,6 +1,8 @@
 import  React,{ useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -12,45 +14,39 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import axios from "axios";
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 export default function Dropdown(props) {
  
     
   const [anchorEl, setAnchorEl] = React.useState(null);
   const[user, setUser] = useState({})
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
+  const baseURL = "http://localhost:3000"
+  const getUser = () => {
+    console.count("user load")
+  if(localStorage.user){
+    setUser(JSON.parse(localStorage.user))
+    }}
+    useEffect(
+      getUser,[]
+    )
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-        getData()
-        console.log("falsey")
-        if(localStorage.user){
-        setUser(JSON.parse(localStorage.user))
-        }
+       // getData()
+        
   };
+  const gotoProfle= ()=>{
+    handleClose();
+    navigate("/profilecreation")
+  }
+
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const getData = () =>{
-    console.count()
-    axios({
-      method: 'post',
-      baseURL: 'http://localhost:3000',
-      responseType: 'json',
-      url:'/currentuser',
-      headers: {"x-access-token": localStorage.token},
-      body:{"token": localStorage.token}
-    })
-      .then(function (response) {
-        //console.log(response.data)
-        localStorage.setItem("user", JSON.stringify(response.data))
-        
-    }).catch((Error) => {
-      console.log(Error)
-      console.log(JSON.parse(localStorage.user))
-    });
-  }
-  // useEffect(() => {
-  //   getData(); // Call the getData function when the component mounts
-  // }, []); // Empty dependency array ensures it runs only once on mount
+  
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -63,7 +59,7 @@ export default function Dropdown(props) {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+            <Avatar sx={{ width: 32, height: 32 }} src={baseURL +'/image/'+user.pfp}/>
           </IconButton>
         </Tooltip>
       </Box>
@@ -73,48 +69,31 @@ export default function Dropdown(props) {
         open={open}
         onClose={handleClose}
         onClick={handleClose}
-        PaperProps={{
-          elevation: 0,
-          sx: {
-            overflow: 'visible',
-            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-            mt: 1.5,
-            '& .MuiAvatar-root': {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-            },
-            '&:before': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              top: 0,
-              right: 14,
-              width: 10,
-              height: 10,
-              bgcolor: 'background.paper',
-              transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
-          },
-        }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> {user.fname}
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+          <ListItemAvatar><Avatar src={baseURL +'/image/'+user.pfp}/></ListItemAvatar>
+           {user.fname + ' '+ user.lname} 
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
+        <MenuItem onClick={gotoProfle}>
+          <ListItemIcon><ManageAccountsIcon/></ListItemIcon>
+           My Profile
         </MenuItem>
+        <MenuItem onClick={gotoProfle}>
+           <ListItemIcon><WorkOutlineIcon/></ListItemIcon>
+           My Jobs
+        </MenuItem>
+        <MenuItem onClick={gotoProfle}>
+          <ListItemIcon><BookmarkBorderIcon/></ListItemIcon>
+           Saved Jobs
+        </MenuItem>
+        
+        
+        
+        
+
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Settings fontSize="small" />
