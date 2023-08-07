@@ -17,7 +17,7 @@ const GameDesign = () => {
             method: 'get',
             baseURL: 'http://localhost:3000',
             responseType: 'json',
-            url: '/gigsLookUp/design',
+            url: '/jobslisting/design',
          })
          .then(function(response){
             console.log(response.data)

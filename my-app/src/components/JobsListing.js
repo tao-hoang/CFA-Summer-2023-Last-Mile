@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import "../css/JobListing.css"
-import UiDesign from './UiDesign';
 import SpecificJob from './SpecificJob';
 import LandingNav from './LandingNav';
 import JobListingImg from "../images/Job.png"
@@ -21,7 +20,7 @@ const JobsListing = () => {
       method: 'get',
       baseURL: 'http://localhost:3000',
       responseType: 'json',
-      url:'/gigsLookUp/design',
+      url:'/jobslisting/design',
     })
       .then(function (response) {
         console.log(response.data)
@@ -31,6 +30,8 @@ const JobsListing = () => {
   }
   const [selectedCategory, setSelectedCategory] = useState('');
   const [currentFilters, setFilters] = useState(getData);
+  const [activeCardIndex1, setActiveCardIndex1] = useState(0);
+  const [activeCardIndex2, setActiveCardIndex2] = useState(0);
   
   const [gigs, setgigs] = useState([]);
   
@@ -50,15 +51,52 @@ const JobsListing = () => {
     }
   };
 
+//Available Jobs
+const cardsData1 = [
+  { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
+  { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
+  { id: 3, title: 'Card 3', description: 'This is the description for Card 3' },
+];
+
+//Recommended Courses
+const cardsData2 = [
+  { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
+  { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
+  { id: 3, title: 'Card 3', description: 'This is the description for Card 3' },
+];
+
+  const handleArrowClick = (direction, section) => {
+    if (section === 1) {
+      setActiveCardIndex1((prevIndex) => {
+        if (direction === 'left') {
+          return prevIndex - 1 < 0 ? cardsData1.length - 1 : prevIndex - 1;
+        } else if (direction === 'right') {
+          return (prevIndex + 1) % cardsData1.length;
+        }
+      });
+    } else if (section === 2) {
+      setActiveCardIndex2((prevIndex) => {
+        if (direction === 'left') {
+          return prevIndex - 1 < 0 ? cardsData2.length - 1 : prevIndex - 1;
+        } else if (direction === 'right') {
+          return (prevIndex + 1) % cardsData2.length;
+        }
+      });
+    }
+  };
 
   return (
+    
     <div>
       
-      
+    
       <LandingNav showLinks={localStorage.token == undefined}/>
       <div id='header'>
         <h1>Find the perfect job for yourself.</h1>
+        <p></p>
       </div>
+
+      
       
       <div className='cat-holder'>
         <h3>Sort By:</h3>
@@ -77,29 +115,39 @@ const JobsListing = () => {
        <Button variant="extended" className='Fab' onClick={getData}>
        Reload
        </Button>
-
-
-
-
-
-
-
-
       </div>
 
 
-
-
-
-
-
-
-
-      {gigs ? gigs.map(item => 
-      <SpecificJob key={item._id} 
+      {/* Add Cards for Each Job */}
+      <div className="card-section">
+        <h2>Available Jobs</h2>
+        <div className="cards-container">
+          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 1)}>&#x2190;</span>
+          {gigs ? gigs.map((item, index) => (
+            <div className={`card ${index === activeCardIndex1 ? 'active' : ''}`} key={item._id}>
+              <SpecificJob
                 jobTitle={item.jobname}
                 payment={item.pay}
-                 />) : null}
+              />
+            </div>
+          )) : null}
+          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 1)}>&#x2192;</span>
+        </div>
+      </div>
+
+      <div className="card-section">
+        <h2>Recommended Courses</h2>
+        <div className="cards-container">
+          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 2)}>&#x2190;</span>
+          {cardsData2.map((card, index) => (
+            <div className={`card ${index === activeCardIndex2 ? 'active' : ''}`} key={card.id}>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
+          ))}
+          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 2)}>&#x2192;</span>
+        </div>
+      </div>
     </div>
   );
 };

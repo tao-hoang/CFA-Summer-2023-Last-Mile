@@ -15,6 +15,9 @@ let LandingNavLinks=(props)=>{
     if (!localStorage.token){
         return(
             <Fragment>
+                <Link to="/jobslisting">
+                <Button className='headerButton' sx={{width:90, borderRadius:100}}>Jobs Listings</Button>
+                </Link>
                 <Link to="/homepage">
                 <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
                 </Link>
