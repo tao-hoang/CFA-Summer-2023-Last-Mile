@@ -29,7 +29,7 @@ const LoginForm = () => {
         if(response.data.user.token){
           localStorage.setItem("token", response.data.user.token)
           getData()
-          navigate('/gigsLookUp')
+          navigate('/jobslisting')
         }
       })
       .catch((error) => {

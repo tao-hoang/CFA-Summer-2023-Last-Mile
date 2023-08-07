@@ -47,7 +47,7 @@ const router = createBrowserRouter([
     element: <RegUI2 />
   },
   {
-    path: "/gigsLookUp",
+    path: "/jobslisting",
     element: <JobsListing />,
   },
   {
