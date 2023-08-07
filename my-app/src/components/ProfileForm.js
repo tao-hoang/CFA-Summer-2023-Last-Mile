@@ -75,7 +75,7 @@ const ProfileForm = () => {
     <form onSubmit={handleFormSubmit} className='profileForm'>
       <div>
         <label htmlFor="firstName">First Name*</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="firstName"
           value={firstName}
@@ -85,7 +85,7 @@ const ProfileForm = () => {
       </div>
       <div>
         <label htmlFor="lastName">Last Name*</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="lastName"
           value={lastName}
@@ -95,7 +95,7 @@ const ProfileForm = () => {
       </div>
       <div>
         <label htmlFor="otherNames">Other Names</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="otherNames"
           value={otherNames}
@@ -104,7 +104,7 @@ const ProfileForm = () => {
       </div>
       <div>
         <label htmlFor="pronouns">Pronouns</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="pronouns"
           value={pronouns}
@@ -121,7 +121,7 @@ const ProfileForm = () => {
       </div>
       <div>
         <label htmlFor="country">Country</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="country"
           value={country}
@@ -130,7 +130,7 @@ const ProfileForm = () => {
       </div>
       <div>
         <label htmlFor="city">City</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="city"
           value={city}
@@ -139,7 +139,7 @@ const ProfileForm = () => {
       </div>
       <div>
         <label htmlFor="education">Education</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="education"
           value={education}
@@ -148,7 +148,7 @@ const ProfileForm = () => {
       </div>
       <div>
         <label htmlFor="certifications">Certifications</label>
-        <input
+        <input className='profileInput'
           type="text"
           id="certifications"
           value={certifications}
@@ -156,9 +156,13 @@ const ProfileForm = () => {
         />
       </div>
     </form>
-      <div className='profileResumeUpload'></div>
-      <div className='gitHubLink'></div>
-      <button className='profileButton' type="submit">Save</button>
+      <div className='bottomFields'>
+        <div className='profileResumeUpload'>
+          <p className='profileBottomText'><UploadFileIcon  className='formIcon'/> Upload your resume</p>
+        </div>
+        <div className='gitHubLink'><p className='profileBottomText'><GitHubIcon className='formIcon'/> https://github.com/</p> <input className='profileInput' /></div>
+      </div>
+      <button className='profileButton' type="submit" onClick={handleFormSubmit}>Save</button>
     </div>
   );
 };
