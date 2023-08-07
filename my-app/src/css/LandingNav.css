@@ -27,3 +27,7 @@ src: url("./fonts/Lora.ttf");
     border-bottom:1px solid lightgrey;
     background-color:white !important;  
 }
+#bell{
+    width: 32px;
+    height: auto;
+}

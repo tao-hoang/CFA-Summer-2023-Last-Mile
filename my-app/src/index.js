@@ -18,12 +18,15 @@ import MobileDev from './components/MobileDev';
 import SoftwareDev from './components/SoftwareDev';
 import UiDesign from './components/UiDesign';
 import WebDesign from './components/WebDesign';
-import CyberSecurity from "./components/CyberSecurity"
+import CyberSecurity from "./components/CyberSecurity";
+import Homepage from './components/Homepage';
+import ProfileCreation from './components/ProfileCreation';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import JobsListing from './components/JobsListing';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +45,14 @@ const router = createBrowserRouter([
   {
     path: "/register2",
     element: <RegUI2 />
+  },
+  {
+    path: "/jobslisting",
+    element: <JobsListing />,
+  },
+  {
+    path: "/homepage",
+    element: <Homepage />,
   },
   {
     path: "/*",
@@ -91,7 +102,10 @@ const router = createBrowserRouter([
   path: "/webdesign",
   element: <WebDesign />
 },
-
+{
+  path:"/profilecreation",
+  element:<ProfileCreation/>
+}
   
 
 ]);
