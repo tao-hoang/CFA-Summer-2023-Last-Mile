@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import "../css/JobListing.css"
-import UiDesign from './UiDesign';
 import SpecificJob from './SpecificJob';
 import LandingNav from './LandingNav';
 import JobListingImg from "../images/Job.png"
@@ -21,7 +20,7 @@ const JobsListing = () => {
       method: 'get',
       baseURL: 'http://localhost:3000',
       responseType: 'json',
-      url:'/gigsLookUp/design',
+      url:'/jobslisting/design',
     })
       .then(function (response) {
         console.log(response.data)
@@ -54,7 +53,7 @@ const JobsListing = () => {
   return (
     <div>
       
-      
+    
       <LandingNav showLinks={localStorage.token == undefined}/>
       <div id='header'>
         <h1>Find the perfect job for yourself.</h1>

@@ -17,7 +17,7 @@ const CyberSecurity = () => {
             method: 'get',
             baseURL: 'http://localhost:3000',
             responseType: 'json',
-            url: '/gigsLookUp/Security',
+            url: '/jobslisting/Security',
          })
          .then(function(response){
             console.log(response.data)

@@ -28,7 +28,7 @@ const LoginForm = () => {
         console.log(response.data);
         if(response.data.user.token){
           localStorage.setItem("token", response.data.user.token)
-          navigate('/gigsLookUp')
+          navigate('/jobslisting')
         }
       })
       .catch((error) => {
