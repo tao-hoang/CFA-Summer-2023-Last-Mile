@@ -3,18 +3,23 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import Profile from "../images/defaultProfilePic.png"
 import Bell from "../images/notificationBell.png"
+import AccountMenu from "./Dropdown";
 let LandingNavLinks=(props)=>{
     //return links if showlinks ==true
     const [token, settoken] = useState('')
     const handleToken = ()=>{
-        //dumb solution but it works for now
-        localStorage.removeItem("token")
-        console.log("logoout")
-        settoken(localStorage.token)
-    }
+      //dumb solution but it works for now
+      localStorage.removeItem("token")
+      localStorage.removeItem("user")
+      console.log("logoout")
+      settoken(localStorage.token)
+  }
     if (!localStorage.token){
         return(
             <Fragment>
+                <Link to="/jobslisting">
+                <Button className='headerButton' sx={{width:130, borderRadius:100}}>Jobs Listings</Button>
+                </Link>
                 <Link to="/homepage">
                 <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
                 </Link>
@@ -30,13 +35,15 @@ let LandingNavLinks=(props)=>{
     //else do not return links
     else{
         return(<Fragment>
+            <Link to="/jobslisting">
+                <Button className='headerButton' sx={{width:130, borderRadius:100}}>Jobs Listings</Button>
+                </Link>
             <Link to="/homepage">
                 <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
                 </Link>
-            <img src={Bell}/><img src={Profile}/>
-            <Button onClick={handleToken} className='headerButton' variant="contained" color="primary" sx={{width:90, borderRadius:100}}>
-                signout
-            </Button>
+                <img src={Bell} id="bell"/>
+            {/* <img src={Profile}/> */}
+            <AccountMenu tokeFunc={handleToken}/>
 
                 </Fragment>)
     }

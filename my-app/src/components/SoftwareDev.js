@@ -16,7 +16,7 @@ const SoftwareDev = () => {
             method: 'get',
             baseURL: 'http://localhost:3000',
             responseType: 'json',
-            url: '/gigsLookUp/software',
+            url: '/jobslisting/software',
          })
          .then(function(response){
             console.log(response.data)

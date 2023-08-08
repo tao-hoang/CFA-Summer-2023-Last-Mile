@@ -77,7 +77,7 @@ const cardsData2 = [
     <div className='landingBodyContainer'>
       <LandingNav showLinks="true" />
         <div className='landingBody'>
-          <div id="heroImage">
+          <div id="homepageImage">
             <div className="welcomeText">
               <h1 className="welcomeHeader" style={{ marginBottom: 20 }}>Work to build yourself up.</h1>
               <p className="welcomeMessage" style={{ marginBottom: 50, fontSize: 19, fontFamily: "lora" }}>This is where you can find available jobs and recommended courses to learn new skills and build your portfolio.</p>

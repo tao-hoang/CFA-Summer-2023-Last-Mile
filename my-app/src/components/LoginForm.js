@@ -9,7 +9,8 @@ import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
-const baseURL = "http://localhost:3000/login";
+const baseURL = "https://bewildered-lime-jumpsuit.cyclic.app";
+const route = "/login"
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,23 +19,45 @@ const LoginForm = () => {
 
   function createPost(event) {
     event.preventDefault(); 
-    axios.post(baseURL, {
+    axios.post(baseURL+route, {
         "email":email,
         "password":password,
         }
       )
-      .then((response) => {
+      .then(async (response) => {
 
         console.log(response.data);
         if(response.data.user.token){
           localStorage.setItem("token", response.data.user.token)
-          navigate('/gigsLookUp')
+          await getData()
+          navigate('/jobslisting')
         }
       })
       .catch((error) => {
         setError("Failed to log in. Please check your credentials.");
       });
     }
+    const getData = async () =>{
+      console.count()
+      await axios({
+        method: 'post',
+        baseURL: 'http://localhost:3000',
+        responseType: 'json',
+        url:'/currentuser',
+        headers: {"x-access-token": localStorage.token},
+        body:{"token": localStorage.token}
+      })
+        .then(function (response) {
+          //console.log(response.data)
+          localStorage.setItem("user", JSON.stringify(response.data))
+          
+      }).catch((Error) => {
+        console.log(Error)
+        console.log(JSON.parse(localStorage.user))
+        if(localStorage.token){
+          localStorage.removeItem("token")
+        }
+      });}
   
 
   return (

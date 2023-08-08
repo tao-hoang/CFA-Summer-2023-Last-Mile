@@ -68,3 +68,14 @@
     font-size: 14px;
     color: #555;
   }
+
+  #homepageImage{
+    background-image:url("../images/homepage.png") ;
+    height: 700px;
+    min-width: 1000px;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

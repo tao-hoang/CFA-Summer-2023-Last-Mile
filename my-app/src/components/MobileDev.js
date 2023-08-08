@@ -15,7 +15,7 @@ const MobileDev = () => {
             method: 'get',
             baseURL: 'http://localhost:3000',
             responseType: 'json',
-            url: '/gigsLookUp/mobile',
+            url: '/jobslisting/mobile',
          })
          .then(function(response){
             console.log(response.data)
