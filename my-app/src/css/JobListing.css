@@ -1,13 +1,41 @@
-/* HomePage.css */
+#header{
+    background-image:url("../images/Job.png") ;
+    height: 340px;
+    min-width: 1000px;
+    /* Position and center the image to scale nicely on all screens */
+    background-position:right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-left: 107px;
+    padding-top: 48px;
 
-.homepage {
+
+    color: #0A1128;
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 55px; /* 110% */
+    letter-spacing: 0.5px;
+}
+
+.cat-holder{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .cards-container {
+    justify-content: left;
+}
+.but{
+    border-radius: 100px;
+}
+.Fab{
+    background-color: White;
+    border-radius: 100px;
+    border: 3px solid #0A1128;
+    color: #0A1128;
+    margin: 10px;
+}
+
+.cards-container {
     display: flex;
     align-items: center;
     margin: 0 20px; /* Add some margin to separate the arrows from cards */
@@ -54,28 +82,3 @@
   .right-arrow {
     order: 3; /* Reorder the right arrow to appear last */
   }
- 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  h3 {
-    font-size: 18px;
-  }
-  
-  p {
-    font-size: 14px;
-    color: #555;
-  }
-
-  #homepageImage{
-    background-image:url("../images/homepage.png") ;
-    height: 700px;
-    min-width: 1000px;
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center 55%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}

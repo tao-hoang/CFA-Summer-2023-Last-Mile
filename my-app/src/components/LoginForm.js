@@ -23,18 +23,40 @@ const LoginForm = () => {
         "password":password,
         }
       )
-      .then((response) => {
+      .then(async (response) => {
 
         console.log(response.data);
         if(response.data.user.token){
           localStorage.setItem("token", response.data.user.token)
-          navigate('/gigsLookUp')
+          await getData()
+          navigate('/jobslisting')
         }
       })
       .catch((error) => {
         setError("Failed to log in. Please check your credentials.");
       });
     }
+    const getData = async () =>{
+      console.count()
+      await axios({
+        method: 'post',
+        baseURL: 'http://localhost:3000',
+        responseType: 'json',
+        url:'/currentuser',
+        headers: {"x-access-token": localStorage.token},
+        body:{"token": localStorage.token}
+      })
+        .then(function (response) {
+          //console.log(response.data)
+          localStorage.setItem("user", JSON.stringify(response.data))
+          
+      }).catch((Error) => {
+        console.log(Error)
+        console.log(JSON.parse(localStorage.user))
+        if(localStorage.token){
+          localStorage.removeItem("token")
+        }
+      });}
   
 
   return (

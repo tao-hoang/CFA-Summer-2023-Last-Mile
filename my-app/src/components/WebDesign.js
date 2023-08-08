@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import JobsListing from './JobsListing';
 import "../css/Jobs.css";
+import axios from "axios";
+import SpecificJob from './SpecificJob';
 
 const WebDesign = () => {
+    const [webJobs, setWebJobs] = useState([]);
+
+    useEffect(() =>{
+        getData()
+     },[])
+
+    const getData = () =>{
+        axios({
+            method: 'get',
+            baseURL: 'http://localhost:3000',
+            responseType: 'json',
+            url: '/jobslisting/design',
+         })
+         .then(function(response){
+            console.log(response.data)
+            setWebJobs(response.data.gigsResults);
+            console.log(webJobs)
+         })
+
+    }
+
+
   return (  
       <div className='container'>
         <h1 className='header'>Web Design</h1>
@@ -10,6 +34,11 @@ const WebDesign = () => {
                 Welcome to the Web Design page! Here, you can find the latest job and course opportunities related to
                 Web Design where skills in HTML, CSS, and Javascript can be learned; or if you already have the skills apply!
             </p>
+
+            {webJobs ? webJobs.map(item =>
+            <SpecificJob key = {item._id} jobTitle = {item.jobname} jobDesc = {item.description} payment = {item.pay} />) : null
+            }
+
             <p className='job-listing'>
                 Our platform regularly updates job listings from top companies and startups, providing you
                 with a centralized place to discover your dream job. Whether you're looking for entry-level

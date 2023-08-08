@@ -77,7 +77,7 @@ const cardsData2 = [
     <div className='landingBodyContainer'>
       <LandingNav showLinks="true" />
         <div className='landingBody'>
-          <div id="heroImage">
+          <div id="homepageImage">
             <div className="welcomeText">
               <h1 className="welcomeHeader" style={{ marginBottom: 20 }}>Work to build yourself up.</h1>
               <p className="welcomeMessage" style={{ marginBottom: 50, fontSize: 19, fontFamily: "lora" }}>This is where you can find available jobs and recommended courses to learn new skills and build your portfolio.</p>
@@ -105,47 +105,37 @@ const cardsData2 = [
           </div>
 
           <div className="homepage">
-            <h1>Welcome to connectIT</h1>
-            <div className="card-section">
-              <h2>Available Jobs</h2>
-              <div className="card-container">
-                {cardsData1.map((card, index) => (
-                  <div
-                    className={`card ${index === activeCardIndex1 ? 'active' : ''}`}
-                    key={card.id}
-                  >
-                    <h3>{card.title}</h3>
-                    <p>{card.description}</p>
-                    <div className="arrows">
-                      <span onClick={() => handleArrowClick('left', 1)}>&#x2190;</span>
-                      <span onClick={() => handleArrowClick('right', 1)}>&#x2192;</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      <h1>Welcome to connectIT</h1>
+      <div className="card-section">
+        <h2>Available Jobs</h2>
+        <div className="cards-container">
+          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 1)}>&#x2190;</span>
+          {cardsData1.map((card, index) => (
+            <div className={`card ${index === activeCardIndex1 ? 'active' : ''}`} key={card.id}>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
             </div>
-
-            <div className="card-section">
-              <h2>Recommended Courses</h2>
-              <div className="card-container">
-                {cardsData2.map((card, index) => (
-                  <div
-                    className={`card ${index === activeCardIndex2 ? 'active' : ''}`}
-                    key={card.id}
-                  >
-                    <h3>{card.title}</h3>
-                    <p>{card.description}</p>
-                    <div className="arrows">
-                      <span onClick={() => handleArrowClick('left', 2)}>&#x2190;</span>
-                      <span onClick={() => handleArrowClick('right', 2)}>&#x2192;</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
+          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 1)}>&#x2192;</span>
         </div>
+      </div>
+
+      <div className="card-section">
+        <h2>Recommended Courses</h2>
+        <div className="cards-container">
+          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 2)}>&#x2190;</span>
+          {cardsData2.map((card, index) => (
+            <div className={`card ${index === activeCardIndex2 ? 'active' : ''}`} key={card.id}>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
+          ))}
+          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 2)}>&#x2192;</span>
+        </div>
+      </div>
     </div>
+  </div>
+  </div>
   );
 };
 
