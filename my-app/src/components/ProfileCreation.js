@@ -16,9 +16,8 @@ let ProfileCreation=()=>{
                 </div>
                 <div className="profileBanner">
                         <AddAPhotoIcon className="cameraIcon bannerCamera"/>
-
+                        <div className="profilePic"><AddAPhotoIcon className="cameraIcon"/></div>
                 </div>
-                <div className="profilePic"><AddAPhotoIcon className="cameraIcon"/></div>
                 <ProfileForm />
             </div>
         </div>
