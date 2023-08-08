@@ -9,7 +9,8 @@ import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
-const baseURL = "http://localhost:3000/login";
+const baseURL = "https://bewildered-lime-jumpsuit.cyclic.app";
+const route = "/login"
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,7 +19,7 @@ const LoginForm = () => {
 
   function createPost(event) {
     event.preventDefault(); 
-    axios.post(baseURL, {
+    axios.post(baseURL+route, {
         "email":email,
         "password":password,
         }

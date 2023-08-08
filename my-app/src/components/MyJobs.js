@@ -4,50 +4,57 @@ import "../css/Jobs.css";
 import axios from "axios";
 import SpecificJob from './SpecificJob';
 import LandingNav from "./LandingNav";
+import axiosRateLimit from 'axios-rate-limit';
+const http = axiosRateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000 });
+const MyJobs = (gigIds) => {
 
-const MyJobs = () => {
-    const [uiJobs, setUiJobs] = useState([]);
     const[user,setUser] = useState({})
+    const[gigs,setGigs] =useState([])
+    const getData = async (gigIds) =>{
+      try{
+      const gigPromises = gigIds.map(async (x) => {
+        const response = await await http.get(`http://localhost:3000/gigbyid/${x}`);
+        
+        return response.data.gig;
+        });
+
+        const gigData = await Promise.all(gigPromises);
+        setGigs(gigData);
+      }catch(error){
+        console.log(error)
+      }
+    }
+ 
     const getUser = () => {
         console.count("user load")
       if(localStorage.user){
-        setUser(JSON.parse(localStorage.user))
+        const parsedUser = JSON.parse(localStorage.user);
+        setUser(parsedUser)
+        console.log(parsedUser.gigs)
+        if (parsedUser.gigs && parsedUser.gigs.length > 0) {
+          getData(parsedUser.gigs);
+      }
         }
       }
     useEffect(getUser,[])
     
-    const getData = () =>{
-        let data = JSON.stringify({
-            "_id": "64d171dc95edbe6541e9cedb"
-          });
-          
-          let config = {
-            method: 'get',
-            maxBodyLength: Infinity,
-            url: 'http://localhost:3000/gigbyid',
-            headers: { 
-              'Content-Type': 'application/json'
-            },
-            body : data
-          };
-          
-          axios.request(config)
-          .then((response) => {
-            console.log(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-          
-
-    }
-
-    useEffect(getData,[])
- 
   return (  
       <div className='container'>
         <LandingNav/>
        <h1>My Jobs</h1>
+       {gigs.map((item) => (
+        <SpecificJob
+        key = {item._id}
+        jobTitle = {item.jobname}
+        jobDesc = {item.description}
+        payment = {item.pay}
+
+
+
+
+
+        />
+      ))}
          </div>
     );
 
