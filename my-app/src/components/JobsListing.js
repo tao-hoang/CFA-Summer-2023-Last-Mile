@@ -126,6 +126,9 @@ const cardsData2 = [
             <div className={`card ${index === activeCardIndex1 ? 'active' : ''}`} key={item._id}>
               <SpecificJob
                 jobTitle={item.jobname}
+                jobDesc={item.description}
+                category={item.categories}
+                employer={item.employer}
                 payment={item.pay}
               />
             </div>
