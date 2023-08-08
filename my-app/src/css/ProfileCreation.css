@@ -1,4 +1,14 @@
+@font-face {
+    font-family: "montserrat";
+    src: url("./fonts/Montserrat-VariableFont_wght.ttf");
+  }
+@font-face {
+font-family: "lora";
+src: url("./fonts/Lora.ttf");
+}
+
 .profileForm{
+    font-family: "lora";
     display: grid;
     grid-template-columns:  1fr 1fr;
     grid-template-rows:  repeat(2, 1fr) 2fr repeat(2, 1fr) ;
@@ -20,6 +30,9 @@
 .profileForm label {
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 18px;
+    color:rgb(99, 99, 99);
+    font-weight: normal;
 }
 
 .profileForm input {
@@ -35,12 +48,15 @@
     grid-column: 1 / span 2; 
 }
 #aboutMe{
+    font-family: "montserrat";
+    font-size: 30px;
     height: 100%;
     width: 98%;
     max-width: 1000px;
     border-radius: 10px;
     border-style:solid;
     border-width: 1px;
+    /* font-weight: 500; */
 }
   
 .profileButton {
@@ -56,42 +72,110 @@
     font-size: 24px;
 }
 .bottomFields{
+    font-family: "montserrat";
+    height: 100px;
     width: 1000px;
     margin: auto;
     display: flex;
     gap: 20px;
 }
 .profileResumeUpload{
+    color:#0A1128 !important;
     padding: 8px;
     display: flex;
-    border: solid #0A1128;
+    border: solid #0A1128 1px;
     flex-grow: 1;
     border-radius: 20px;
     gap: 10px;
+    align-items: center;
 }
 .gitHubLink{
+    color:#0A1128 !important;
     padding: 8px;
     display: flex;
     flex-grow: 2;
-    border: solid #0A1128;
+    border: solid #0A1128 1px;
     align-items: center;
     border-radius: 20px;
     gap: 10px;
 }
 .formIcon{
+    color:#0A1128 !important;
     font-size: 50px !important;
     display: inline-block;
     vertical-align: middle;
 }
 .profileBottomText{
-    font-size: 24px;
+    color:#0A1128 !important;
+    font-size: 20px;
+    font-weight: 500;
 }
 .profileInput{
-    font-size: 24px;
+    font-size: 30px;
     border-radius: 10px;
     border-style:solid;
     border-width: 1px;
+    /* width: 44%; */
 }
 /* *{
     border: solid black;
 } */
+.profileCreationHero{
+    background-image: url(../images/profileForm.png);
+    height: 300px;
+    min-width: 500px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 1600px;
+    margin: auto;
+}
+.profileCreationContent{
+    max-width: 1600px;
+    margin: auto;
+}
+.welcomeTextProfile{
+    width:400px;
+    padding-top:60px ;
+    padding-left:220px;
+    font-family: "lora" ;
+  }
+.profileBanner{
+    height: 200px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: lightgray;
+    width: 1100px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    border-style:solid lightgray;;
+    border-width: 1px;
+    position: relative;
+}
+.profilePic{
+    height: 160px;
+    width: 160px;
+    background-color: lightgray;
+    border-radius: 50%;
+    border: solid white ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 100px;
+    left: 100px;
+    z-index: 2;
+}
+.cameraIcon{
+    font-size: 50px !important;
+}
+.bannerCamera{
+    display: inline-block !important;
+    position: relative !important;
+    bottom:0  !important;
+    right:0  !important;
+    top: 100;
+    left: 100;
+}

@@ -3,7 +3,6 @@ import axios from "axios";
 import "../css/ProfileCreation.css"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 const ProfileForm = () => {
   // State variables to store form data
   const [firstName, setFirstName] = useState('');
@@ -72,7 +71,7 @@ const ProfileForm = () => {
 
   return (
     <div>
-    <form onSubmit={handleFormSubmit} className='profileForm'>
+    <form onSubmit={handleFormSubmit} id="profileForm" className='profileForm'>
       <div>
         <label htmlFor="firstName">First Name*</label>
         <input className='profileInput'
@@ -162,7 +161,7 @@ const ProfileForm = () => {
         </div>
         <div className='gitHubLink'><p className='profileBottomText'><GitHubIcon className='formIcon'/> https://github.com/</p> <input className='profileInput' /></div>
       </div>
-      <button className='profileButton' type="submit" onClick={handleFormSubmit}>Save</button>
+      <button className='profileButton' type="submit" form='profileForm'>Save</button>
     </div>
   );
 };
