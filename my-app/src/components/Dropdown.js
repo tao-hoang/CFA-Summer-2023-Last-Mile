@@ -1,5 +1,5 @@
 import  React,{ useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -24,7 +24,7 @@ export default function Dropdown(props) {
   const[user, setUser] = useState({})
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
-  const baseURL = "http://localhost:3000"
+  const baseURL = "https://cfa-last-mile-backend.onrender.com"
   const getUser = () => {
     console.count("user load")
   if(localStorage.user){
@@ -43,6 +43,7 @@ export default function Dropdown(props) {
     handleClose();
     navigate("/profilecreation")
   }
+ 
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -82,8 +83,13 @@ export default function Dropdown(props) {
           <ListItemIcon><ManageAccountsIcon/></ListItemIcon>
            My Profile
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={ ()=>{
+                    handleClose();
+                    navigate("/myjobs")
+                    }}>
+        
            <ListItemIcon><WorkOutlineIcon/></ListItemIcon>
+
            My Jobs
         </MenuItem>
         <MenuItem onClick={handleClose}>
