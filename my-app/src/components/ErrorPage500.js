@@ -1,5 +1,7 @@
 import LandingNav from "./LandingNav";
 import "../css/Error.css"
+import { Link } from "react-router-dom";
+
 let ErrorPage500=()=>{
     return(
         <div>
@@ -9,7 +11,7 @@ let ErrorPage500=()=>{
                 <h1 className="errorCode">5<img className="sadError" alt="sad" src={require("../images/sadError.png")}/>0</h1>
                 <h1 className="errorMessage">We are working on fixing the problem. Feel free to go update your portfolio in the meantime.</h1>
                 <div className="linkButtonsDiv">
-                    <button className="linkButton">Homepage</button>
+                    <Link to="/" className="linkButton">Homepage</Link>
                     <button className="linkButton">Contact us</button>
                 </div>
             </div>
