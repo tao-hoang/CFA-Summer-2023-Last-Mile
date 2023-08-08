@@ -49,7 +49,7 @@ src: url("./fonts/Lora.ttf");
     gap:50px;
 }
 .linkButton{
-    display: block;
+    display: flex;
     background-color: #0A1128 ;
     color: white;
     font-size: 24px;
@@ -57,6 +57,9 @@ src: url("./fonts/Lora.ttf");
     width: 220px;
     border: solid #0A1128 ;
     border-radius: 25px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
 }
 .sadError{
     display: inline-block;

@@ -117,7 +117,6 @@ const cardsData2 = [
        </Button>
       </div>
 
-
       {/* Add Cards for Each Job */}
       <div className="card-section">
         <h2>Available Jobs</h2>
