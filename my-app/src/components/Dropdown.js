@@ -32,7 +32,7 @@ export default function Dropdown(props) {
     }
   }
     useEffect(
-      getUser,[]
+      getUser,[localStorage.user]
     )
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
