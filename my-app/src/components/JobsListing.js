@@ -6,6 +6,8 @@ import SpecificJob from './SpecificJob';
 import LandingNav from './LandingNav';
 import { Button} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Cards from './Cards';
+
 const theme = createTheme({
   palette: {
     primary: {main: '#0a1128'},
@@ -88,15 +90,12 @@ const cardsData2 = [
   return (
     
     <div>
-      
-    
+       
       <LandingNav showLinks={localStorage.token == undefined}/>
       <div id='header'>
         <h1>Find the perfect job for yourself.</h1>
         <p></p>
-      </div>
-
-      
+      </div>   
       
       <div className='cat-holder'>
         <h3>Sort By:</h3>
@@ -117,37 +116,28 @@ const cardsData2 = [
        </Button>
       </div>
 
-      {/* Add Cards for Each Job */}
       <div className="card-section">
         <h2>Available Jobs</h2>
         <div className="cards-container">
-          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 1)}>&#x2190;</span>
-          {gigs ? gigs.map((item, index) => (
-            <div className={`card ${index === activeCardIndex1 ? 'active' : ''}`} key={item._id}>
-              <SpecificJob
-                jobTitle={item.jobname}
-                jobDesc={item.description}
-                category={item.categories}
-                employer={item.employer}
-                payment={item.pay}
-              />
-            </div>
-          )) : null}
-          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 1)}>&#x2192;</span>
-        </div>
-      </div>
-
-      <div className="card-section">
-        <h2>Recommended Courses</h2>
-        <div className="cards-container">
-          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 2)}>&#x2190;</span>
-          {cardsData2.map((card, index) => (
-            <div className={`card ${index === activeCardIndex2 ? 'active' : ''}`} key={card.id}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          ))}
-          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 2)}>&#x2192;</span>
+          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 1)}>
+            &#x2190;
+          </span>
+          {gigs
+            ? gigs.map((item, index) => (
+                <Cards
+                  key={item._id}
+                  jobTitle={item.jobname}
+                  jobDesc={item.description}
+                  category={item.categories}
+                  employer={item.employer}
+                  payment={item.pay}
+                  isActive={index === activeCardIndex1}
+                />
+              ))
+            : null}
+          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 1)}>
+            &#x2192;
+          </span>
         </div>
       </div>
     </div>
