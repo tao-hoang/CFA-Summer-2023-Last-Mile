@@ -202,7 +202,7 @@ const getData = async (query) => {
   }
 
   try {
-    const response = await axios.get(`http://localhost:3000/gigsLookUp/${query}`);
+    const response = await axios.get(`http://localhost:3000/jobsListing/${query}`);
     console.log(response);
     return response.data.gigsResults;
     
