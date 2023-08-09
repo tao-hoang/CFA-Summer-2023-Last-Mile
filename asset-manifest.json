@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-warehouse/static/css/main.70c2bf53.css",
+    "main.js": "/react-warehouse/static/js/main.c430adad.js",
+    "static/js/787.28cb0dcd.chunk.js": "/react-warehouse/static/js/787.28cb0dcd.chunk.js",
+    "static/media/hero.jpg": "/react-warehouse/static/media/hero.ee68b9534dd399b584e7.jpg",
+    "static/media/error.png": "/react-warehouse/static/media/error.a67f98941794f2395813.png",
+    "static/media/login.jpg": "/react-warehouse/static/media/login.a3569e36bfb0ba5d846e.jpg",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/react-warehouse/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
+    "static/media/signUp.jpg": "/react-warehouse/static/media/signUp.c2e4d21fea6863e8da78.jpg",
+    "static/media/Lora.ttf": "/react-warehouse/static/media/Lora.3a653a05dd1cd5925a30.ttf",
+    "static/media/homepage.png": "/react-warehouse/static/media/homepage.dbbb679d262fa6ef6cb0.png",
+    "static/media/Job.png": "/react-warehouse/static/media/Job.00768e5fbefdd12addde.png",
+    "index.html": "/react-warehouse/index.html",
+    "main.70c2bf53.css.map": "/react-warehouse/static/css/main.70c2bf53.css.map",
+    "main.c430adad.js.map": "/react-warehouse/static/js/main.c430adad.js.map",
+    "787.28cb0dcd.chunk.js.map": "/react-warehouse/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70c2bf53.css",
+    "static/js/main.c430adad.js"
+  ]
+}
