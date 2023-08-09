@@ -68,7 +68,9 @@ const ProfileForm = () => {
     setEducation('');
     setCertifications('');
   };
-
+  let handleResumeChange=()=>{
+    //set resume
+  }
   return (
     <div>
     <form onSubmit={handleFormSubmit} id="profileForm" className='profileForm'>
@@ -156,12 +158,13 @@ const ProfileForm = () => {
       </div>
     </form>
       <div className='bottomFields'>
-        <div className='profileResumeUpload'>
+        <label htmlFor="resumeUpload" className='profileResumeUpload'>
           <p className='profileBottomText'><UploadFileIcon  className='formIcon'/> Upload your resume</p>
-        </div>
+        </label>
         <div className='gitHubLink'><p className='profileBottomText'><GitHubIcon className='formIcon'/> https://github.com/</p> <input className='profileInput' /></div>
       </div>
       <button className='profileButton clickable' type="submit" form='profileForm'>Save</button>
+      <input type='file' id="resumeUpload" onChange={handleResumeChange}/>
     </div>
   );
 };

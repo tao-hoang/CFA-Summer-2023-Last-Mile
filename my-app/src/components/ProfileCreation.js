@@ -57,11 +57,11 @@ let ProfileCreation=()=>{
                 </div>
                 <div className="profileBanner">
                         <AddAPhotoIcon className="cameraIcon bannerCamera clickable"/>
-                        <div className="profilePic clickable" style={{
+                        <label htmlFor="pfpInput" className="profilePic clickable" style={{
                             backgroundImage:`url(${selectedImage})`,
-                        }}><AddAPhotoIcon className="cameraIcon"/></div>
+                        }}><AddAPhotoIcon className="cameraIcon"/></label>
                 </div>
-                <input type="file" accept="image/*" onChange={handleImageChange} />
+                <input type="file" accept="image/*" onChange={handleImageChange} id="pfpInput"/>
                 <ProfileForm />
             </div>
         </div>

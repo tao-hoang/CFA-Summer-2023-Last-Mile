@@ -186,3 +186,9 @@ src: url("./fonts/Lora.ttf");
 .clickable{
     cursor: pointer;
 }
+#pfpInput{
+    display: none;
+}
+#resumeUpload{
+    display: none;
+}
