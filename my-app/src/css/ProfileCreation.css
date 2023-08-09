@@ -169,6 +169,8 @@ src: url("./fonts/Lora.ttf");
     bottom: -80px;
     left: 50px;
     z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .cameraIcon{
     font-size: 50px !important;
@@ -180,4 +182,7 @@ src: url("./fonts/Lora.ttf");
     left: 980px;
 
 
+}
+.clickable{
+    cursor: pointer;
 }

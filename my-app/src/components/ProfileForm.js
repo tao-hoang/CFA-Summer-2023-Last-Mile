@@ -161,7 +161,7 @@ const ProfileForm = () => {
         </div>
         <div className='gitHubLink'><p className='profileBottomText'><GitHubIcon className='formIcon'/> https://github.com/</p> <input className='profileInput' /></div>
       </div>
-      <button className='profileButton' type="submit" form='profileForm'>Save</button>
+      <button className='profileButton clickable' type="submit" form='profileForm'>Save</button>
     </div>
   );
 };
