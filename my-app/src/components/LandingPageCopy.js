@@ -3,8 +3,6 @@ import { Link, Route, Routes } from "react-router-dom";
 import "../css/LandingPage.css";
 import LandingNav from "./LandingNav";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-import { useJobContext } from './JobContext';
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -12,7 +10,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 //search bar
 import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 //icons
 import DrawIcon from '@mui/icons-material/Draw';
@@ -29,26 +29,24 @@ import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import Montserrat from "../css/fonts/Montserrat-VariableFont_wght.ttf";
 const LandingPage = () => {
 
+ 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResult, setSearchResult] = useState([]);
-  const [open, setOpen] = useState(false);
 
-  const debouncedGetData = debounce(async (query) => {
-    const response = await getData(query);
-    console.log(response); 
-    setSearchResult(response);
-  }, 300); // Adjust the debounce time as needed
+  const getData = () =>{
+    axios({
+        method: 'get',
+        baseURL: 'http://localhost:3000',
+        responseType: 'json',
+        url: `/gigsLookUp/${searchQuery}`,
+     })
+     .then(function(response){
+        console.log(response.data)
+        setSearchResult(response.data.gigsResults);
+        console.log(searchResult)
+     })
 
-  useEffect(() => {
-    if (!open) {
-      setSearchResult([]);
-    }
-  }, [open]);
-
-  const handleInputChange = (event, value) => {
-    setSearchQuery(value);
-    debouncedGetData(value);
-  };
+  }
 
   //colors for components
   const theme = createTheme({
@@ -64,17 +62,18 @@ const LandingPage = () => {
       fontFamily: "Montserrat",
     }
   });
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
-  const navigate = useNavigate();
-  const { setSelectedJob } = useJobContext();
-
-  const handleSearchItemClick = (event, newValue) => {
-    if (newValue) {
-      setSelectedJob(newValue);
-      navigate('/SearchItem');
-  }
-
-  }
+  const handleSearchSubmit = async(event) => {
+    event.preventDefault();
+    getData();
+   
+    // Handle search query submission
+    // You can perform any search-related logic here
+    console.log('Search submitted:', searchQuery);
+  };
 
   return (
     <div className='landingBodyContainer'>
@@ -86,23 +85,25 @@ const LandingPage = () => {
             <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>
             <p className="welcomeMessage" style={{marginBottom:50, fontSize:19, fontFamily:"lora"}}>Start honing your skills and get real-world experience with connectIT. We have projects that will suit your needs and help you grow as a professional.</p>
             <p className='searchPrompt'>What kind of work are you looking for?</p>
-            <React.Fragment key="unique-key">
-              <Autocomplete
-                id="asynchronous-demo"
-                sx={{ width: 400 }}
-                open={open}
-                onOpen={() => setOpen(true)}
-                onClose={() => setOpen(false)}
-                options={searchResult}
-                getOptionLabel={(searchResult) => searchResult.jobname}
-                inputValue={searchQuery}
-                onInputChange={handleInputChange}
-                onChange={handleSearchItemClick}
-                renderInput={(params) => (
-                  <TextField {...params} label="Search jobs and courses..." />
-                )}
+            <Paper onSubmit={handleSearchSubmit}
+              component="form"
+              sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 375, opacity:0.5, borderRadius:2, color:"black", opacity:"90%", backgroundColor:"lightgrey"}}
+            >
+              <IconButton sx={{ p: '10px' }} aria-label="menu">
+                <MenuIcon />
+              </IconButton>
+              <InputBase
+                sx={{ ml: 1, flex: 1}}
+                inputProps={{ 'aria-label': 'search' }}
+                type="text"
+                placeholder="Search jobs and courses..."
+                value={searchQuery}
+                onChange={handleSearchChange}
               />
-            </React.Fragment>
+              <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                <SearchIcon />
+              </IconButton>
+            </Paper>
           </div>
         </div>
         <div className="categoriesSection">
@@ -182,35 +183,36 @@ const LandingPage = () => {
 
           </div>
         </div>
+        <h1>Welcome to Our App!</h1>
+        <p>We made this app to help people learn skills and find jobs in places that they love!</p>
+        <h2>Features:</h2>
+        {/* Existing features list */}
+        <ul>
+          <li>Search for jobs based on location, skills, and preferences</li>
+          <li>Explore a wide range of industries and career paths</li>
+          <li>Access comprehensive resources and learning materials</li>
+          <li>Connect with industry professionals and mentors</li>
+          <li>Get personalized job recommendations</li>
+          <li>Track your learning progress and achievements</li>
+        </ul>
+        
+        {/* How It Works section */}
+        <h2>How It Works:</h2>
+        <ul>
+          <li>Create an account to get started</li>
+          <li>Set your preferences and indicate your desired skills and location</li>
+          <li>Explore the available job listings and learning resources</li>
+          <li>Apply for jobs that match your interests and qualifications</li>
+          <li>Connect with other users and industry professionals to expand your network</li>
+          <li>Track your job applications and interview progress</li>
+          <li>Continuously learn and enhance your skills to improve your career prospects</li>
+        </ul>
+        {/* Join Our Community section */}
+        <h3>Sign up now to start your journey towards a fulfilling and successful career!</h3>
       </div>
     </ThemeProvider>
     </div>
   );
 };
-
-const debounce = (func, delay) => {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => func.apply(this, args), delay);
-  };
-};
-
-const getData = async (query) => {
-  if (!query) {
-    return [];
-  }
-
-  try {
-    const response = await axios.get(`http://localhost:3000/gigsLookUp/${query}`);
-    console.log(response);
-    return response.data.gigsResults;
-    
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return [];
-  }
-};
-
 
 export default LandingPage;

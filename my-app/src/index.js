@@ -21,6 +21,8 @@ import WebDesign from './components/WebDesign';
 import CyberSecurity from "./components/CyberSecurity";
 import Homepage from './components/Homepage';
 import ProfileCreation from './components/ProfileCreation';
+import SearchItem from './components/SearchItem';
+import { JobProvider } from './components/JobContext';
 
 import {
   createBrowserRouter,
@@ -108,6 +110,10 @@ const router = createBrowserRouter([
   element:<ProfileCreation/>
 },
 {
+  path:"/SearchItem",
+  element: <SearchItem/>
+},
+{
   path:"/myjobs",
   element:<MyJobs/>
 }
@@ -118,7 +124,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <JobProvider>
     <RouterProvider router={router} />
+    </JobProvider>
   </React.StrictMode>
 );
 
