@@ -18,10 +18,10 @@ const RegUI = () => {
           <h2 className='signUpInstruction'>Join as a</h2>
           <div className='iconDiv'>   
             <Link to="../register2Client" className='linkUnstyled'>       
-              <div className="client"><PersonSearchIcon className='clientIcon'/><p className='iconText'>Client</p></div>
+              <div className="client"><PersonSearchIcon className='clientIcon'/><p className='iconText darkText'>Client</p></div>
             </Link>
             <Link to="../register2" className='linkUnstyled'>
-              <div className='jobSeeker'><WorkOutlineIcon className='jobSeekerIcon'/><p className='iconText'>Jobseeker</p></div>
+              <div className='jobSeeker'><WorkOutlineIcon className='jobSeekerIcon'/><p className='iconText lightText'>Jobseeker</p></div>
             </Link>
           </div>
 
