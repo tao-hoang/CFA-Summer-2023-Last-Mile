@@ -6,6 +6,7 @@ import SpecificJob from './SpecificJob';
 import LandingNav from './LandingNav';
 import { Button} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Cards from './Cards'
 const theme = createTheme({
   palette: {
     primary: {main: '#0a1128'},
