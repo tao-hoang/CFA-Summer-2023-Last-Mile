@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import "../css/ProfileCreation.css"
+import GitHubIcon from '@mui/icons-material/GitHub';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
 const ProfileForm = () => {
   // State variables to store form data
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [otherNames, setOtherNames] = useState('');
   const [pronouns, setPronouns] = useState('');
+  const [aboutMe, setAboutMe] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [education, setEducation] = useState('');
@@ -30,7 +34,6 @@ const ProfileForm = () => {
     catch (error) {
       // If there's an error, handle it here (e.g., show an error message)
       throw new Error(error.message);
-      console.log(error);
     }
   };
   //when submitted, try to edit profile
@@ -41,6 +44,7 @@ const ProfileForm = () => {
       lastName,
       otherNames,
       pronouns,
+      aboutMe,
       country,
       city,
       education,
@@ -58,17 +62,21 @@ const ProfileForm = () => {
     setLastName('');
     setOtherNames('');
     setPronouns('');
+    setAboutMe('');
     setCountry('');
     setCity('');
     setEducation('');
     setCertifications('');
   };
-
+  let handleResumeChange=()=>{
+    //set resume
+  }
   return (
-    <form onSubmit={handleFormSubmit} className='profileForm'>
+    <div>
+    <form onSubmit={handleFormSubmit} id="profileForm" className='profileForm'>
       <div>
-        <label htmlFor="firstName">First Name:</label>
-        <input
+        <label htmlFor="firstName">First Name*</label>
+        <input className='profileInput'
           type="text"
           id="firstName"
           value={firstName}
@@ -77,8 +85,8 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name:</label>
-        <input
+        <label htmlFor="lastName">Last Name*</label>
+        <input className='profileInput'
           type="text"
           id="lastName"
           value={lastName}
@@ -87,8 +95,8 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="otherNames">Other Names:</label>
-        <input
+        <label htmlFor="otherNames">Other Names</label>
+        <input className='profileInput'
           type="text"
           id="otherNames"
           value={otherNames}
@@ -96,17 +104,25 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="pronouns">Pronouns:</label>
-        <input
+        <label htmlFor="pronouns">Pronouns</label>
+        <input className='profileInput'
           type="text"
           id="pronouns"
           value={pronouns}
           onChange={(e) => setPronouns(e.target.value)}
         />
       </div>
+      <div id='aboutMeDiv'>
+        <label htmlFor="aboutMe">About me</label>
+        <textarea 
+          id="aboutMe"
+          value={aboutMe}
+          onChange={(e) => setAboutMe(e.target.value)}
+          />
+      </div>
       <div>
-        <label htmlFor="country">Country:</label>
-        <input
+        <label htmlFor="country">Country</label>
+        <input className='profileInput'
           type="text"
           id="country"
           value={country}
@@ -114,8 +130,8 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="city">City:</label>
-        <input
+        <label htmlFor="city">City</label>
+        <input className='profileInput'
           type="text"
           id="city"
           value={city}
@@ -123,8 +139,8 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="education">Education:</label>
-        <input
+        <label htmlFor="education">Education</label>
+        <input className='profileInput'
           type="text"
           id="education"
           value={education}
@@ -132,16 +148,24 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="certifications">Certifications:</label>
-        <input
+        <label htmlFor="certifications">Certifications</label>
+        <input className='profileInput'
           type="text"
           id="certifications"
           value={certifications}
           onChange={(e) => setCertifications(e.target.value)}
         />
       </div>
-      <button type="submit">Submit</button>
     </form>
+      <div className='bottomFields'>
+        <label htmlFor="resumeUpload" className='profileResumeUpload'>
+          <p className='profileBottomText'><UploadFileIcon  className='formIcon'/> Upload your resume</p>
+        </label>
+        <div className='gitHubLink'><p className='profileBottomText'><GitHubIcon className='formIcon'/> https://github.com/</p> <input className='profileInput' /></div>
+      </div>
+      <button className='profileButton clickable' type="submit" form='profileForm'>Save</button>
+      <input type='file' id="resumeUpload" onChange={handleResumeChange}/>
+    </div>
   );
 };
 

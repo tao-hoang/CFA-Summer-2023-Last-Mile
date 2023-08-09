@@ -171,6 +171,15 @@ ul.signUpInstruction li.invalid {
 .iconText{
     font-family: "montserrat";
     font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+.lightText{
+    color:#fefcfb;
+}
+.darkText{
+    color:#0a1128;
+
 }
 .iconDiv{
     display: flex;
