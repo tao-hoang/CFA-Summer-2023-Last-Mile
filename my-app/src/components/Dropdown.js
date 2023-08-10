@@ -85,7 +85,7 @@ export default function Dropdown(props) {
         <Divider />
         <MenuItem onClick={gotoProfle}>
           <ListItemIcon><ManageAccountsIcon/></ListItemIcon>
-           My Profile
+           Edit My Profile
         </MenuItem>
         <MenuItem onClick={ ()=>{
                     handleClose();

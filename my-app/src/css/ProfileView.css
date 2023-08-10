@@ -14,3 +14,17 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.acount-info{
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#edit-button{
+    height: 50px;
+    border-radius: 30px;
+    background-color: #0A1128 ;
+    color:#fefcfb;
+    border: solid #0A1128;
+    font-size: 15px;
+}
