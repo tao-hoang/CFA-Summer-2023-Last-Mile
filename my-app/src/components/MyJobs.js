@@ -5,6 +5,7 @@ import axios from "axios";
 import SpecificJob from './SpecificJob';
 import LandingNav from "./LandingNav";
 import axiosRateLimit from 'axios-rate-limit';
+import JobCard from "./JobCard";
 const http = axiosRateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000 });
 const MyJobs = (gigIds) => {
 
@@ -42,19 +43,16 @@ const MyJobs = (gigIds) => {
       <div className='container'>
         <LandingNav/>
        <h1>My Jobs</h1>
+       <div className="flexy">
        {gigs.map((item) => (
-        <SpecificJob
+        <JobCard
         key = {item._id}
         jobTitle = {item.jobname}
         jobDesc = {item.description}
         payment = {item.pay}
-
-
-
-
-
         />
       ))}
+      </div>
          </div>
     );
 
