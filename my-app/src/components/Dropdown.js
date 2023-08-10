@@ -97,7 +97,10 @@ export default function Dropdown(props) {
           <ListItemIcon><BookmarkBorderIcon/></ListItemIcon>
            Saved Jobs
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={()=>{
+          handleClose();
+          navigate("/myjobs");
+        }}>
           <ListItemIcon><PostAddOutlinedIcon/></ListItemIcon>
           Post a Job
         </MenuItem>
