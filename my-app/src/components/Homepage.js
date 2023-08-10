@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Route, Routes } from "react-router-dom";
 import "../css/Homepage.css";
 import LandingNav from "./LandingNav";
@@ -24,7 +24,7 @@ const Homepage = () => {
       method: 'get',
       baseURL: 'http://localhost:3000', // Update with your API endpoint
       responseType: 'json',
-      url: '/homepage/design', // Update with your API route
+      url: '/jobslisting/dev', // Update with your API route
     })
       .then(function (response) {
         console.log(response.data);
@@ -34,6 +34,10 @@ const Homepage = () => {
         console.error(error);
       });
   }
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const theme = createTheme({
     palette: {
@@ -90,7 +94,7 @@ const Homepage = () => {
 
           <div className="homepage">
       <h1>Welcome to connectIT</h1>
-      <Cards gigs={gigs} /> {/* Rendering the Cards component */}
+      <Cards gigs={gigs} />
     </div>
   </div>
   </div>

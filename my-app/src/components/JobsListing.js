@@ -83,7 +83,7 @@ const JobsListing = () => {
           Reload
         </Button>
       </div>
-      <Cards gigs={gigs} /> {/* Rendering the Cards component */}
+      <Cards gigs={gigs} />
     </div>
   );
 };
