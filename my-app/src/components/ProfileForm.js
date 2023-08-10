@@ -44,7 +44,7 @@ const ProfileForm = () => {
     console.count("user load")
   if(localStorage.user){
     setUser(JSON.parse(localStorage.user))
-    setFirstName(user.fname)//give the deafualt values 
+    setFirstName(user.fname)//give the default values 
     setLastName(user.lname)
     }
   }
