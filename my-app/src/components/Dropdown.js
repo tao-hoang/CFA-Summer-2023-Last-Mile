@@ -44,7 +44,10 @@ export default function Dropdown(props) {
     handleClose();
     navigate("/profilecreation")
   }
- 
+  const gotoMyProfle = () =>{
+    handleClose();
+    navigate("/myprofile")
+  }
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -75,7 +78,7 @@ export default function Dropdown(props) {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={gotoMyProfle}>
           <ListItemAvatar><Avatar src={baseURL +'/image/'+user.pfp}/></ListItemAvatar>
            {user.fname + ' '+ user.lname} 
         </MenuItem>
