@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import axios from "axios";
 // import "../css/ProfileCreation.css"
 import "../css/GigCreation.css"
-import GitHubIcon from '@mui/icons-material/GitHub';
-import UploadFileIcon from '@mui/icons-material/UploadFile';
 const GigForm = () => {
   // State variables to store form data
   const [jobName, setjobName] = useState('');
@@ -15,7 +13,7 @@ const GigForm = () => {
   const [pay, setPay] = useState('');
   //set to current baseURL (of backend?)
   const baseURL = "http://localhost:3000";
-
+  //api call
   const editGig = async (userInfo, authToken) => {
     try {
       // Make the POST request to the creategig route
@@ -49,13 +47,13 @@ const GigForm = () => {
     })
     //FOR TESTING
     let myNewData={
-      jobname: "Cyber security",
-      categories: "Security",
-      city: "Seattle",
-      remote: "Remote",
-      duration: "12 months",
-      pay: 20000,
-      description: "This job require 2 years of experience in cyber security with strong skills to details etc",
+      jobname: jobName,
+      categories: categories,
+      city: city,
+      remote: remote,
+      duration: duration,
+      pay: pay,
+      description:description ,
     }
     let myToken=localStorage.token;
     editGig(myNewData,myToken);
@@ -68,9 +66,7 @@ const GigForm = () => {
     setDescription('');
     setPay('');
   };
-  let handleResumeChange=()=>{
-    //set resume
-  }
+
   return (
     <div>
     <form onSubmit={handleFormSubmit} id="gigForm" className='gigForm'>
@@ -131,22 +127,15 @@ const GigForm = () => {
         />
       </div>
       <div id='descriptionDiv'>
-        <label htmlFor="description">Description</label>
+        <label htmlFor="gigDescription">Description</label>
         <textarea 
-          id="description"
+          id="gigDescription"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           />
       </div>
     </form>
-      <div className='bottomFields'>
-        <label htmlFor="resumeUpload" className='profileResumeUpload'>
-          <p className='profileBottomText'><UploadFileIcon  className='formIcon'/> Upload your resume</p>
-        </label>
-        <div className='gitHubLink'><p className='profileBottomText'><GitHubIcon className='formIcon'/> https://github.com/</p> <input className='gigInput' /></div>
-      </div>
       <button className='profileButton clickable' type="submit" form='profileForm'>Save</button>
-      <input type='file' id="resumeUpload" onChange={handleResumeChange}/>
     </div>
   );
 };

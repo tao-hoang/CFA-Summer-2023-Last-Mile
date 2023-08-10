@@ -11,24 +11,20 @@ src: url("./fonts/Lora.ttf");
     font-family: "lora";
     display: grid;
     grid-template-columns:  1fr 1fr;
-    grid-template-rows:  repeat(2, 1fr) 2fr repeat(2, 1fr) ;
+    grid-template-rows:  repeat(3, 1fr) 2fr ;
     gap: 10px;
     width: 800px;
     margin: auto;
     margin-top: 90px;
 }
-/* .gigFromContainer{
-    width: 800px;
-    margin: auto;
-} */
-.gigFrom div {
-    display: flex;
-    flex-direction: column;
+.gigForm div {
+    /* display: flex;
+    flex-direction: column; */
     width: 95%;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
-.gigFrom label {
+.gigForm label {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 18px;
@@ -36,7 +32,7 @@ src: url("./fonts/Lora.ttf");
     font-weight: normal;
 }
 
-.gigFrom input {
+.gigForm input {
     width: 100%;
     padding: 5px;
     border-radius: 10px;
@@ -44,14 +40,16 @@ src: url("./fonts/Lora.ttf");
     border-width: 1px;
 }
 
-#aboutMeDiv {
+#descriptionDiv {
     width: 100%;
     grid-column: 1 / span 2; 
 }
-#aboutMe{
+#gigDescription{
     font-family: "montserrat";
     font-size: 30px;
-    height: 100%;
+    height: 100px;
+    max-height: 100px;
+    resize: none;
     width: 98%;
     max-width: 800px;
     border-radius: 10px;
@@ -73,45 +71,14 @@ src: url("./fonts/Lora.ttf");
     border: solid #0A1128;
     font-size: 24px;
 }
-.bottomFields{
-    font-family: "montserrat";
-    height: 100px;
-    width: 800px;
-    margin: auto;
-    display: flex;
-    gap: 20px;
-}
-.profileResumeUpload{
-    color:#0A1128 !important;
-    padding: 8px;
-    display: flex;
-    border: solid #0A1128 1px;
-    flex-grow: 1;
-    border-radius: 20px;
-    gap: 10px;
-    align-items: center;
-}
-.gitHubLink{
-    color:#0A1128 !important;
-    padding: 8px;
-    display: flex;
-    flex-grow: 2;
-    border: solid #0A1128 1px;
-    align-items: center;
-    border-radius: 20px;
-    gap: 10px;
-}
+
 .formIcon{
     color:#0A1128 !important;
     font-size: 50px !important;
     display: inline-block;
     vertical-align: middle;
 }
-.profileBottomText{
-    color:#0A1128 !important;
-    font-size: 20px;
-    font-weight: 500;
-}
+
 .gigInput{
     font-size: 30px;
     border-radius: 10px;
@@ -187,8 +154,5 @@ src: url("./fonts/Lora.ttf");
     cursor: pointer;
 }
 #pfpInput{
-    display: none;
-}
-#resumeUpload{
     display: none;
 }

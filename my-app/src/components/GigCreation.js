@@ -7,43 +7,6 @@ import { useState } from "react";
 let GigCreation=()=>{
     const baseURL = "http://localhost:3000";
     let myToken=localStorage.token;
-    //pfp image setting
-    const [selectedImage, setSelectedImage] = useState(null);
-
-    const handleImageChange = (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        const imageURL = URL.createObjectURL(file);
-        setSelectedImage(imageURL);
-
-        // Create a FormData object to send the image file
-        const formData = new FormData();
-        formData.append('avatar', file);
-        //axios post
-        editProfilePic(formData,myToken);
-      } else {
-        setSelectedImage(null);
-      }
-    };
-    const editProfilePic = async ( formData, authToken ) => {
-        try {
-          // Make the POST request to the modifyprofile route
-          const response = await axios.post(`${baseURL}/changepfp`, formData,
-          {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-                'x-access-token':authToken, 
-            },
-          });
-          // If the request is successful, return the response data
-          console.log('Upload success: ',response);
-          return response.data;
-        }
-        catch (error) {
-          // If there's an error, handle it here (e.g., show an error message)
-          throw new Error(error.message);
-        }
-      };
     return(
         <div className="profileCreationHolder">
             <LandingNav/>
@@ -57,11 +20,9 @@ let GigCreation=()=>{
                 </div>
                 <div className="profileBanner">
                         <AddAPhotoIcon className="cameraIcon bannerCamera clickable"/>
-                        <label htmlFor="pfpInput" className="profilePic clickable" style={{
-                            backgroundImage:`url(${selectedImage})`,
-                        }}><AddAPhotoIcon className="cameraIcon"/></label>
+                        <div  className="profilePic clickable" >
+                        <AddAPhotoIcon className="cameraIcon"/></div>
                 </div>
-                <input type="file" accept="image/*" onChange={handleImageChange} id="pfpInput"/>
                 <GigForm />
             </div>
         </div>
