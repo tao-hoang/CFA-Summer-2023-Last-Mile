@@ -25,6 +25,8 @@ import LandingNav from "./LandingNav"
 
 const baseURL = "http://localhost:3000/register";
 const RegUI = () => {
+    const [fname, setfname] = useState('')
+    const [lname, setlname] =useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -62,8 +64,8 @@ const RegUI = () => {
   
   
         axios.post(baseURL, {
-          "fname":"first_name",
-          "lname":"last_name",
+          "fname":fname,
+          "lname":lname,
           "email": email,
           "password":password
         }
@@ -119,6 +121,12 @@ const RegUI = () => {
           <h1 className='welcomeMessage'>Create an account</h1>
           <h3 className='signUpInstruction'>Join our network of cool people yippeeeeeeee</h3>
           <form onSubmit={handleRegistration}>
+            <div className='inputGroup'>
+              <label htmlFor='fname' className='formLabel'>First Name</label>
+              <input id="fname" className='formInput' value={fname} onChange={(e) => setfname(e.target.value)} required></input>
+              <label htmlFor='lnamess' className='formLabel'>Last Name</label>
+              <input id='lname' className='formInput' value={lname} onChange={(e) => setlname(e.target.value)} required></input>
+            </div>
             <div className='inputGroup'>
               <label className='formLabel' htmlFor='emailInput'>Email</label>
               <input className='formInput' id="emailInput" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
