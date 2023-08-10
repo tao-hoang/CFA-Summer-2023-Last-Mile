@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "montserrat";
+    src: url("./fonts/Montserrat-VariableFont_wght.ttf");
+  }
+@font-face {
+font-family: "lora";
+src: url("./fonts/Lora.ttf");
+}
+
+.gigForm{
+    font-family: "lora";
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows:  repeat(3, 1fr) 2fr ;
+    gap: 10px;
+    width: 800px;
+    margin: auto;
+    margin-top: 90px;
+}
+.gigForm div {
+    /* display: flex;
+    flex-direction: column; */
+    width: 95%;
+    /* padding-bottom: 30px; */
+}
+
+.gigForm label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    color:rgb(99, 99, 99);
+    font-weight: normal;
+}
+
+.gigForm input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border-style:solid;
+    border-width: 1px;
+}
+
+#descriptionDiv {
+    width: 100%;
+    grid-column: 1 / span 2; 
+}
+#gigDescription{
+    font-family: "montserrat";
+    font-size: 30px;
+    height: 100px;
+    max-height: 100px;
+    resize: none;
+    width: 98%;
+    max-width: 800px;
+    border-radius: 10px;
+    border-style:solid;
+    border-width: 1px;
+    /* font-weight: 500; */
+}
+  
+.profileButton {
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 50px;
+    width: 110px;
+    border-radius: 30px;
+    background-color: #0A1128 ;
+    color:#fefcfb;
+    border: solid #0A1128;
+    font-size: 24px;
+}
+
+.formIcon{
+    color:#0A1128 !important;
+    font-size: 50px !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gigInput{
+    font-size: 30px;
+    border-radius: 10px;
+    border-style:solid;
+    border-width: 1px;
+    width: 210px;
+}
+/* *{
+    border: solid black;
+} */
+.profileCreationHero{
+    background-image: url(../images/profileForm.png);
+    height: 300px;
+    min-width: 500px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 1600px;
+    margin: auto;
+}
+.profileCreationContent{
+    max-width: 1600px;
+    margin: auto;
+}
+.welcomeTextProfile{
+    width:400px;
+    padding-top:60px ;
+    padding-left:220px;
+    font-family: "lora" ;
+  }
+.profileBanner{
+    height: 200px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: lightgray;
+    width: 1100px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    border-style:solid lightgray;;
+    border-width: 1px;
+    position: relative;
+}
+.profilePic{
+    height: 160px;
+    width: 160px;
+    background-color: rgb(173, 173, 173);
+    border-radius: 50%;
+    border: solid white ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: -80px;
+    left: 50px;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cameraIcon{
+    font-size: 50px !important;
+}
+.bannerCamera{
+    display: inline-block !important;
+    position: relative !important;
+    top:180px;
+    left: 980px;
+
+
+}
+.clickable{
+    cursor: pointer;
+}
+#pfpInput{
+    display: none;
+}

@@ -34,10 +34,10 @@ const Homepage = () => {
         console.error(error);
       });
   }
-
   useEffect(() => {
     getData();
   }, []);
+
 
   const theme = createTheme({
     palette: {
@@ -91,10 +91,10 @@ const Homepage = () => {
               </Paper>
             </div>
           </div>
-
           <div className="homepage">
       <h1>Welcome to connectIT</h1>
       <Cards gigs={gigs} />
+
     </div>
   </div>
   </div>
