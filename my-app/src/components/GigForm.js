@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from "axios";
-// import "../css/ProfileCreation.css"
 import "../css/GigCreation.css"
 const GigForm = () => {
   // State variables to store form data
@@ -11,14 +10,15 @@ const GigForm = () => {
   const [duration, setDuration] = useState('');
   const [description, setDescription] = useState('');
   const [pay, setPay] = useState('');
+  //WIP
+  const [employer, setEmployer] = useState('');
   //set to current baseURL (of backend?)
   const baseURL = "http://localhost:3000";
   //api call
-  const editGig = async (userInfo, authToken) => {
+  const editGig = async (data, authToken) => {
     try {
       // Make the POST request to the creategig route
-
-      const response = await axios.post(`${baseURL}/creategig`, userInfo, {
+      const response = await axios.post(`${baseURL}/creategig`, data, {
         headers: {
           'Content-Type': 'application/json',
           'x-access-token':authToken, 
@@ -36,26 +36,31 @@ const GigForm = () => {
   //when submitted, try to create gig
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log({
-      jobName,
-      categories,
-      remote,
-      city,
-      duration,
-      description,
-      pay,
-    })
-    //FOR TESTING
+
     let myNewData={
       jobname: jobName,
       categories: categories,
       city: city,
       remote: remote,
       duration: duration,
-      pay: pay,
+      pay: Number(pay),
       description:description ,
+      employer: "Employer placeholder",
     }
+    //FOR TESTING
+    let myTestData={
+      jobname: "jobName",
+      categories: "categories",
+      city: "city",
+      remote: "remote",
+      duration: "duration",
+      pay: 6,
+      description:"description" ,
+      employer: "Employer placeholder",
+    }
+    console.log(myNewData);
     let myToken=localStorage.token;
+    //call api function
     editGig(myNewData,myToken);
     // Reset the form after submission
     setjobName('');
@@ -135,7 +140,7 @@ const GigForm = () => {
           />
       </div>
     </form>
-      <button className='profileButton clickable' type="submit" form='profileForm'>Save</button>
+      <button className='profileButton clickable' type="submit" form='gigForm'>Save</button>
     </div>
   );
 };
