@@ -99,7 +99,7 @@ export default function Dropdown(props) {
         </MenuItem>
         <MenuItem onClick={()=>{
           handleClose();
-          navigate("/myjobs");
+          navigate("/gigcreation");
         }}>
           <ListItemIcon><PostAddOutlinedIcon/></ListItemIcon>
           Post a Job
