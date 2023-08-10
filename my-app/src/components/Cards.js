@@ -6,7 +6,7 @@ const Card = ({ jobTitle, jobDesc, category, employer, payment, isActive }) => {
   const [activeCardIndex2, setActiveCardIndex2] = useState(0);
 
   const cardsData1 = [
-    { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
+    { id: 1, title: 'Card 1', description: 'This is the descriptin for Card 1' },
     { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
     { id: 3, title: 'Card 3', description: 'This is the description for Card 3' },
   ];
