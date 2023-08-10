@@ -30,6 +30,7 @@ export default function ProfileView(){
                 <div className='acount-info'>
                 <h3>First Name: {user.fname}</h3>
                 <h3>Last Name: {user.lname}</h3>
+                {user.hasOwnProperty('about')?<h3>About: {user.about}</h3>:<h3>de nada</h3>}
                 <h3>Email: <a href={"mailto: "+user.email}>{user.email}</a></h3>
                 <Button id='edit-button' endIcon={<ManageAcountsIcon/>} onClick={()=>{navigate('/profilecreation')}}>
                     update information   

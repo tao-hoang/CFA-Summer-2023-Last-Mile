@@ -4,10 +4,11 @@ import "../css/ProfileCreation.css"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import axiosRateLimit from 'axios-rate-limit';
+import { useNavigate } from 'react-router-dom';
 const http = axiosRateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000 });
 const ProfileForm = () => {
   // State variables to store form data
-  const [user, setUser] = useState(JSON.parse(localStorage.user))
+  const [user, setUser] = useState(localStorage.user? JSON.parse(localStorage.user):{})
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [otherNames, setOtherNames] = useState('');
@@ -17,6 +18,8 @@ const ProfileForm = () => {
   const [city, setCity] = useState('');
   const [education, setEducation] = useState('');
   const [certifications, setCertifications] = useState('');
+  const navigate = useNavigate()
+
   //set to current baseURL (of backend?)
   const baseURL = "http://localhost:3000";
   const getData = async () =>{
@@ -46,11 +49,12 @@ const ProfileForm = () => {
     setUser(JSON.parse(localStorage.user))
     setFirstName(user.fname)//give the default values 
     setLastName(user.lname)
+    setAboutMe(user.about)
     }
   }
-    useEffect(
-      getUser,[]
-    )
+  useEffect(
+    getUser,[]
+  )
   
   const editUserProfile = async (userInfo, authToken) => {
     try {
@@ -89,6 +93,7 @@ const ProfileForm = () => {
     let myNewData={
       "fname":firstName,
       "lname":lastName,
+      "about":aboutMe
     }
     let myToken=localStorage.token;
     await editUserProfile(myNewData,myToken);
@@ -98,11 +103,13 @@ const ProfileForm = () => {
     // setLastName('');
     setOtherNames('');
     setPronouns('');
-    setAboutMe('');
+    //setAboutMe('');
     setCountry('');
     setCity('');
     setEducation('');
     setCertifications('');
+    navigate("/myprofile")
+
   };
   let handleResumeChange=()=>{
     //set resume
