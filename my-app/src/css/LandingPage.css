@@ -53,6 +53,8 @@
 .categoryLink{
   text-align: center;
   width: 17%;
+  font-family: "lora";
+  font-weight: 600;
 }
 .categoryIcon{
   font-size: 70px !important;

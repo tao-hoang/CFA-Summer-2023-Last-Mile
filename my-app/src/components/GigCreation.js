@@ -1,7 +1,6 @@
 import LandingNav from "./LandingNav"
 import GigForm from "./GigForm"
 import React from "react"
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import axios from "axios";
 import { useState } from "react";
 let GigCreation=()=>{
@@ -19,9 +18,6 @@ let GigCreation=()=>{
                     </div>
                 </div>
                 <div className="profileBanner">
-                        <AddAPhotoIcon className="cameraIcon bannerCamera clickable"/>
-                        <div  className="profilePic clickable" >
-                        <AddAPhotoIcon className="cameraIcon"/></div>
                 </div>
                 <GigForm />
             </div>

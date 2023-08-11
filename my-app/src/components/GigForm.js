@@ -25,7 +25,8 @@ const GigForm = () => {
         },
       });
       // If the request is successful, return the response data
-      console.log(response)
+      console.log(response);
+      alert("Gig posted successfully!");
       return response.data;
     }
     catch (error) {
@@ -45,7 +46,7 @@ const GigForm = () => {
       duration: duration,
       pay: Number(pay),
       description:description ,
-      employer: "Employer placeholder",
+      employer: employer,
     }
     //FOR TESTING
     let myTestData={
@@ -76,7 +77,7 @@ const GigForm = () => {
     <div>
     <form onSubmit={handleFormSubmit} id="gigForm" className='gigForm'>
       <div>
-        <label htmlFor="jobName">Job Title*</label>
+        <label htmlFor="jobName">Job Title<span className='blueText'>*</span></label>
         <input className='gigInput'
           type="text"
           id="jobName"
@@ -86,13 +87,33 @@ const GigForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="categories">Category*</label>
+        <label htmlFor="categories">Categories<span className='blueText'>*</span></label>
         <input className='gigInput'
           type="text"
           id="categories"
           value={categories}
           onChange={(e) => setCategories(e.target.value)}
           required
+        />
+      </div>
+      <div>
+        <label htmlFor="pay">Pay<span className='blueText'>*</span></label>
+        <input className='gigInput'
+          required
+          type="text"
+          id="pay"
+          value={pay}
+          onChange={(e) => setPay(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="employer">Employer<span className='blueText'>*</span></label>
+        <input className='gigInput'
+          required
+          type="text"
+          id="employer"
+          value={pay}
+          onChange={(e) => setEmployer(e.target.value)}
         />
       </div>
       <div>
@@ -122,18 +143,10 @@ const GigForm = () => {
           onChange={(e) => setDuration(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="pay">Pay</label>
-        <input className='gigInput'
-          type="text"
-          id="pay"
-          value={pay}
-          onChange={(e) => setPay(e.target.value)}
-        />
-      </div>
       <div id='descriptionDiv'>
-        <label htmlFor="gigDescription">Description</label>
-        <textarea 
+        <label htmlFor="gigDescription">Description<span className='blueText'>*</span></label>
+        <textarea
+          required 
           id="gigDescription"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
