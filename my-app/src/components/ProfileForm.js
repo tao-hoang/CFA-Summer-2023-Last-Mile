@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import "../css/ProfileCreation.css"
 import resumeImage from  "../images/resume.png"
@@ -9,8 +9,12 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 import SaveIcon from '@mui/icons-material/Save';
 
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import axiosRateLimit from 'axios-rate-limit';
+const http = axiosRateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000 });
 const ProfileForm = () => {
   // State variables to store form data
+  const [user, setUser] = useState(JSON.parse(localStorage.user))
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [otherNames, setOtherNames] = useState('');
@@ -27,11 +31,44 @@ const ProfileForm = () => {
   const baseURL = "http://localhost:3000";
   let myToken=localStorage.token;
 
+  const getData = async () =>{
+    console.count()
+    await axios({
+      method: 'post',
+      baseURL: 'http://localhost:3000',
+      responseType: 'json',
+      url:'/currentuser',
+      headers: {"x-access-token": localStorage.token},
+      body:{"token": localStorage.token}
+    })
+      .then(function (response) {
+        //console.log(response.data)
+        localStorage.setItem("user", JSON.stringify(response.data))
+        
+    }).catch((Error) => {
+      console.log(Error)
+      console.log(JSON.parse(localStorage.user))
+      if(localStorage.token){
+        localStorage.removeItem("token")
+      }
+    });}
+  const getUser = () => {
+    console.count("user load")
+  if(localStorage.user){
+    setUser(JSON.parse(localStorage.user))
+    setFirstName(user.fname)//give the default values 
+    setLastName(user.lname)
+    }
+  }
+    useEffect(
+      getUser,[]
+    )
+  
   const editUserProfile = async (userInfo, authToken) => {
     try {
       // Make the POST request to the modifyprofile route
 
-      const response = await axios.post(`${baseURL}/modifyprofile`, userInfo, {
+      const response = await http.post(`${baseURL}/modifyprofile`, userInfo, {
         headers: {
           'Content-Type': 'application/json',
           'x-access-token':authToken, 
@@ -47,7 +84,7 @@ const ProfileForm = () => {
     }
   };
   //when submitted, try to edit profile
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log({
       firstName,
@@ -66,10 +103,11 @@ const ProfileForm = () => {
       "lname":lastName,
     }
     let myToken=localStorage.token;
-    editUserProfile(myNewData,myToken);
+    await editUserProfile(myNewData,myToken);
+    getData()
     // Reset the form after submission
-    setFirstName('');
-    setLastName('');
+    // setFirstName('');
+    // setLastName('');
     setOtherNames('');
     setPronouns('');
     setAboutMe('');

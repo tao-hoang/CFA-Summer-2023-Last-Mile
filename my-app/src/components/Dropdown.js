@@ -17,6 +17,7 @@ import axios from "axios";
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import PostAddOutlinedIcon from '@mui/icons-material/PostAddOutlined';
 export default function Dropdown(props) {
  
     
@@ -32,7 +33,7 @@ export default function Dropdown(props) {
     }
   }
     useEffect(
-      getUser,[]
+      getUser,[localStorage.user]
     )
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -96,7 +97,13 @@ export default function Dropdown(props) {
           <ListItemIcon><BookmarkBorderIcon/></ListItemIcon>
            Saved Jobs
         </MenuItem>
-        
+        <MenuItem onClick={()=>{
+          handleClose();
+          navigate("/gigcreation");
+        }}>
+          <ListItemIcon><PostAddOutlinedIcon/></ListItemIcon>
+          Post a Job
+        </MenuItem>
         
         
         

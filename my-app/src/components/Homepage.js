@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Route, Routes } from "react-router-dom";
 import "../css/Homepage.css";
 import LandingNav from "./LandingNav";
+import Cards from "./Cards";
+import axios from "axios";
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -15,8 +17,28 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const Homepage = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCardIndex1, setActiveCardIndex1] = useState(0);
-  const [activeCardIndex2, setActiveCardIndex2] = useState(0);
+  const [gigs, setGigs] = useState([]);
+
+  const getData = () => {
+    axios({
+      method: 'get',
+      baseURL: 'http://localhost:3000', // Update with your API endpoint
+      responseType: 'json',
+      url: '/jobslisting/dev', // Update with your API route
+    })
+      .then(function (response) {
+        console.log(response.data);
+        setGigs(response.data.gigsResults);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
+  useEffect(() => {
+    getData();
+  }, []);
+
+
   const theme = createTheme({
     palette: {
       primary: {
@@ -38,40 +60,6 @@ const Homepage = () => {
     event.preventDefault();
   };
 
-
-//Available Jobs
-const cardsData1 = [
-  { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
-  { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
-  { id: 3, title: 'Card 3', description: 'This is the description for Card 3' },
-];
-
-//Recommended Courses
-const cardsData2 = [
-  { id: 1, title: 'Card 1', description: 'This is the description for Card 1' },
-  { id: 2, title: 'Card 2', description: 'This is the description for Card 2' },
-  { id: 3, title: 'Card 3', description: 'This is the description for Card 3' },
-];
-
-  const handleArrowClick = (direction, section) => {
-    if (section === 1) {
-      setActiveCardIndex1((prevIndex) => {
-        if (direction === 'left') {
-          return prevIndex - 1 < 0 ? cardsData1.length - 1 : prevIndex - 1;
-        } else if (direction === 'right') {
-          return (prevIndex + 1) % cardsData1.length;
-        }
-      });
-    } else if (section === 2) {
-      setActiveCardIndex2((prevIndex) => {
-        if (direction === 'left') {
-          return prevIndex - 1 < 0 ? cardsData2.length - 1 : prevIndex - 1;
-        } else if (direction === 'right') {
-          return (prevIndex + 1) % cardsData2.length;
-        }
-      });
-    }
-  };
 
   return (
     <div className='landingBodyContainer'>
@@ -103,36 +91,10 @@ const cardsData2 = [
               </Paper>
             </div>
           </div>
-
           <div className="homepage">
       <h1>Welcome to connectIT</h1>
-      <div className="card-section">
-        <h2>Available Jobs</h2>
-        <div className="cards-container">
-          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 1)}>&#x2190;</span>
-          {cardsData1.map((card, index) => (
-            <div className={`card ${index === activeCardIndex1 ? 'active' : ''}`} key={card.id}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          ))}
-          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 1)}>&#x2192;</span>
-        </div>
-      </div>
+      <Cards gigs={gigs} />
 
-      <div className="card-section">
-        <h2>Recommended Courses</h2>
-        <div className="cards-container">
-          <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 2)}>&#x2190;</span>
-          {cardsData2.map((card, index) => (
-            <div className={`card ${index === activeCardIndex2 ? 'active' : ''}`} key={card.id}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          ))}
-          <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 2)}>&#x2192;</span>
-        </div>
-      </div>
     </div>
   </div>
   </div>
