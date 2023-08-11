@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import "../css/ProfileCreation.css"
+import resumeImage from  "../images/resume.png"
+
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Button, Input, Typography } from '@mui/material';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+
+import SaveIcon from '@mui/icons-material/Save';
+
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import axiosRateLimit from 'axios-rate-limit';
 const http = axiosRateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000 });
@@ -17,8 +24,13 @@ const ProfileForm = () => {
   const [city, setCity] = useState('');
   const [education, setEducation] = useState('');
   const [certifications, setCertifications] = useState('');
+  const [selectedResume, setSelectedResume] = useState(null);
+
+ 
   //set to current baseURL (of backend?)
   const baseURL = "http://localhost:3000";
+  let myToken=localStorage.token;
+
   const getData = async () =>{
     console.count()
     await axios({
@@ -104,9 +116,46 @@ const ProfileForm = () => {
     setEducation('');
     setCertifications('');
   };
-  let handleResumeChange=()=>{
+
+  const editProfileResume = async (formData, authToken)=>{
+    console.log(formData);
+    try {
+      const response = await axios.post(`${baseURL}/changeResume`, formData,
+      {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'x-access-token':authToken, 
+        },
+      });
+      console.log('Upload success', response)
+      return response.data;
+    } catch (error) {
+      throw new Error(error.message)
+    }
+    
+  };
+  
+  const handleResumeChange=(event)=>{
     //set resume
-  }
+    const file = event.target.files[0];
+    if(file){
+      const resumeURL = URL.createObjectURL(file);
+      setSelectedResume(resumeURL);
+
+      const formData = new FormData();
+      formData.append('resume', file);
+      //axios post 
+      console.log(formData);
+      editProfileResume(formData, myToken);
+    } else {
+      setSelectedResume(null);
+    }
+
+  };
+
+  
+ 
+
   return (
     <div>
     <form onSubmit={handleFormSubmit} id="profileForm" className='profileForm'>
@@ -193,15 +242,50 @@ const ProfileForm = () => {
         />
       </div>
     </form>
-      <div className='bottomFields'>
-        <label htmlFor="resumeUpload" className='profileResumeUpload'>
-          <p className='profileBottomText'><UploadFileIcon  className='formIcon'/> Upload your resume</p>
-        </label>
-        <div className='gitHubLink'><p className='profileBottomText'><GitHubIcon className='formIcon'/> https://github.com/</p> <input className='profileInput' /></div>
+    <div className="bottomFields" style={{marginBottom:20}}>
+      <label htmlFor="resumeUpload" className="profileResumeUpload">
+        <input
+          type="file"
+          id="resumeUpload"
+          className="profileResumeUpload"
+          onChange={handleResumeChange}
+        />
+        <Typography className="profileBottomText">
+          <CloudUploadIcon className="formIcon" />
+          Upload your resume
+        </Typography>
+      </label>
+      <div>
+  {selectedResume ? (
+    <>
+      <span>Resume Uploaded</span>
+      <img src={resumeImage} alt="Resume Icon" style={{ width: '50px', height: 'auto', marginLeft:20}} />
+    </>
+  ) : (
+    <span>No Resume Uploaded</span>
+  )}
+</div>
+          
+      <div className="gitHubLink">
+        <Typography className="profileBottomText">
+          <GitHubIcon className="formIcon" />
+          GitHub Repository Link
+        </Typography>
+        <Input className="profileInput" placeholder="https://github.com/" />
       </div>
-      <button className='profileButton clickable' type="submit" form='profileForm'>Save</button>
-      <input type='file' id="resumeUpload" onChange={handleResumeChange}/>
-    </div>
+      <Button
+        className="profileButton clickable"
+        type="submit"
+        form="profileForm"
+        variant="contained"
+        color="primary"
+        style={{marginTop:20, marginLeft:20}}
+        startIcon={<SaveIcon />}
+      >
+        Save
+      </Button>
+      </div>
+  </div>
   );
 };
 

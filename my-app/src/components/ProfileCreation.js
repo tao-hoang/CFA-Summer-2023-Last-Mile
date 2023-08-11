@@ -9,6 +9,7 @@ let ProfileCreation=()=>{
     let myToken=localStorage.token;
     //pfp image setting
     const [selectedImage, setSelectedImage] = useState(null);
+  
 
     const handleImageChange = (event) => {
       const file = event.target.files[0];
