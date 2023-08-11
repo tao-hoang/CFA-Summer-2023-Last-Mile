@@ -89,7 +89,7 @@ const LandingPage = () => {
             <React.Fragment key="unique-key">
               <Autocomplete
                 id="asynchronous-demo"
-                sx={{ width: 400 }}
+                sx={{ width: 400, borderRadius:1, backgroundColor: "rgba(255,255,255)", elevationColor: "rgba(255,255,255)"}}
                 open={open}
                 onOpen={() => setOpen(true)}
                 onClose={() => setOpen(false)}
