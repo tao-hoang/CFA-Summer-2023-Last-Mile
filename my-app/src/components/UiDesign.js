@@ -4,6 +4,7 @@ import JobsListing from './JobsListing';
 import "../css/Jobs.css";
 import axios from "axios";
 import SpecificJob from './SpecificJob';
+import LandingNav from "./LandingNav";
 
 const UiDesign = () => {
     const [uiJobs, setUiJobs] = useState([]);
@@ -30,6 +31,9 @@ const UiDesign = () => {
     
  
   return (  
+    <div className='landingBodyContainer'>
+    <LandingNav showLinks="true" />
+    <div className='landingBody'>
       <div className='container'>
                     
         <h1 className='header'>UI/UX Design</h1>
@@ -52,9 +56,10 @@ const UiDesign = () => {
                 your job search!
             </p>
         </div>
-         </div>
+        </div>
+        </div>
+        </div>
     );
-
 };
 
 

@@ -3,7 +3,7 @@ import JobsListing from './JobsListing';
 import "../css/Jobs.css";
 import axios from "axios";
 import SpecificJob from './SpecificJob';
-
+import LandingNav from "./LandingNav";
 
 const CyberSecurity = () => {
     const [cyberJobs, setCyberJobs] = useState([]);
@@ -28,6 +28,9 @@ const CyberSecurity = () => {
     }
 
   return (  
+    <div className='landingBodyContainer'>
+    <LandingNav showLinks="true" />
+    <div className='landingBody'>
       <div className='container'>
         <h1 className='header'>Cyber Security</h1>
             <p className='job-listing'>
@@ -48,6 +51,8 @@ const CyberSecurity = () => {
                 Make sure to check back frequently as new job postings are added regularly. Good luck with
                 your job search!
             </p>
+        </div>
+        </div>
         </div>
   );
 };
