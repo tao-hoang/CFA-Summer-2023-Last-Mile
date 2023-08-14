@@ -4,6 +4,7 @@ import "../css/Jobs.css";
 import axios from "axios";
 import SpecificJob from './SpecificJob';
 import LandingNav from "./LandingNav";
+import CircularProgress from '@mui/material/CircularProgress';
 import axiosRateLimit from 'axios-rate-limit';
 import JobCard from "./JobCard";
 const http = axiosRateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000 });
@@ -43,6 +44,8 @@ const MyJobs = (gigIds) => {
       <div className='container'>
         <LandingNav/>
        <h1>My Jobs</h1>
+       
+       {gigs.length==0?<div className="center"><CircularProgress size="60px"/></div> : 
        <div className="flexy">
        {gigs.map((item) => (
         <JobCard
@@ -53,6 +56,7 @@ const MyJobs = (gigIds) => {
         />
       ))}
       </div>
+      }
          </div>
     );
 
