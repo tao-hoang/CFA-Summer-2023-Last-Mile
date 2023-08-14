@@ -30,6 +30,7 @@ import {
 } from "react-router-dom";
 import JobsListing from './components/JobsListing';
 import MyJobs from './components/MyJobs';
+import ProfileView from './components/ProfileView';
 
 const router = createBrowserRouter([
   {
@@ -116,6 +117,10 @@ const router = createBrowserRouter([
 {
   path:"/myjobs",
   element:<MyJobs/>
+},
+{
+  path:"/myprofile",
+  element:<ProfileView/>
 },
 {
   path:"/gigcreation",
