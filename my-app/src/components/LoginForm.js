@@ -11,7 +11,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
 const baseURL = "https://bewildered-lime-jumpsuit.cyclic.app";
 const route = "/login"
-const awsapi = "http://ec2-52-91-204-97.compute-1.amazonaws.com:3000/"
+const awsapi = "http://ec2-3-95-155-67.compute-1.amazonaws.com:3000"
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -42,7 +42,7 @@ const LoginForm = () => {
       console.count()
       await axios({
         method: 'post',
-        baseURL: 'http://ec2-52-91-204-97.compute-1.amazonaws.com:3000',
+        baseURL: 'http://ec2-3-95-155-67.compute-1.amazonaws.com:3000',
         responseType: 'json',
         url:'/currentuser',
         headers: {"x-access-token": localStorage.token},

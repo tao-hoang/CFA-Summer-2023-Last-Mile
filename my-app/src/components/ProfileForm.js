@@ -29,14 +29,14 @@ const ProfileForm = () => {
   const [selectedResume, setSelectedResume] = useState('');
 
   //set to current baseURL (of backend?)
-  const baseURL = "http://ec2-52-91-204-97.compute-1.amazonaws.com:3000";
+  const baseURL = "http://ec2-3-95-155-67.compute-1.amazonaws.com:3000";
   let myToken=localStorage.token;
 
   const getData = async () =>{
     console.count()
     await axios({
       method: 'post',
-      baseURL: 'http://ec2-52-91-204-97.compute-1.amazonaws.com:3000',
+      baseURL: 'http://ec2-3-95-155-67.compute-1.amazonaws.com:3000',
       responseType: 'json',
       url:'/currentuser',
       headers: {"x-access-token": localStorage.token},

@@ -25,7 +25,7 @@ const JobsListing = () => {
   const getData = () => {
     axios({
       method: 'get',
-      baseURL: 'http://ec2-52-91-204-97.compute-1.amazonaws.com:3000', // Update with your API endpoint
+      baseURL: 'http://ec2-3-95-155-67.compute-1.amazonaws.com:3000', // Update with your API endpoint
       responseType: 'json',
       url: '/jobslisting/design', // Update with your API route
     })
