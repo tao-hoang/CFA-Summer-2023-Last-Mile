@@ -46,7 +46,7 @@ export default function Dropdown(props) {
   }
   const gotoMyProfle = () =>{
     handleClose();
-    navigate("/myprofile")
+    navigate("/userprofile/"+user._id)
   }
 
   const handleClose = () => {

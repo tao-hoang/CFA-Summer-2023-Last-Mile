@@ -118,7 +118,7 @@ const ProfileForm = () => {
     setCity('');
     setEducation('');
     setCertifications('');
-    navigate("/myprofile")
+    navigate("/homepage")
 
   };
 

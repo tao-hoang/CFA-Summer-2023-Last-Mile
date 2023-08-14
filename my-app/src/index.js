@@ -125,6 +125,9 @@ const router = createBrowserRouter([
 {
   path:"/gigcreation",
   element:<GigCreation/>
+},{
+  path:"/userprofile/:id",
+  element:<ProfileView/>
 }
   
 

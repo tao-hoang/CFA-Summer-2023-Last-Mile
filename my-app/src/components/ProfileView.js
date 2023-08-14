@@ -1,7 +1,7 @@
 import  React,{ useEffect, useState } from 'react';
-import { useNavigate, Link} from 'react-router-dom';
+import { useNavigate, Link,Routes, Route, useParams} from 'react-router-dom';
 
-
+import axios from "axios";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import ManageAcountsIcon from '@mui/icons-material/ManageAccountsOutlined'
@@ -9,23 +9,26 @@ import LandingNav from "./LandingNav";
 import "../css/ProfileCreation.css"
 import "../css/ProfileView.css"
 export default function ProfileView(){
+    const baseURL = "http://localhost:3000";
+    let { id } = useParams();
+    console.log(id)
     const[user, setUser] = useState({})
     const navigate = useNavigate();
-    const baseURL = "http://localhost:3000"
-    const getUser = () => {
+    const getUser = async () => {
         console.count("user load")
-      if(localStorage.user){
-        setUser(JSON.parse(localStorage.user))
-        }
+        let  c =  await axios.get(baseURL+'/userbyid/'+id)
+        console.log(c.data)
+        setUser(c.data)
       }
-        useEffect(
-          getUser,[localStorage.user]
+        useEffect(()=>{
+          getUser()
+        },[id]
         )
     return(
         <div>
             <LandingNav/>
             <div className="profileBanner" style={{backgroundImage:'url("https://64.media.tumblr.com/2842f06caddbfda985e150abc1e2b8e1/cc9cd637b26d5a89-47/s1280x1920/f55e3939a54c172d4672af907f883b36ed28126a.jpg")'}}>
-                        <Avatar id="profilePic" src={baseURL +'/image/'+user.pfp}/>
+                        <Avatar id="profilePic" src={"https://cfa-last-mile-backend.onrender.com" +'/image/'+user.pfp}/>
                         </div>
                 <div className='acount-info'>
                 <h3>First Name: {user.fname}</h3>
@@ -37,12 +40,6 @@ export default function ProfileView(){
                     update information   
                 </Button>
                 </div>
-
-
-
-            
-
-            
         </div>
     )
 }
