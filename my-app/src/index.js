@@ -119,13 +119,12 @@ const router = createBrowserRouter([
   element:<MyJobs/>
 },
 {
-<<<<<<< HEAD
   path:"/myprofile",
   element:<ProfileView/>
-=======
+},
+{
   path:"/gigcreation",
   element:<GigCreation/>
->>>>>>> main
 }
   
 
