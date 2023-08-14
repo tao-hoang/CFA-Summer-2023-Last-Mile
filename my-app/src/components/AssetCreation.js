@@ -30,7 +30,6 @@ const AssetCreation = () => {
         <div className='landingBodyContainer'>
             <LandingNav showLinks="true" />
             <div className='landingBody'>
-                <div className="body">
                     <div className="container">
                         <h1 className='header'>Asset Creation</h1>
                         <p className='job-listing'>
@@ -54,7 +53,6 @@ const AssetCreation = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 
