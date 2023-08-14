@@ -32,7 +32,27 @@ const RegUI = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-   
+    const getData = async () =>{
+      console.count()
+      await axios({
+        method: 'post',
+        baseURL: 'http://localhost:3000',
+        responseType: 'json',
+        url:'/currentuser',
+        headers: {"x-access-token": localStorage.token},
+        body:{"token": localStorage.token}
+      })
+        .then(function (response) {
+          //console.log(response.data)
+          localStorage.setItem("user", JSON.stringify(response.data))
+          
+      }).catch((Error) => {
+        console.log(Error)
+        console.log(JSON.parse(localStorage.user))
+        if(localStorage.token){
+          localStorage.removeItem("token")
+        }
+      });}
     const handleRegistration = (e) => {
       e.preventDefault();
 
@@ -70,9 +90,10 @@ const RegUI = () => {
           "password":password
         }
           )
-          .then((response) => {
+          .then(async (response) => {
             if(response.data.token){
               localStorage.setItem('token', response.data.token)
+              await getData();
               navigate('/profilecreation')
             }
 

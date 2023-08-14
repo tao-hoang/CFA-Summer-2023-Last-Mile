@@ -1,8 +1,12 @@
 import React from 'react';
 import "../css/CustomerSupport.css";
+import LandingNav from './LandingNav';
 
 const CustomerSupport = () => {
   return (  
+    <div className='landingBodyContainer'>
+    <LandingNav showLinks="true" />
+    <div className='landingBody'>
       <div className='container'>
         <h1 className='header'>Customer Support</h1>
             <h2 className=''>
@@ -44,6 +48,8 @@ const CustomerSupport = () => {
               <p className='contact-form'>Phone: +1 (123) 456-7890</p>
               <p className='contact-form'>Live Chat: Click on the chat icon in the bottom right corner of the page to chat with a support representative.</p>
             </p>
+        </div>
+        </div>
         </div>
   );
 };
