@@ -10,7 +10,10 @@
   line-height: 1.6;
   background-color: #f5f2e8;
 }
-
+.jobsContent{
+    max-width: 1600px;
+    margin: auto;
+  }
 .container {
   max-width: 960px;
   margin: 0 auto;

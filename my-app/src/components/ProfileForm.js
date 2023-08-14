@@ -26,6 +26,7 @@ const ProfileForm = () => {
   const [education, setEducation] = useState('');
   const [certifications, setCertifications] = useState('');
   const navigate = useNavigate()
+  const [selectedResume, setSelectedResume] = useState('');
 
   //set to current baseURL (of backend?)
   const baseURL = "http://localhost:3000";
@@ -164,7 +165,7 @@ const ProfileForm = () => {
     <div>
     <form onSubmit={handleFormSubmit} id="profileForm" className='profileForm'>
       <div>
-        <label htmlFor="firstName">First Name*</label>
+        <label htmlFor="firstName">First Name<span className='blueText'>*</span></label>
         <input className='profileInput'
           type="text"
           id="firstName"
@@ -174,7 +175,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name*</label>
+        <label htmlFor="lastName">Last Name<span className='blueText'>*</span></label>
         <input className='profileInput'
           type="text"
           id="lastName"

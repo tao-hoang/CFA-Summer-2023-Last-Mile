@@ -127,3 +127,6 @@ src: url("./fonts/Lora.ttf");
     color: inherit;
     text-decoration: inherit;
 }
+.clickable{
+    cursor: pointer;
+}

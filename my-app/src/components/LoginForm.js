@@ -82,7 +82,7 @@ const LoginForm = () => {
               <label className='formLabel' htmlFor='passwordInput'>Password</label>
               <input className='formInput' id="passwordInput" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </div>
-            <button className='loginButton' type="submit">Login</button>
+            <button className='loginButton clickable' type="submit">Login</button>
           </form>
           {error && <p>{error}</p>}
           <p className='smPrompt'><span className='smText'>or log in with</span></p>
@@ -96,7 +96,7 @@ const LoginForm = () => {
           {error && <p>{error}</p>}
       {/* ... (rest of the component) ... */}
           <Link to="../register">
-            <button className='newUserSignup'>New user? Create an account</button>
+            <button className='newUserSignup clickable'>New user? Create an account</button>
           </Link>
 
         </div>

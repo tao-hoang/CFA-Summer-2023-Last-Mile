@@ -61,6 +61,7 @@ const JobsListing = () => {
   return (
     <div>
       <LandingNav showLinks={localStorage.token == undefined} />
+      <div className='jobsListingContent'>
       <div id='header'>
         <h1>Find the perfect job for yourself.</h1>
         <p></p>
@@ -84,6 +85,7 @@ const JobsListing = () => {
         </Button>
       </div>
       <Cards gigs={gigs} />
+      </div>
     </div>
   );
 };
