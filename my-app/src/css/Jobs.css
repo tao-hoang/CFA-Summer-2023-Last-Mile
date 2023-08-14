@@ -9,7 +9,10 @@ body, html {
     font-family: Arial, sans-serif;
     line-height: 1.6;
   }
-  
+  .jobsContent{
+    max-width: 1600px;
+    margin: auto;
+  }
   .container {
     max-width: 960px;
     margin: 0 auto;

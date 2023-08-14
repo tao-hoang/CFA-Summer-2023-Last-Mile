@@ -71,6 +71,7 @@ const GigForm = () => {
     setDuration('');
     setDescription('');
     setPay('');
+    setEmployer("");
   };
 
   return (
@@ -112,7 +113,7 @@ const GigForm = () => {
           required
           type="text"
           id="employer"
-          value={pay}
+          value={employer}
           onChange={(e) => setEmployer(e.target.value)}
         />
       </div>

@@ -6,10 +6,9 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { useJobContext } from './JobContext';
 //header
-import { ButtonGroup } from '@mui/material';
+
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
 //search bar
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';

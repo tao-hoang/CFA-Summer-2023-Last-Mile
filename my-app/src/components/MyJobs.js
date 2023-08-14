@@ -39,21 +39,23 @@ const MyJobs = (gigIds) => {
       }
     useEffect(getUser,[])
     
-  return (  
+  return (
+    <div className="jobsContent">        
+      <LandingNav/>
       <div className='container'>
-        <LandingNav/>
        <h1>My Jobs</h1>
        <div className="flexy">
-       {gigs.map((item) => (
-        <JobCard
-        key = {item._id}
-        jobTitle = {item.jobname}
-        jobDesc = {item.description}
-        payment = {item.pay}
-        />
-      ))}
-      </div>
+        {gigs.map((item) => (
+          <JobCard
+          key = {item._id}
+          jobTitle = {item.jobname}
+          jobDesc = {item.description}
+          payment = {item.pay}
+          />
+        ))}
+        </div>
          </div>
+    </div>  
     );
 
 };
