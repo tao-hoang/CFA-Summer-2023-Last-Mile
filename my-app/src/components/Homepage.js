@@ -94,7 +94,6 @@ const Homepage = () => {
           <div className="homepage">
       <h1>Welcome to connectIT</h1>
       <Cards gigs={gigs} />
-
     </div>
   </div>
   </div>
