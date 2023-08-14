@@ -251,6 +251,7 @@ const ProfileForm = () => {
       <label htmlFor="resumeUpload" className="profileResumeUpload">
         <input
           type="file"
+          accept=".pdf"
           id="resumeUpload"
           className="profileResumeUpload"
           onChange={handleResumeChange}
