@@ -72,8 +72,7 @@ const LandingPage = () => {
     if (newValue) {
       setSelectedJob(newValue);
       navigate('/SearchItem');
-  }
-
+    }
   }
 
   return (

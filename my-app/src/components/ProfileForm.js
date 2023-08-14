@@ -26,6 +26,7 @@ const ProfileForm = () => {
   const [education, setEducation] = useState('');
   const [certifications, setCertifications] = useState('');
   const navigate = useNavigate()
+  const [selectedResume, setSelectedResume] = useState('');
 
   //set to current baseURL (of backend?)
   const baseURL = "http://localhost:3000";

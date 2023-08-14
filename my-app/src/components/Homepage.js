@@ -4,20 +4,52 @@ import "../css/Homepage.css";
 import LandingNav from "./LandingNav";
 import Cards from "./Cards";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+import { useJobContext } from './JobContext';
 //header
 import { ButtonGroup } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
+
 //search bar
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
 const Homepage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [gigs, setGigs] = useState([]);
+  const [searchResult, setSearchResult] = useState([]);
+  const [open, setOpen] = useState(false);
+
+  const debouncedGetData = debounce(async (query) => {
+    const response = await getResult(query);
+    console.log(response); 
+    setSearchResult(response);
+  }, 300); // Adjust the debounce time as needed
+
+  useEffect(() => {
+    if (!open) {
+      setSearchResult([]);
+    }
+  }, [open]);
+
+  const handleInputChange = (event, value) => {
+    setSearchQuery(value);
+    debouncedGetData(value);
+  };
+
+  const navigate = useNavigate();
+  const { setSelectedJob } = useJobContext();
+
+  const handleSearchItemClick = (event, newValue) => {
+    if (newValue) {
+      setSelectedJob(newValue);
+      navigate('/SearchItem');
+    }
+
+  }
+
+  
 
   const getData = () => {
     axios({
@@ -52,13 +84,13 @@ const Homepage = () => {
       fontFamily: "Montserrat",
     }
   });
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
+  // const handleSearchChange = (event) => {
+  //   setSearchQuery(event.target.value);
+  // };
 
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-  };
+  // const handleSearchSubmit = (event) => {
+  //   event.preventDefault();
+  // };
 
 
   return (
@@ -70,25 +102,23 @@ const Homepage = () => {
               <h1 className="welcomeHeader" style={{ marginBottom: 20 }}>Work to build yourself up.</h1>
               <p className="welcomeMessage" style={{ marginBottom: 50, fontSize: 19, fontFamily: "lora" }}>This is where you can find available jobs and recommended courses to learn new skills and build your portfolio.</p>
               <p className='searchPrompt'>What kind of work are you looking for?</p>
-              <Paper onSubmit={handleSearchSubmit}
-                component="form"
-                sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 375, opacity: 0.5, borderRadius: 2 }}
-              >
-                <IconButton sx={{ p: '10px' }} aria-label="menu">
-                  <MenuIcon />
-                </IconButton>
-                <InputBase
-                  sx={{ ml: 1, flex: 1 }}
-                  inputProps={{ 'aria-label': 'search' }}
-                  type="text"
-                  placeholder="Search jobs and courses..."
-                  value={searchQuery}
-                  onChange={handleSearchChange}
-                />
-                <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                  <SearchIcon />
-                </IconButton>
-              </Paper>
+              <React.Fragment key="unique-key">
+              <Autocomplete
+                id="asynchronous-demo"
+                sx={{ width: 400, borderRadius:1, backgroundColor: "rgba(255,255,255)", elevationColor: "rgba(255,255,255)"}}
+                open={open}
+                onOpen={() => setOpen(true)}
+                onClose={() => setOpen(false)}
+                options={searchResult}
+                getOptionLabel={(searchResult) => searchResult.jobname}
+                inputValue={searchQuery}
+                onInputChange={handleInputChange}
+                onChange={handleSearchItemClick}
+                renderInput={(params) => (
+                  <TextField {...params} label="Search jobs and courses..." />
+                )}
+              />
+            </React.Fragment>
             </div>
           </div>
           <div className="homepage">
@@ -99,6 +129,31 @@ const Homepage = () => {
   </div>
   </div>
   );
+};
+
+
+const debounce = (func, delay) => {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+};
+
+const getResult = async (query) => {
+  if (!query) {
+    return [];
+  }
+
+  try {
+    const response = await axios.get(`http://localhost:3000/jobsListing/${query}`);
+    console.log(response);
+    return response.data.gigsResults;
+    
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
 };
 
 export default Homepage;
