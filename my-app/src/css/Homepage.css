@@ -14,10 +14,8 @@
   }
   
   .card {
-    width: 300px;
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin: 10px;
+    width: fit-content;
+    padding: 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 100px;
@@ -78,4 +76,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+/* SearchBarStyles.css */
+.autocomplete-wrapper {
+  /* ... (other styles) ... */
+
+  /* Add this line to hide the dropdown indicator */
+  & .MuiAutocomplete-popupIndicator {
+    display: none;
+  }
 }
