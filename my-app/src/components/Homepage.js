@@ -105,6 +105,7 @@ const Homepage = () => {
               <React.Fragment key="unique-key">
               <Autocomplete
                 id="asynchronous-demo"
+                className='autocomplete-wrapper'
                 sx={{ width: 400, borderRadius:1, backgroundColor: "rgba(255,255,255)", elevationColor: "rgba(255,255,255)"}}
                 open={open}
                 onOpen={() => setOpen(true)}

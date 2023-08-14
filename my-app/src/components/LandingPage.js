@@ -77,17 +77,17 @@ const LandingPage = () => {
   return (
     <div className='landingBodyContainer'>
     <LandingNav showLinks="true"/>
-    <ThemeProvider theme={theme}>
       <div className='landingBody'>
         <div id="heroImage">
           <div className="welcomeText">
-            <h1 className="welcomeHeader" style={{marginBottom:20}}>Work to empower yourself.</h1>
+          <h1 className="welcomeHeader" style={{ marginBottom: 20 }}>Work to empower yourself.</h1>
             <p className="welcomeMessage" style={{marginBottom:50, fontSize:19, fontFamily:"lora"}}>Start honing your skills and get real-world experience with connectIT. We have projects that will suit your needs and help you grow as a professional.</p>
             <p className='searchPrompt'>What kind of work are you looking for?</p>
             <React.Fragment key="unique-key">
               <Autocomplete
                 id="asynchronous-demo"
-                sx={{ width: 400, borderRadius:1, backgroundColor: "rgba(255,255,255)", elevationColor: "rgba(255,255,255)"}}
+                className="autocomplete-wrapper"
+                sx={{ width: 400, borderRadius:1,  elevationColor: "rgba(255,255,255)"}}
                 open={open}
                 onOpen={() => setOpen(true)}
                 onClose={() => setOpen(false)}
@@ -181,7 +181,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-    </ThemeProvider>
     </div>
   );
 };

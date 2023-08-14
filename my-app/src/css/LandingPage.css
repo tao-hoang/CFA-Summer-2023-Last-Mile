@@ -67,6 +67,30 @@
   max-width: 1600px;
   margin: auto;
 }
-.landingBodyContainer{
 
+
+/* SearchBarStyles.css */
+.autocomplete-wrapper {
+  width: 400px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255);
+   /* Change to green */
+}
+
+.autocomplete-wrapper .MuiInputBase-root:hover {
+  background-color: rgba(255, 255, 255);
+}
+
+.autocomplete-wrapper .MuiInputBase-root:focus {
+  background-color: rgb(19, 89, 231); /* Change this to your desired green color */
+}
+
+/* SearchBarStyles.css */
+.autocomplete-wrapper {
+  /* ... (other styles) ... */
+
+  /* Add this line to hide the dropdown indicator */
+  & .MuiAutocomplete-popupIndicator {
+    display: none;
+  }
 }
