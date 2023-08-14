@@ -20,7 +20,7 @@ const Cards = ({ gigs }) => {
   const [activeCardIndex1, setActiveCardIndex1] = useState(0);
   const [activeCardIndex2, setActiveCardIndex2] = useState(0);
 
-  const cardsData2 = [
+  const cardsData = [
     { id: 1, title: 'Course 1', description: 'This is the description for Course 1' },
     { id: 2, title: 'Course 2', description: 'This is the description for Course 2' },
     { id: 3, title: 'Course 3', description: 'This is the description for Course 3' },
@@ -38,9 +38,9 @@ const Cards = ({ gigs }) => {
     } else if (section === 2) {
       setActiveCardIndex2((prevIndex) => {
         if (direction === 'left') {
-          return prevIndex - 1 < 0 ? cardsData2.length - 1 : prevIndex - 1;
+          return prevIndex - 1 < 0 ? cardsData.length - 1 : prevIndex - 1;
         } else if (direction === 'right') {
-          return (prevIndex + 1) % cardsData2.length;
+          return (prevIndex + 1) % cardsData.length;
         }
       });
     }
@@ -74,7 +74,7 @@ const Cards = ({ gigs }) => {
           <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 2)}>
             &#x2190;
           </span>
-          {cardsData2.map((card, index) => (
+          {cardsData.map((card, index) => (
             <div className={`card ${index === activeCardIndex2 ? 'active' : ''}`} key={card.id}>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
