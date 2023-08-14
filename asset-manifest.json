@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/CFA-Summer-2023-Last-Mile/static/css/main.806aadb1.css",
-    "main.js": "/CFA-Summer-2023-Last-Mile/static/js/main.ee742bdd.js",
-    "static/js/787.28cb0dcd.chunk.js": "/CFA-Summer-2023-Last-Mile/static/js/787.28cb0dcd.chunk.js",
-    "static/media/hero.jpg": "/CFA-Summer-2023-Last-Mile/static/media/hero.ee68b9534dd399b584e7.jpg",
-    "static/media/error.png": "/CFA-Summer-2023-Last-Mile/static/media/error.a67f98941794f2395813.png",
-    "static/media/login.jpg": "/CFA-Summer-2023-Last-Mile/static/media/login.a3569e36bfb0ba5d846e.jpg",
-    "static/media/Montserrat-VariableFont_wght.ttf": "/CFA-Summer-2023-Last-Mile/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
-    "static/media/signUp.jpg": "/CFA-Summer-2023-Last-Mile/static/media/signUp.c2e4d21fea6863e8da78.jpg",
-    "static/media/Lora.ttf": "/CFA-Summer-2023-Last-Mile/static/media/Lora.3a653a05dd1cd5925a30.ttf",
-    "static/media/homepage.png": "/CFA-Summer-2023-Last-Mile/static/media/homepage.dbbb679d262fa6ef6cb0.png",
-    "static/media/Job.png": "/CFA-Summer-2023-Last-Mile/static/media/Job.00768e5fbefdd12addde.png",
-    "index.html": "/CFA-Summer-2023-Last-Mile/index.html",
-    "main.806aadb1.css.map": "/CFA-Summer-2023-Last-Mile/static/css/main.806aadb1.css.map",
-    "main.ee742bdd.js.map": "/CFA-Summer-2023-Last-Mile/static/js/main.ee742bdd.js.map",
-    "787.28cb0dcd.chunk.js.map": "/CFA-Summer-2023-Last-Mile/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/static/css/main.4479e65f.css",
+    "main.js": "/static/js/main.04a206c5.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/hero.jpg": "/static/media/hero.ee68b9534dd399b584e7.jpg",
+    "static/media/profileForm.png": "/static/media/profileForm.86c6814867d33499c94a.png",
+    "static/media/error.png": "/static/media/error.a67f98941794f2395813.png",
+    "static/media/login.jpg": "/static/media/login.a3569e36bfb0ba5d846e.jpg",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
+    "static/media/signUp.jpg": "/static/media/signUp.c2e4d21fea6863e8da78.jpg",
+    "static/media/Lora.ttf": "/static/media/Lora.3a653a05dd1cd5925a30.ttf",
+    "static/media/homepage.png": "/static/media/homepage.dbbb679d262fa6ef6cb0.png",
+    "static/media/Job.png": "/static/media/Job.00768e5fbefdd12addde.png",
+    "index.html": "/index.html",
+    "main.4479e65f.css.map": "/static/css/main.4479e65f.css.map",
+    "main.04a206c5.js.map": "/static/js/main.04a206c5.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.806aadb1.css",
-    "static/js/main.ee742bdd.js"
+    "static/css/main.4479e65f.css",
+    "static/js/main.04a206c5.js"
   ]
 }
