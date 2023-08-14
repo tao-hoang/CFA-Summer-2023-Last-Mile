@@ -164,7 +164,7 @@ const ProfileForm = () => {
     <div>
     <form onSubmit={handleFormSubmit} id="profileForm" className='profileForm'>
       <div>
-        <label htmlFor="firstName">First Name*</label>
+        <label htmlFor="firstName">First Name<span className='blueText'>*</span></label>
         <input className='profileInput'
           type="text"
           id="firstName"
@@ -174,7 +174,7 @@ const ProfileForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name*</label>
+        <label htmlFor="lastName">Last Name<span className='blueText'>*</span></label>
         <input className='profileInput'
           type="text"
           id="lastName"

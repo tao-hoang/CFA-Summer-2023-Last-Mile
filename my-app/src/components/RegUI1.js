@@ -31,10 +31,9 @@ const RegUI = () => {
             <li>Search through our expansive job board for projects to build your portfolio</li>
             <li>Connect with potential employers</li>
           </ul>
-          <div className='captcha'>(captcha)</div>
-          <button className='signUpButton' type="submit">Join as a jobseeker</button>
+          <button className='signUpButton clickable' type="submit">Join as a jobseeker</button>
           <Link to="/login">
-            <button className='signInButton'>Already have an account? Sign in</button>
+            <button className='signInButton clickable'>Already have an account? Sign in</button>
           </Link>
         </div>
       </div>

@@ -170,7 +170,7 @@ const RegUI = () => {
                 <input className='formInput' id="confirmPasswordInput" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
             </div>
             <div className='captcha'>(captcha)</div>
-            <button className='signUpButton' type="submit">Join</button>
+            <button className='signUpButton clickable' type="submit">Join</button>
           </form>
           {error && <p>{error}</p>}
           <p className='smPrompt'><span className='smText'>or log in with</span></p>

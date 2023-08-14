@@ -25,7 +25,7 @@ src: url("./fonts/Lora.ttf");
     display: flex;
     flex-direction: column;
     width: 95%;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .profileForm label {
@@ -57,6 +57,7 @@ src: url("./fonts/Lora.ttf");
     border-radius: 10px;
     border-style:solid;
     border-width: 1px;
+    resize: none;
     /* font-weight: 500; */
 }
   
@@ -80,6 +81,7 @@ src: url("./fonts/Lora.ttf");
     margin: auto;
     display: flex;
     gap: 20px;
+    padding-top: 20px;
 }
 .profileResumeUpload{
     color:#0A1128 !important;
@@ -191,4 +193,7 @@ src: url("./fonts/Lora.ttf");
 }
 #resumeUpload{
     display: none;
+}
+.blueText{
+    color:#1282A2
 }

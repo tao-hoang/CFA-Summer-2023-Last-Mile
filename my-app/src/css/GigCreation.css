@@ -47,8 +47,8 @@ src: url("./fonts/Lora.ttf");
 #gigDescription{
     font-family: "montserrat";
     font-size: 30px;
-    height: 100px;
-    max-height: 100px;
+    height: 160px;
+    /* max-height: 170px; */
     resize: none;
     width: 98%;
     max-width: 800px;
