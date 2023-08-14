@@ -1,0 +1,30 @@
+#profilePic{
+    height: 160px;
+    width: 160px;
+    background-color: rgb(173, 173, 173);
+    border-radius: 50%;
+    border: solid white ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: -80px;
+    left: 50px;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.acount-info{
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#edit-button{
+    height: 50px;
+    border-radius: 30px;
+    background-color: #0A1128 ;
+    color:#fefcfb;
+    border: solid #0A1128;
+    font-size: 15px;
+}

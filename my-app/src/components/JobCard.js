@@ -15,7 +15,7 @@ export default function JobCard(props) {
   let category=props.category;
   let employer=props.employer;
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, minWidth:345, margin:"10px"}}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {jobTitle} {'$'+payment}
