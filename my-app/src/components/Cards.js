@@ -3,6 +3,10 @@ import axios from "axios";
 import SpecificJob from './SpecificJob';
 import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import JobCard from './JobCard';
+
+
+
 
 const theme = createTheme({
   palette: {
@@ -50,7 +54,8 @@ const Cards = ({ gigs }) => {
           <span className="arrow left-arrow" onClick={() => handleArrowClick('left', 1)}>&#x2190;</span>
           {gigs ? gigs.map((item, index) => (
             <div className={`card ${index === activeCardIndex1 ? 'active' : ''}`} key={item._id}>
-              <SpecificJob
+              <JobCard
+                key={item._id}
                 jobTitle={item.jobname}
                 jobDesc={item.description}
                 category={item.categories}

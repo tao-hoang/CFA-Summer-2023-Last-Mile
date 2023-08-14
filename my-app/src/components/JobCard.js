@@ -6,10 +6,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "../css/JobCard.css"
+import { Box } from '@mui/material';
 export default function JobCard(props) {
   let jobTitle=props.jobTitle;
   let jobDesc=props.jobDesc;
   let payment=props.payment;
+  let selected = props.selected;
   let duration=props.duration;
   let remote=props.remote;
   let category=props.category;
