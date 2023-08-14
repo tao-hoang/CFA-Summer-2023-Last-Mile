@@ -11,7 +11,7 @@ import "../css/ProfileView.css"
 export default function ProfileView(){
     const[user, setUser] = useState({})
     const navigate = useNavigate();
-    const baseURL = "http://localhost:3000"
+    const baseURL = "http://ec2-52-91-204-97.compute-1.amazonaws.com:3000"
     const getUser = () => {
         console.count("user load")
       if(localStorage.user){

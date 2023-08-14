@@ -42,7 +42,7 @@ const LoginForm = () => {
       console.count()
       await axios({
         method: 'post',
-        baseURL: 'http://localhost:3000',
+        baseURL: 'http://ec2-52-91-204-97.compute-1.amazonaws.com:3000',
         responseType: 'json',
         url:'/currentuser',
         headers: {"x-access-token": localStorage.token},

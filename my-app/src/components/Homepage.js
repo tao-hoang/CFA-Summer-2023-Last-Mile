@@ -54,7 +54,7 @@ const Homepage = () => {
   const getData = () => {
     axios({
       method: 'get',
-      baseURL: 'http://localhost:3000', // Update with your API endpoint
+      baseURL: 'http://ec2-52-91-204-97.compute-1.amazonaws.com:3000', // Update with your API endpoint
       responseType: 'json',
       url: '/jobslisting/dev', // Update with your API route
     })
@@ -146,7 +146,7 @@ const getResult = async (query) => {
   }
 
   try {
-    const response = await axios.get(`http://localhost:3000/jobsListing/${query}`);
+    const response = await axios.get(`http://ec2-52-91-204-97.compute-1.amazonaws.com:3000/jobsListing/${query}`);
     console.log(response);
     return response.data.gigsResults;
     

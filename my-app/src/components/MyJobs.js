@@ -15,7 +15,7 @@ const MyJobs = (gigIds) => {
     const getData = async (gigIds) =>{
       try{
       const gigPromises = gigIds.map(async (x) => {
-        const response = await await http.get(`http://localhost:3000/gigbyid/${x}`);
+        const response = await await http.get(`http://ec2-52-91-204-97.compute-1.amazonaws.com:3000/gigbyid/${x}`);
         
         return response.data.gig;
         });

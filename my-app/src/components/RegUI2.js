@@ -23,7 +23,7 @@ import { green } from '@mui/material/colors';
 
 import LandingNav from "./LandingNav"
 
-const baseURL = "http://localhost:3000/register";
+const baseURL = "http://ec2-52-91-204-97.compute-1.amazonaws.com:3000/register";
 const RegUI = () => {
     const [fname, setfname] = useState('')
     const [lname, setlname] =useState('')
@@ -36,7 +36,7 @@ const RegUI = () => {
       console.count()
       await axios({
         method: 'post',
-        baseURL: 'http://localhost:3000',
+        baseURL: 'http://ec2-52-91-204-97.compute-1.amazonaws.com:3000',
         responseType: 'json',
         url:'/currentuser',
         headers: {"x-access-token": localStorage.token},

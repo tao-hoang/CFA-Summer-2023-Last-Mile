@@ -13,7 +13,7 @@ const GigForm = () => {
   //WIP
   const [employer, setEmployer] = useState('');
   //set to current baseURL (of backend?)
-  const baseURL = "http://localhost:3000";
+  const baseURL = "http://ec2-52-91-204-97.compute-1.amazonaws.com:3000";
   //api call
   const editGig = async (data, authToken) => {
     try {
