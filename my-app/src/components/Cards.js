@@ -76,8 +76,10 @@ const Cards = ({ gigs }) => {
           </span>
           {cardsData.map((card, index) => (
             <div className={`card ${index === activeCardIndex2 ? 'active' : ''}`} key={card.id}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
+              <JobCard
+                jobTitle={card.title}
+                jobDesc={card.description}
+              />
             </div>
           ))}
           <span className="arrow right-arrow" onClick={() => handleArrowClick('right', 2)}>
