@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import SpecificJob from './SpecificJob';
 import { useJobContext } from './JobContext';
+import LandingNav from "./LandingNav";
 
 function SearchItem() {
     const { selectedJob } = useJobContext();
-  return (  
+  return (
+    <div className="searchItemBody">
+    <LandingNav showLinks="true"/>
     <div className="container">
     <h1 className="header">Job Search Result</h1>
     <p className="job-listing">
@@ -34,6 +37,7 @@ function SearchItem() {
                 your job search!
             </p>
         </div>
+        </div>  
   );
 };
 
