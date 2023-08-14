@@ -23,7 +23,7 @@ import Homepage from './components/Homepage';
 import ProfileCreation from './components/ProfileCreation';
 import SearchItem from './components/SearchItem';
 import { JobProvider } from './components/JobContext';
-
+import GigCreation from './components/GigCreation';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -119,8 +119,13 @@ const router = createBrowserRouter([
   element:<MyJobs/>
 },
 {
+<<<<<<< HEAD
   path:"/myprofile",
   element:<ProfileView/>
+=======
+  path:"/gigcreation",
+  element:<GigCreation/>
+>>>>>>> main
 }
   
 
