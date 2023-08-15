@@ -1,6 +1,7 @@
 import LandingNav from "./LandingNav"
 import GigForm from "./GigForm"
 import React from "react"
+import "../css/GigCreation.css"
 import axios from "axios";
 import { useState } from "react";
 let GigCreation=()=>{

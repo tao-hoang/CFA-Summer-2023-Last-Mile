@@ -122,6 +122,9 @@ src: url("./fonts/Lora.ttf");
     border-style:solid lightgray;;
     border-width: 1px;
     position: relative;
+    background-image: url(../images/bannerCoffee.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .profilePic{
     height: 160px;
