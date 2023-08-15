@@ -31,7 +31,7 @@ const RegUI = () => {
             <li>Search through our expansive job board for projects to build your portfolio</li>
             <li>Connect with potential employers</li>
           </ul>
-          <button className='signUpButton clickable' type="submit">Join as a jobseeker</button>
+          <Link to="../register2" className='linkUnstyled'><button className='signUpButton clickable' type="submit">Join as a jobseeker</button></Link>
           <Link to="/login">
             <button className='signInButton clickable'>Already have an account? Sign in</button>
           </Link>
