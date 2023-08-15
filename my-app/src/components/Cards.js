@@ -56,6 +56,7 @@ const Cards = ({ gigs }) => {
             <div className={`card ${index === activeCardIndex1 ? 'active' : ''}`} key={item._id}>
               <JobCard
                 key={item._id}
+                id = {item._id}
                 jobTitle={item.jobname}
                 jobDesc={item.description}
                 category={item.categories}

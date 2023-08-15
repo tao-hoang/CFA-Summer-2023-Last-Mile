@@ -31,6 +31,7 @@ import {
 import JobsListing from './components/JobsListing';
 import MyJobs from './components/MyJobs';
 import ProfileView from './components/ProfileView';
+import SingleJob from './components/SingleJob';
 
 const router = createBrowserRouter([
   {
@@ -128,6 +129,9 @@ const router = createBrowserRouter([
 },{
   path:"/userprofile/:id",
   element:<ProfileView/>
+},{
+  path:"/job/:id",
+  element:<SingleJob/>
 }
   
 

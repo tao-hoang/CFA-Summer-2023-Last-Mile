@@ -51,6 +51,7 @@ const MyJobs = (gigIds) => {
         {gigs.map((item) => (
           <JobCard
           key = {item._id}
+          id = {item._id}
           jobTitle = {item.jobname}
           jobDesc = {item.description}
           payment = {item.pay}
