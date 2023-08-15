@@ -3,6 +3,8 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import Profile from "../images/defaultProfilePic.png"
 import Bell from "../images/notificationBell.png"
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import { Badge } from "@mui/material";
 import AccountMenu from "./Dropdown";
 let LandingNavLinks=(props)=>{
     //return links if showlinks ==true
@@ -41,7 +43,10 @@ let LandingNavLinks=(props)=>{
             <Link to="/homepage">
                 <Button className='headerButton' sx={{width:90, borderRadius:100}}>Explore</Button>
                 </Link>
-                <img src={Bell} id="bell"/>
+                <Badge color="secondary" badgeContent={1}>
+                    <img src={Bell} id="bell"/>
+                </Badge>
+                
             {/* <img src={Profile}/> */}
             <AccountMenu tokeFunc={handleToken}/>
 

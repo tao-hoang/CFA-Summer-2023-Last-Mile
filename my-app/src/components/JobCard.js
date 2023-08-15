@@ -16,6 +16,7 @@ export default function JobCard(props) {
   let remote=props.remote;
   let category=props.category;
   let employer=props.employer;
+  let id =props.id;
   return (
     <Card sx={{ maxWidth: 345, minWidth:345}}>
       <CardContent>
@@ -27,7 +28,7 @@ export default function JobCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">See Full Listing</Button>
+        <Button size="small" disabled={id === undefined} href={id !== undefined ? "/job/" + id : undefined} >See Full Listing</Button>
       </CardActions>
     </Card>
   );
