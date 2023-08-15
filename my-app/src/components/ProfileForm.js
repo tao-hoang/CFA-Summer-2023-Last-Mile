@@ -16,6 +16,7 @@ const http = axiosRateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1
 const ProfileForm = () => {
   // State variables to store form data
   const [user, setUser] = useState(localStorage.user? JSON.parse(localStorage.user):{})
+  const [git, setGit] = useState('')
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [otherNames, setOtherNames] = useState('');
@@ -103,7 +104,8 @@ const ProfileForm = () => {
     let myNewData={
       "fname":firstName,
       "lname":lastName,
-      "about":aboutMe
+      "about":aboutMe,
+      "github":git
     }
     let myToken=localStorage.token;
     await editUserProfile(myNewData,myToken);
@@ -275,9 +277,14 @@ const ProfileForm = () => {
       <div className="gitHubLink">
         <Typography className="profileBottomText">
           <GitHubIcon className="formIcon" />
-          GitHub Repository Link
+          GitHub
         </Typography>
-        <Input className="profileInput" placeholder="https://github.com/" />
+        <Input className="profileInput" 
+              placeholder="https://github.com/" 
+              id='git'
+              onChange={(e) => setGit(e.target.value)}
+              value={git}
+               />
       </div>
       <Button
         className="profileButton clickable"

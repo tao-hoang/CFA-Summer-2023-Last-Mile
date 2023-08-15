@@ -41,6 +41,7 @@ export default function ProfileView(){
                 {user.hasOwnProperty('about')?<h3>About: {user.about}</h3>:null}
                 <h3>Email: <a href={"mailto: "+user.email}>{user.email}</a></h3>
                 {user.resume!=undefined?<h3>Check Out My <a target='_blank' href={baseURL+'/resume/'+user.resume}>Resume</a></h3>:null}
+                {user.hasOwnProperty('github')?<h3>Find Me on <a href={user.github}>GitHub</a></h3>:null}
                 {own?<Button id='edit-button' endIcon={<ManageAcountsIcon/>} onClick={()=>{navigate('/profilecreation')}}>
                     update information   
                 </Button>:null}
