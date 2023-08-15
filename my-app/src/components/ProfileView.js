@@ -32,7 +32,7 @@ export default function ProfileView(){
     return(
         <div>
             <LandingNav/>
-            <div className="profileBanner" style={{backgroundImage:'url("https://64.media.tumblr.com/2842f06caddbfda985e150abc1e2b8e1/cc9cd637b26d5a89-47/s1280x1920/f55e3939a54c172d4672af907f883b36ed28126a.jpg")'}}>
+            <div className="profileBanner">
                         <Avatar id="profilePic" src={"https://cfa-last-mile-backend.onrender.com" +'/image/'+user.pfp}/>
                         </div>
                 <div className='acount-info'>
